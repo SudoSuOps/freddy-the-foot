@@ -43,6 +43,82 @@
   }
 </style>
 
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://opendiabetic.org/#org",
+   "name": "OpenDiabetic",
+   "alternateName": "Swarm & Bee AI",
+   "url": "https://opendiabetic.org"
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://freddythefoot.com/#brand",
+   "name": "Freddy the Foot",
+   "url": "https://freddythefoot.com/",
+   "parentOrganization": {
+    "@id": "https://opendiabetic.org/#org"
+   },
+   "sameAs": [
+    "https://opendiabetic.org"
+   ],
+   "description": "Freddy the Foot is the member-facing mascot of OpenDiabetic — a middle-aged man living with type 2 diabetes who makes daily foot care relatable through short comedy. The friendly front door to the 24/7 Club."
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://freddythefoot.com/#website",
+   "url": "https://freddythefoot.com/",
+   "name": "Freddy the Foot",
+   "publisher": {
+    "@id": "https://freddythefoot.com/#brand"
+   },
+   "description": "Foot care for people who live it 24/7 — Season 1 of the Freddy the Foot comedy series for the diabetes community."
+  },
+  {
+   "@type": "CreativeWorkSeries",
+   "@id": "https://freddythefoot.com/#season1",
+   "name": "Freddy the Foot — Season 1: The 24/7 Club",
+   "url": "https://freddythefoot.com/#episodes",
+   "numberOfEpisodes": 10,
+   "publisher": {
+    "@id": "https://freddythefoot.com/#brand"
+   },
+   "about": [
+    "diabetic foot care",
+    "type 2 diabetes",
+    "foot health",
+    "neuropathy"
+   ],
+   "hasPart": [
+    {
+     "@type": "CreativeWork",
+     "@id": "https://freddythefoot.com/ep01#ep",
+     "name": "EP01 · Beach",
+     "url": "https://freddythefoot.com/ep01",
+     "position": 1
+    },
+    {
+     "@type": "CreativeWork",
+     "@id": "https://freddythefoot.com/ep02#ep",
+     "name": "EP02 · Dad Shoes",
+     "url": "https://freddythefoot.com/ep02",
+     "position": 2
+    },
+    {
+     "@type": "CreativeWork",
+     "@id": "https://freddythefoot.com/ep05#ep",
+     "name": "EP05 · 3AM",
+     "url": "https://freddythefoot.com/ep05",
+     "position": 5
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -200,6 +276,7 @@
         <a class="navlink" href="#episodes" style="color:#A7A3BC;">Episodes</a>
         <a class="navlink" href="#club" style="color:#A7A3BC;">The 24/7 Club</a>
         <a class="navlink" href="#guide" style="color:#A7A3BC;">Field Guide</a>
+        <a class="navlink" href="/brand-kit" style="color:#A7A3BC;">Brand Kit</a>
         <a href="#club" style="background:linear-gradient(135deg,#2456B8,#7B5EA7);color:#fff;font-family:'Baloo 2';font-weight:700;font-size:15px;padding:10px 20px;border-radius:100px;">Join the Club 🤙</a>
       </div>
     </div>

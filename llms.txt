@@ -1,0 +1,27 @@
+# Freddy the Foot
+
+> Freddy the Foot is the member-facing mascot of OpenDiabetic — a middle-aged man
+> (early 50s) living with type 2 diabetes who makes daily foot care relatable through
+> short comedy. He complains the whole time and does it anyway. Freddy is the friendly
+> front door to the "24/7 Club" (everyone managing diabetes around the clock); the deep
+> clinical content lives at OpenDiabetic. Every story follows one rule: one clinical
+> risk → one habit → one adventure. Educational, never diagnostic; laughs with the life,
+> never at the disease.
+
+## Pages
+
+- [Home / Season 1](https://freddythefoot.com/): The landing page — meet Freddy, the 24/7 Club, and the Season 1 episode lineup.
+- [Brand Asset Kit](https://freddythefoot.com/brand-kit): Character bible, wardrobe, the "Freddy Sunshine" palette, type, humor doctrine, and templates — the single source of truth for all Freddy creative.
+
+## Episodes (Season 1: The 24/7 Club)
+
+- [EP01 · Beach](https://freddythefoot.com/ep01): Hot surfaces you can't feel can still burn — hand-check the ground before you step.
+- [EP02 · Dad Shoes](https://freddythefoot.com/ep02): Break new shoes in one hour at a time and check for hot spots after every round.
+- [EP05 · 3AM](https://freddythefoot.com/ep05): The floor is a minefield at 3am — keep slides by the bed, shake them first, then step.
+
+## About
+
+- Publisher: OpenDiabetic (Swarm & Bee AI) — https://opendiabetic.org
+- Audience: people living with type 2 diabetes and their care circle
+- Topics: diabetic foot care, neuropathy, daily foot checks, footwear, foot health
+- Tone: educational, plain-language, dignity-first, humor that leaves a real reminder
