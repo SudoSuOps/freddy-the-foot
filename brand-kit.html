@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freddy the Foot — Brand Asset Kit</title>
+<meta name="description" content="Freddy the Foot Brand Asset Kit — the single source of truth for all Freddy creative: character, wardrobe, the Freddy Sunshine palette, type, humor doctrine, the 24/7 Club, and templates.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://freddythefoot.com/brand-kit">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Freddy the Foot — Brand Asset Kit">
+<meta property="og:description" content="Freddy the Foot Brand Asset Kit — the single source of truth for all Freddy creative: character, wardrobe, the Freddy Sunshine palette, type, humor doctrine, the 24/7 Club, and templates.">
+<meta property="og:url" content="https://freddythefoot.com/brand-kit">
+<meta name="theme-color" content="#0f0e15">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600;1,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;background:#0f0e15;}
+  *{box-sizing:border-box;}
+  @keyframes freddyGlow{0%,100%{opacity:.5}50%{opacity:.85}}
+</style>
+<style>
+  /* Production shell: center the 1240px artboard and scale it to fit any viewport
+     (no horizontal body scroll on mobile; pixel-perfect at >=1240px). */
+  html,body{background:#0f0e15;overflow-x:hidden;}
+  #stage{display:flex;justify-content:center;}
+  #artboard{transform-origin:top center;}
+</style>
+</head>
+<body>
+<div id="stage">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="tiedye" cx="44%" cy="38%" r="78%">
+      <stop offset="0%" stop-color="#F0876B"/>
+      <stop offset="34%" stop-color="#7B5EA7"/>
+      <stop offset="70%" stop-color="#6E8CB8"/>
+      <stop offset="100%" stop-color="#52709c"/>
+    </radialGradient>
+    <radialGradient id="iris" cx="42%" cy="36%" r="66%">
+      <stop offset="0%" stop-color="#DFF3EC"/>
+      <stop offset="40%" stop-color="#3E8E4E"/>
+      <stop offset="100%" stop-color="#2b5f7a"/>
+    </radialGradient>
+    <clipPath id="robeClip"><path d="M62,240 C96,232 168,232 202,240 L206,302 C206,342 170,358 132,358 C94,358 58,342 58,302 Z"/></clipPath>
+    <clipPath id="teeClip"><path d="M58,220 C96,213 168,213 202,220 L205,296 L55,296 Z"/></clipPath>
+    <clipPath id="flanL"><path d="M118,218 L60,222 L58,300 C58,338 84,355 118,357 Z"/></clipPath>
+    <clipPath id="flanR"><path d="M142,218 L204,222 L206,300 C206,338 180,355 142,357 Z"/></clipPath>
+  </defs>
+  <symbol id="print" viewBox="0 0 40 52">
+    <ellipse cx="17" cy="35" rx="14" ry="16"/>
+    <ellipse cx="31" cy="17" rx="5" ry="6"/>
+    <ellipse cx="23" cy="9" rx="4" ry="5"/>
+    <ellipse cx="14" cy="7" rx="3.6" ry="4.6"/>
+    <ellipse cx="6" cy="13" rx="3" ry="4"/>
+  </symbol>
+  <symbol id="freddyBase" viewBox="0 0 260 384">
+    <ellipse cx="132" cy="368" rx="74" ry="13" fill="rgba(0,0,0,0.22)"/>
+    <path d="M132,44 C82,44 64,100 62,170 L60,274 C58,334 94,356 132,356 C170,356 206,334 204,274 L202,170 C200,100 182,44 132,44 Z" fill="#F2B98C" stroke="#D99A63" stroke-width="3"/>
+    <path d="M152,62 C186,92 190,152 188,262 C186,322 168,348 140,354 C182,352 206,332 204,274 L202,170 C200,112 182,68 152,62 Z" fill="#E0A56F" opacity="0.4"/>
+    <path d="M67,130 q-7,28 -1,56 q11,4 17,-3 q-6,-27 -3,-51 q-7,-5 -13,-2 Z" fill="#5A3B1E"/>
+    <path d="M193,130 q7,28 1,56 q-11,4 -17,-3 q6,-27 3,-51 q7,-5 13,-2 Z" fill="#5A3B1E"/>
+    <path d="M71,150 q-2,18 2,34" stroke="#9c8a78" stroke-width="2" fill="none" opacity="0.75"/>
+    <path d="M189,150 q2,18 -2,34" stroke="#9c8a78" stroke-width="2" fill="none" opacity="0.75"/>
+    <g stroke="#D99A63" stroke-width="2.5">
+      <ellipse cx="80" cy="48" rx="18" ry="24" fill="#F2B98C"/>
+      <ellipse cx="104" cy="26" rx="16" ry="22" fill="#F2B98C"/>
+      <ellipse cx="130" cy="20" rx="16" ry="23" fill="#F2B98C"/>
+      <ellipse cx="157" cy="30" rx="15" ry="21" fill="#F2B98C"/>
+      <ellipse cx="183" cy="50" rx="14" ry="19" fill="#F2B98C"/>
+    </g>
+    <g stroke-linejoin="round">
+      <path d="M75,36 Q75,33 86,33 L112,33 Q120,33 119,43 Q117,59 96,60 Q78,60 75,36 Z" fill="#2a2320" fill-opacity="0.5" stroke="#C9A227" stroke-width="4"/>
+      <path d="M185,36 Q185,33 174,33 L148,33 Q140,33 141,43 Q143,59 164,60 Q182,60 185,36 Z" fill="#2a2320" fill-opacity="0.5" stroke="#C9A227" stroke-width="4"/>
+      <path d="M119,40 q13,-6 22,0" fill="none" stroke="#E6B93B" stroke-width="4" stroke-linecap="round"/>
+      <path d="M75,39 q-11,-2 -16,5" fill="none" stroke="#E6B93B" stroke-width="4" stroke-linecap="round"/>
+      <path d="M185,39 q11,-2 16,5" fill="none" stroke="#E6B93B" stroke-width="4" stroke-linecap="round"/>
+      <path d="M83,40 l12,11" stroke="#fff" stroke-width="3" opacity="0.45" stroke-linecap="round"/>
+      <path d="M149,40 l12,11" stroke="#fff" stroke-width="3" opacity="0.45" stroke-linecap="round"/>
+    </g>
+    <path d="M84,116 q24,-16 48,-3" fill="none" stroke="#5A3B1E" stroke-width="8" stroke-linecap="round"/>
+    <path d="M150,122 q22,-9 42,-3" fill="none" stroke="#5A3B1E" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="108" cy="152" rx="22" ry="26" fill="#fff" stroke="#D99A63" stroke-width="2"/>
+    <ellipse cx="156" cy="152" rx="22" ry="26" fill="#fff" stroke="#D99A63" stroke-width="2"/>
+    <path d="M88,140 q20,-7 40,-1" fill="none" stroke="#D99A63" stroke-width="3" stroke-linecap="round"/>
+    <path d="M136,140 q20,-7 40,-1" fill="none" stroke="#D99A63" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="110" cy="160" r="11" fill="url(#iris)"/><circle cx="110" cy="160" r="6" fill="#241a12"/><circle cx="106" cy="155" r="3" fill="#fff"/>
+    <circle cx="154" cy="160" r="11" fill="url(#iris)"/><circle cx="154" cy="160" r="6" fill="#241a12"/><circle cx="150" cy="155" r="3" fill="#fff"/>
+    <path d="M84,166 q-7,5 -9,12" fill="none" stroke="#D99A63" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M180,166 q7,5 9,12" fill="none" stroke="#D99A63" stroke-width="2.5" stroke-linecap="round"/>
+    <ellipse cx="86" cy="190" rx="15" ry="10" fill="#D93A2B" opacity="0.16"/>
+    <ellipse cx="178" cy="190" rx="15" ry="10" fill="#D93A2B" opacity="0.16"/>
+    <path d="M104,206 q28,10 54,-3" fill="none" stroke="#7A4A2E" stroke-width="6" stroke-linecap="round"/>
+    <path d="M123,219 Q132,237 141,219 Q132,225 123,219 Z" fill="#5A3B1E"/>
+  </symbol>
+
+  <symbol id="hands" viewBox="0 0 260 384">
+    <g stroke="#D7D7DE" stroke-width="2.5">
+      <circle cx="50" cy="276" r="21" fill="#fff"/>
+      <circle cx="214" cy="276" r="21" fill="#fff"/>
+      <circle cx="35" cy="266" r="8" fill="#fff"/>
+      <circle cx="229" cy="266" r="8" fill="#fff"/>
+    </g>
+  </symbol>
+
+  <symbol id="flower" viewBox="0 0 24 24">
+    <circle cx="12" cy="5" r="4.2"/><circle cx="19" cy="10" r="4.2"/><circle cx="16" cy="18" r="4.2"/><circle cx="8" cy="18" r="4.2"/><circle cx="5" cy="10" r="4.2"/>
+    <circle cx="12" cy="12" r="3.4" fill="#F5A623"/>
+  </symbol>
+
+  <g id="chainDefs"></g>
+
+  <!-- ep05 · solid-purple robe (3AM rockstar) -->
+  <symbol id="freddy" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M62,240 C96,232 168,232 202,240 L206,302 C206,342 170,358 132,358 C94,358 58,342 58,302 Z" fill="#7B5EA7" stroke="#5f4a86" stroke-width="3"/>
+    <path d="M132,232 L108,238 L129,286 Z" fill="#5f4a86"/>
+    <path d="M132,232 L156,238 L135,286 Z" fill="#5f4a86"/>
+    <use href="#hands"/>
+  </symbol>
+
+  <!-- default / beach · solid coral tee + cargo shorts -->
+  <symbol id="freddyCargo" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M58,220 C88,214 108,216 116,232 Q132,248 148,232 C160,216 174,214 202,220 L205,296 L55,296 Z" fill="#F0876B" stroke="#d06f52" stroke-width="2.5"/>
+    <path d="M55,296 L205,296 L207,330 C207,347 176,358 132,358 C88,358 57,347 57,330 Z" fill="#E8C98F" stroke="#c9a85f" stroke-width="2.5"/>
+    <rect x="55" y="294" width="150" height="9" fill="#c9a85f" opacity="0.6"/>
+    <rect x="70" y="309" width="36" height="34" rx="4" fill="none" stroke="#b6924e" stroke-width="2.5"/>
+    <path d="M70,317 h36" stroke="#b6924e" stroke-width="2.5"/>
+    <rect x="154" y="309" width="36" height="34" rx="4" fill="none" stroke="#b6924e" stroke-width="2.5"/>
+    <path d="M154,317 h36" stroke="#b6924e" stroke-width="2.5"/>
+    <use href="#hands"/>
+  </symbol>
+
+  <!-- beach alt · Hawaiian aloha shirt -->
+  <symbol id="freddyHawaii" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M58,222 C88,216 106,218 116,236 Q132,252 148,236 C162,218 176,216 202,222 L206,300 C206,342 170,358 132,358 C94,358 58,342 58,300 Z" fill="#BFE3F5" stroke="#8fc4dd" stroke-width="2.5"/>
+    <use href="#flower" x="70" y="258" width="30" height="30" fill="#F0876B"/>
+    <use href="#flower" x="150" y="252" width="32" height="32" fill="#7B5EA7"/>
+    <use href="#flower" x="102" y="306" width="30" height="30" fill="#3E8E4E"/>
+    <use href="#flower" x="158" y="310" width="28" height="28" fill="#F0876B"/>
+    <use href="#flower" x="66" y="316" width="26" height="26" fill="#7B5EA7"/>
+    <path d="M116,236 L96,226 L114,258 Z" fill="#8fc4dd"/>
+    <path d="M148,236 L168,226 L150,258 Z" fill="#a6d3e8"/>
+    <use href="#hands"/>
+  </symbol>
+
+  <!-- ep02 · garage flannel over tee -->
+  <symbol id="freddyFlannel" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M58,222 C96,215 168,215 202,222 L206,300 C206,342 170,358 132,358 C94,358 58,342 58,300 Z" fill="#FAF6EC" stroke="#e3dcc6" stroke-width="2.5"/>
+    <path d="M118,218 L60,222 L58,300 C58,338 84,355 118,357 Z" fill="#6E8CB8"/>
+    <g clip-path="url(#flanL)">
+      <line x1="72" y1="212" x2="72" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="98" y1="212" x2="98" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="85" y1="212" x2="85" y2="360" stroke="#FAF6EC" stroke-width="3" opacity="0.5"/>
+      <line x1="50" y1="252" x2="130" y2="252" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="50" y1="302" x2="130" y2="302" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="50" y1="277" x2="130" y2="277" stroke="#F0876B" stroke-width="2.5" opacity="0.6"/>
+    </g>
+    <path d="M142,218 L204,222 L206,300 C206,338 180,355 142,357 Z" fill="#6E8CB8"/>
+    <g clip-path="url(#flanR)">
+      <line x1="162" y1="212" x2="162" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="188" y1="212" x2="188" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="175" y1="212" x2="175" y2="360" stroke="#FAF6EC" stroke-width="3" opacity="0.5"/>
+      <line x1="130" y1="252" x2="210" y2="252" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="130" y1="302" x2="210" y2="302" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="130" y1="277" x2="210" y2="277" stroke="#F0876B" stroke-width="2.5" opacity="0.6"/>
+    </g>
+    <path d="M120,218 L102,224 L120,246 Z" fill="#5a7194"/>
+    <path d="M140,218 L158,224 L140,246 Z" fill="#5a7194"/>
+    <use href="#hands"/>
+  </symbol>
+</svg>
+
+<div id="artboard" style="width:1240px;background:#0f0e15;font-family:'Nunito',sans-serif;color:#F3F1FA;overflow:hidden;">
+
+  <!-- ============ COVER ============ -->
+  <section style="position:relative;padding:72px 80px 64px;overflow:hidden;background:radial-gradient(60% 90% at 12% 6%, rgba(123,94,167,0.55) 0%, rgba(123,94,167,0) 55%), radial-gradient(60% 90% at 92% 20%, rgba(240,135,107,0.4) 0%, rgba(240,135,107,0) 55%), #12101c;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;">
+      <div style="max-width:640px;">
+        <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:100px;padding:7px 16px;font-family:'JetBrains Mono';font-weight:700;font-size:12px;letter-spacing:1.5px;color:#B794F6;">BRAND ASSET KIT · v1.1</div>
+        <div style="margin-top:26px;line-height:.8;">
+          <div style="font-family:'Baloo 2';font-weight:800;font-size:96px;color:#2456B8;text-shadow:3px 3px 0 #fff,-3px 3px 0 #fff,3px -3px 0 #fff,-3px -3px 0 #fff,0 8px 18px rgba(0,0,0,.4);">Freddy</div>
+          <div style="font-family:'Baloo 2';font-weight:800;font-size:52px;color:#D93A2B;text-shadow:2px 2px 0 #fff,-2px 2px 0 #fff,2px -2px 0 #fff,-2px -2px 0 #fff;margin-top:4px;">the Foot</div>
+        </div>
+        <p style="margin:30px 0 0;font-family:'Baloo 2';font-weight:600;font-size:26px;line-height:1.25;color:#F3F1FA;max-width:520px;">The friendly front door to serious foot care — for the people who live it 24/7.</p>
+        <p style="margin:16px 0 0;font-family:'Nunito';font-weight:700;font-size:17px;line-height:1.5;color:#A7A3BC;max-width:520px;">A Gen-X sitcom-dad energy mascot: mid-40s, dry, warm, managing diabetes for years. He doesn't learn lessons — he has thoughts. The joke is about the <em style="color:#F0876B;font-style:normal;">life</em>, never the disease.</p>
+        <div style="margin-top:34px;display:flex;gap:12px;align-items:center;">
+          <span style="background:linear-gradient(135deg,#8B5CF6,#6366F1);color:#fff;font-family:'Baloo 2';font-weight:800;font-size:18px;padding:12px 24px;border-radius:100px;">24/7 club. Check first. 🤙</span>
+        </div>
+      </div>
+      <div style="position:relative;flex:none;">
+        <div style="position:absolute;top:8%;left:50%;transform:translateX(-50%);width:380px;height:380px;border-radius:50%;background:radial-gradient(circle, rgba(240,135,107,0.35) 0%, rgba(240,135,107,0) 68%);animation:freddyGlow 5s ease-in-out infinite;"></div>
+        <svg viewBox="0 0 260 384" style="width:340px;height:502px;position:relative;filter:drop-shadow(0 24px 34px rgba(0,0,0,.55));"><use href="#freddyCargo"/></svg>
+      </div>
+    </div>
+    <p style="margin:40px 0 0;font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#6E6A83;letter-spacing:.5px;">Property of OpenDiabetic / Swarm &amp; Bee AI (SudoHash LLC) · Single source of truth for all Freddy the Foot creative · If an asset contradicts this kit, the kit wins.</p>
+  </section>
+
+  <!-- ============ 01 · WHO IS FREDDY ============ -->
+  <section style="padding:60px 80px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:36px;">
+      <span style="font-family:'JetBrains Mono';font-weight:700;font-size:15px;color:#8B5CF6;">01</span>
+      <h2 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:34px;color:#fff;">Who Freddy is</h2>
+    </div>
+    <div style="display:flex;gap:48px;align-items:flex-start;">
+      <!-- spec diagram -->
+      <div style="flex:none;width:400px;position:relative;background:radial-gradient(80% 70% at 50% 30%, #221e31 0%, #14111f 100%);border:1px solid rgba(255,255,255,0.08);border-radius:26px;padding:30px 0;display:flex;justify-content:center;">
+        <svg viewBox="0 0 260 384" style="width:230px;height:340px;filter:drop-shadow(0 14px 22px rgba(0,0,0,.5));"><use href="#freddyCargo"/></svg>
+        <div style="position:absolute;top:34px;left:18px;font-family:'Nunito';font-weight:800;font-size:12px;color:#F5A623;max-width:120px;">Gold aviators, pushed up on the toes</div>
+        <div style="position:absolute;top:150px;right:16px;font-family:'Nunito';font-weight:800;font-size:12px;color:#5FD38A;max-width:120px;text-align:right;">Big green-blue eyes + laugh lines</div>
+        <div style="position:absolute;top:210px;left:18px;font-family:'Nunito';font-weight:800;font-size:12px;color:#B794F6;max-width:120px;">Sideburns &amp; soul patch — Gen-X texture</div>
+        <div style="position:absolute;bottom:96px;right:16px;font-family:'Nunito';font-weight:800;font-size:12px;color:#BFE3F5;max-width:120px;text-align:right;">White 4-finger gloves</div>
+        <div style="position:absolute;bottom:36px;left:18px;font-family:'Nunito';font-weight:800;font-size:12px;color:#A7A3BC;max-width:130px;">A right foot, standing on his heel</div>
+      </div>
+      <div style="flex:1;">
+        <p style="margin:0 0 22px;font-family:'Nunito';font-weight:700;font-size:20px;line-height:1.5;color:#F3F1FA;">He checks his feet like you lock your door. It's just Tuesday. Been managing this for years — has a system, has opinions about the system, has jokes about the opinions.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:26px;">
+          <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:18px 20px;">
+            <div style="font-family:'Baloo 2';font-weight:700;font-size:13px;letter-spacing:1px;color:#8B5CF6;margin-bottom:6px;">THE ARC SHIFT</div>
+            <div style="font-family:'Nunito';font-weight:700;font-size:15px;line-height:1.45;color:#A7A3BC;">Not "Freddy learns a lesson." It's "Freddy's lived it for years and has thoughts."</div>
+          </div>
+          <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:18px 20px;">
+            <div style="font-family:'Baloo 2';font-weight:700;font-size:13px;letter-spacing:1px;color:#F0876B;margin-bottom:6px;">THE VOICE</div>
+            <div style="font-family:'Nunito';font-weight:700;font-size:15px;line-height:1.45;color:#A7A3BC;">Dry, warm, self-aware. Dad-joke adjacent, but lands them. Grumbles, never despairs.</div>
+          </div>
+        </div>
+        <div style="font-family:'Baloo 2';font-weight:700;font-size:14px;letter-spacing:1px;color:#D93A2B;margin-bottom:12px;">FREDDY NEVER</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span style="background:rgba(217,58,43,0.12);border:1px solid rgba(217,58,43,0.35);color:#f0a79e;font-family:'Nunito';font-weight:700;font-size:14px;padding:7px 14px;border-radius:100px;">shames</span>
+          <span style="background:rgba(217,58,43,0.12);border:1px solid rgba(217,58,43,0.35);color:#f0a79e;font-family:'Nunito';font-weight:700;font-size:14px;padding:7px 14px;border-radius:100px;">panics</span>
+          <span style="background:rgba(217,58,43,0.12);border:1px solid rgba(217,58,43,0.35);color:#f0a79e;font-family:'Nunito';font-weight:700;font-size:14px;padding:7px 14px;border-radius:100px;">lectures</span>
+          <span style="background:rgba(217,58,43,0.12);border:1px solid rgba(217,58,43,0.35);color:#f0a79e;font-family:'Nunito';font-weight:700;font-size:14px;padding:7px 14px;border-radius:100px;">fear-mongers</span>
+          <span style="background:rgba(217,58,43,0.12);border:1px solid rgba(217,58,43,0.35);color:#f0a79e;font-family:'Nunito';font-weight:700;font-size:14px;padding:7px 14px;border-radius:100px;">plays the disease for the punchline</span>
+          <span style="background:rgba(217,58,43,0.12);border:1px solid rgba(217,58,43,0.35);color:#f0a79e;font-family:'Nunito';font-weight:700;font-size:14px;padding:7px 14px;border-radius:100px;">wears a chain (he's a dad, not a rockstar)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · WARDROBE ============ -->
+  <section style="padding:60px 80px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px;">
+      <span style="font-family:'JetBrains Mono';font-weight:700;font-size:15px;color:#8B5CF6;">02</span>
+      <h2 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:34px;color:#fff;">Wardrobe rotation</h2>
+    </div>
+    <p style="margin:0 0 30px;font-family:'Nunito';font-weight:600;font-size:16px;color:#A7A3BC;">Same face, same aviators, same sideburns — the outfit sets the scene. Footwear-on-a-foot stays the canon sight gag.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+      <div style="background:linear-gradient(165deg,#211d3a,#14111f);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:24px 18px 18px;display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <div style="height:250px;display:flex;align-items:flex-end;"><svg viewBox="0 0 260 384" style="width:168px;height:248px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));"><use href="#freddyCargo"/></svg></div>
+        <div style="text-align:center;"><div style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#fff;">Coral tee + cargo</div><div style="font-family:'Nunito';font-weight:600;font-size:13px;color:#8a86a0;">default · everyday</div></div>
+      </div>
+      <div style="background:linear-gradient(165deg,#211d3a,#14111f);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:24px 18px 18px;display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <div style="height:250px;display:flex;align-items:flex-end;"><svg viewBox="0 0 260 384" style="width:168px;height:248px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));"><use href="#freddyHawaii"/></svg></div>
+        <div style="text-align:center;"><div style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#fff;">Aloha shirt</div><div style="font-family:'Nunito';font-weight:600;font-size:13px;color:#8a86a0;">ep01 · beach</div></div>
+      </div>
+      <div style="background:linear-gradient(165deg,#211d3a,#14111f);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:24px 18px 18px;display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <div style="height:250px;display:flex;align-items:flex-end;"><svg viewBox="0 0 260 384" style="width:168px;height:248px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));"><use href="#freddyFlannel"/></svg></div>
+        <div style="text-align:center;"><div style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#fff;">Garage flannel</div><div style="font-family:'Nunito';font-weight:600;font-size:13px;color:#8a86a0;">ep02 · dad shoes</div></div>
+      </div>
+      <div style="background:linear-gradient(165deg,#211d3a,#14111f);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:24px 18px 18px;display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <div style="height:250px;display:flex;align-items:flex-end;"><svg viewBox="0 0 260 384" style="width:168px;height:248px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));"><use href="#freddy"/></svg></div>
+        <div style="text-align:center;"><div style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#fff;">Purple robe</div><div style="font-family:'Nunito';font-weight:600;font-size:13px;color:#8a86a0;">ep05 · 3AM</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · PALETTE ============ -->
+  <section style="padding:60px 80px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px;">
+      <span style="font-family:'JetBrains Mono';font-weight:700;font-size:15px;color:#8B5CF6;">03</span>
+      <h2 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:34px;color:#fff;">Color — "Freddy Sunshine"</h2>
+    </div>
+    <p style="margin:0 0 30px;font-family:'Nunito';font-weight:600;font-size:16px;color:#A7A3BC;">Warnings use freddy-red icons on light ground — never full red panels. Fear is not the vibe.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);"><div style="height:88px;background:#2456B8;"></div><div style="padding:12px 14px;background:#1a1727;"><div style="font-family:'Baloo 2';font-weight:700;font-size:15px;color:#fff;">freddy-blue</div><div style="font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#8a86a0;">#2456B8</div><div style="font-family:'Nunito';font-weight:600;font-size:12px;color:#6E6A83;margin-top:4px;">Logo primary, headers</div></div></div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);"><div style="height:88px;background:#D93A2B;"></div><div style="padding:12px 14px;background:#1a1727;"><div style="font-family:'Baloo 2';font-weight:700;font-size:15px;color:#fff;">freddy-red</div><div style="font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#8a86a0;">#D93A2B</div><div style="font-family:'Nunito';font-weight:600;font-size:12px;color:#6E6A83;margin-top:4px;">Accent, sparing warnings</div></div></div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);"><div style="height:88px;background:#BFE3F5;"></div><div style="padding:12px 14px;background:#1a1727;"><div style="font-family:'Baloo 2';font-weight:700;font-size:15px;color:#fff;">sky-wash</div><div style="font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#8a86a0;">#BFE3F5</div><div style="font-family:'Nunito';font-weight:600;font-size:12px;color:#6E6A83;margin-top:4px;">Backgrounds</div></div></div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);"><div style="height:88px;background:#E8C98F;"></div><div style="padding:12px 14px;background:#1a1727;"><div style="font-family:'Baloo 2';font-weight:700;font-size:15px;color:#fff;">sand-warm</div><div style="font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#8a86a0;">#E8C98F</div><div style="font-family:'Nunito';font-weight:600;font-size:12px;color:#6E6A83;margin-top:4px;">Ground, warm neutrals</div></div></div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);"><div style="height:88px;background:#F2B98C;"></div><div style="padding:12px 14px;background:#1a1727;"><div style="font-family:'Baloo 2';font-weight:700;font-size:15px;color:#fff;">skin-peach</div><div style="font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#8a86a0;">#F2B98C</div><div style="font-family:'Nunito';font-weight:600;font-size:12px;color:#6E6A83;margin-top:4px;">Freddy skin base</div></div></div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);"><div style="height:88px;background:#3E8E4E;"></div><div style="padding:12px 14px;background:#1a1727;"><div style="font-family:'Baloo 2';font-weight:700;font-size:15px;color:#fff;">tip-green</div><div style="font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#8a86a0;">#3E8E4E</div><div style="font-family:'Nunito';font-weight:600;font-size:12px;color:#6E6A83;margin-top:4px;">Tips, checks, habits</div></div></div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);"><div style="height:88px;background:#F5A623;"></div><div style="padding:12px 14px;background:#1a1727;"><div style="font-family:'Baloo 2';font-weight:700;font-size:15px;color:#fff;">alert-amber</div><div style="font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#8a86a0;">#F5A623</div><div style="font-family:'Nunito';font-weight:600;font-size:12px;color:#6E6A83;margin-top:4px;">Caution beats</div></div></div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);"><div style="height:88px;background:#FAF6EC;"></div><div style="padding:12px 14px;background:#1a1727;"><div style="font-family:'Baloo 2';font-weight:700;font-size:15px;color:#fff;">paper-cream</div><div style="font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#8a86a0;">#FAF6EC</div><div style="font-family:'Nunito';font-weight:600;font-size:12px;color:#6E6A83;margin-top:4px;">Footer bands</div></div></div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);"><div style="height:88px;background:#7B5EA7;"></div><div style="padding:12px 14px;background:#1a1727;"><div style="font-family:'Baloo 2';font-weight:700;font-size:15px;color:#fff;">tiedye-purple</div><div style="font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#8a86a0;">#7B5EA7</div><div style="font-family:'Nunito';font-weight:600;font-size:12px;color:#6E6A83;margin-top:4px;">Sunset, 24/7 accents</div></div></div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);"><div style="height:88px;background:#F0876B;"></div><div style="padding:12px 14px;background:#1a1727;"><div style="font-family:'Baloo 2';font-weight:700;font-size:15px;color:#fff;">sunset-coral</div><div style="font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#8a86a0;">#F0876B</div><div style="font-family:'Nunito';font-weight:600;font-size:12px;color:#6E6A83;margin-top:4px;">Golden-hour warmth</div></div></div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);"><div style="height:88px;background:#6E8CB8;"></div><div style="padding:12px 14px;background:#1a1727;"><div style="font-family:'Baloo 2';font-weight:700;font-size:15px;color:#fff;">denim-fade</div><div style="font-family:'JetBrains Mono';font-weight:500;font-size:12px;color:#8a86a0;">#6E8CB8</div><div style="font-family:'Nunito';font-weight:600;font-size:12px;color:#6E6A83;margin-top:4px;">Wardrobe, home scenes</div></div></div>
+      <div style="border-radius:16px;overflow:hidden;border:1px dashed rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:center;background:#14111f;padding:16px;"><div style="font-family:'Nunito';font-weight:700;font-size:13px;color:#6E6A83;text-align:center;line-height:1.5;">11 tokens.<br>No off-palette color.</div></div>
+    </div>
+  </section>
+
+  <!-- ============ 04 · TYPE + LOCKUPS ============ -->
+  <section style="padding:60px 80px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:36px;">
+      <span style="font-family:'JetBrains Mono';font-weight:700;font-size:15px;color:#8B5CF6;">04</span>
+      <h2 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:34px;color:#fff;">Type &amp; lockups</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:28px 30px;">
+        <div style="font-family:'JetBrains Mono';font-weight:700;font-size:12px;letter-spacing:1px;color:#8B5CF6;margin-bottom:14px;">DISPLAY / LOGO — BALOO 2</div>
+        <div style="font-family:'Baloo 2';font-weight:800;font-size:46px;color:#fff;line-height:1;">Smart feet.</div>
+        <div style="font-family:'Baloo 2';font-weight:600;font-size:22px;color:#A7A3BC;margin-top:8px;">Chunky, rounded, confident. Headlines &amp; punchlines.</div>
+      </div>
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:28px 30px;">
+        <div style="font-family:'JetBrains Mono';font-weight:700;font-size:12px;letter-spacing:1px;color:#F0876B;margin-bottom:14px;">BODY / CAPTION — NUNITO</div>
+        <div style="font-family:'Nunito';font-weight:800;font-size:24px;color:#fff;line-height:1.3;">Conversational adult. Contractions, dry asides, em-dash rhythm.</div>
+        <div style="font-family:'Nunito';font-weight:600;font-size:15px;color:#A7A3BC;margin-top:10px;">≤10 words per caption line. Deadpan lines get no exclamation point — that's the joke.</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px;">
+      <div style="background:#12101c;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:150px;">
+        <div style="line-height:.82;text-align:center;"><div style="font-family:'Baloo 2';font-weight:800;font-size:40px;color:#2456B8;text-shadow:2px 2px 0 #fff,-2px 2px 0 #fff,2px -2px 0 #fff,-2px -2px 0 #fff;">Freddy</div><div style="font-family:'Baloo 2';font-weight:800;font-size:23px;color:#D93A2B;text-shadow:1.5px 1.5px 0 #fff,-1px 1px 0 #fff;">the Foot</div></div>
+        <div style="font-family:'JetBrains Mono';font-size:11px;color:#6E6A83;">PRIMARY WORDMARK</div>
+      </div>
+      <div style="background:#12101c;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:150px;">
+        <div style="background:rgba(123,94,167,0.35);border:1.5px solid rgba(255,255,255,0.5);color:#fff;font-family:'Nunito';font-weight:800;font-size:18px;letter-spacing:1.5px;padding:10px 22px;border-radius:100px;">🤙 24/7 CLUB</div>
+        <div style="font-family:'JetBrains Mono';font-size:11px;color:#6E6A83;">COMMUNITY CHIP</div>
+      </div>
+      <div style="background:#12101c;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:150px;">
+        <span style="display:inline-flex;align-items:center;gap:10px;"><svg viewBox="0 0 40 52" style="width:28px;height:36px;fill:#3E8E4E;"><use href="#print"/></svg><span style="font-family:'Baloo 2';font-weight:800;font-size:24px;letter-spacing:1px;color:#3E8E4E;">FOOT GUIDE</span></span>
+        <div style="font-family:'JetBrains Mono';font-size:11px;color:#6E6A83;">SIGN-OFF LOCKUP</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · HUMOR DOCTRINE ============ -->
+  <section style="padding:60px 80px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px;">
+      <span style="font-family:'JetBrains Mono';font-weight:700;font-size:15px;color:#8B5CF6;">05</span>
+      <h2 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:34px;color:#fff;">Humor doctrine — this section is law</h2>
+    </div>
+    <p style="margin:0 0 30px;font-family:'Nunito';font-weight:600;font-size:16px;color:#A7A3BC;">A little smile that leaves a real reminder. The laugh lands first; the lesson arrives about two seconds later.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px;display:flex;gap:14px;"><span style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#8B5CF6;">1</span><span style="font-family:'Nunito';font-weight:700;font-size:16px;line-height:1.4;color:#F3F1FA;">Laugh <em style="color:#F0876B;font-style:normal;">with</em>, never at, never down. Target the life — 3am alarms, dad shoes — never the outcome.</span></div>
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px;display:flex;gap:14px;"><span style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#8B5CF6;">2</span><span style="font-family:'Nunito';font-weight:700;font-size:16px;line-height:1.4;color:#F3F1FA;">Punchline first, reminder as aftertaste. The reminder rides the end card, not the dialogue.</span></div>
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px;display:flex;gap:14px;"><span style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#8B5CF6;">3</span><span style="font-family:'Nunito';font-weight:700;font-size:16px;line-height:1.4;color:#F3F1FA;">Specificity is the comedy engine. "A LEGO at 3am" beats "check your shoes."</span></div>
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px;display:flex;gap:14px;"><span style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#8B5CF6;">4</span><span style="font-family:'Nunito';font-weight:700;font-size:16px;line-height:1.4;color:#F3F1FA;">The habit is background radiation — the setting of the joke, not the punchline.</span></div>
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px;display:flex;gap:14px;"><span style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#8B5CF6;">5</span><span style="font-family:'Nunito';font-weight:700;font-size:16px;line-height:1.4;color:#F3F1FA;">Self-aware, never self-pitying. Grumble = relatable. Despair = scroll.</span></div>
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px;display:flex;gap:14px;"><span style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#8B5CF6;">6</span><span style="font-family:'Nunito';font-weight:700;font-size:16px;line-height:1.4;color:#F3F1FA;">The 24/7 truth stays quiet but present — one line max. It's the dignity layer, not the content.</span></div>
+    </div>
+    <div style="margin-top:24px;background:rgba(217,58,43,0.08);border:1px solid rgba(217,58,43,0.3);border-radius:18px;padding:22px 26px;">
+      <div style="font-family:'Baloo 2';font-weight:800;font-size:15px;letter-spacing:1px;color:#D93A2B;margin-bottom:14px;">BANNED WORDS — NEVER ON ANY ASSET</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#f0a79e;text-decoration:line-through;">amputation</span>
+        <span style="color:#4c4960;">·</span>
+        <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#f0a79e;text-decoration:line-through;">ulcer</span><span style="font-family:'Nunito';font-weight:600;font-size:13px;color:#6E6A83;">(say "sore")</span>
+        <span style="color:#4c4960;">·</span>
+        <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#f0a79e;text-decoration:line-through;">necrosis</span>
+        <span style="color:#4c4960;">·</span>
+        <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#f0a79e;text-decoration:line-through;">"you could lose"</span>
+        <span style="color:#4c4960;">·</span>
+        <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#f0a79e;text-decoration:line-through;">"diabetic complications"</span>
+        <span style="color:#4c4960;">·</span>
+        <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#f0a79e;text-decoration:line-through;">"suffer from"</span><span style="font-family:'Nunito';font-weight:600;font-size:13px;color:#6E6A83;">(say "living with" / "managing")</span>
+        <span style="color:#4c4960;">·</span>
+        <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#f0a79e;text-decoration:line-through;">any pity framing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · 24/7 CLUB + CAST ============ -->
+  <section style="padding:60px 80px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:30px;">
+      <span style="font-family:'JetBrains Mono';font-weight:700;font-size:15px;color:#8B5CF6;">06</span>
+      <h2 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:34px;color:#fff;">The 24/7 Club &amp; the cast</h2>
+    </div>
+    <div style="background:radial-gradient(80% 120% at 20% 0%, rgba(123,94,167,0.4), rgba(123,94,167,0) 60%), #1a1727;border:1px solid rgba(255,255,255,0.1);border-radius:22px;padding:34px 38px;margin-bottom:24px;">
+      <p style="margin:0;font-family:'Baloo 2';font-weight:700;font-size:24px;line-height:1.3;color:#fff;">Not a product — a belonging. Everyone managing diabetes around the clock. Membership is automatic; the badge is a 🤙.</p>
+      <p style="margin:16px 0 0;font-family:'Nunito';font-weight:700;font-size:16px;line-height:1.5;color:#B794F6;">CTA: "Freddy gets it. 24/7 management, real life, still living. More at OpenDiabetic." &nbsp;·&nbsp; <span style="font-family:'JetBrains Mono';font-size:14px;">#SmartFeet #247Club</span></p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+      <div style="background:#12101c;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px;"><div style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#F0876B;">Dr. Sole</div><div style="font-family:'Nunito';font-weight:600;font-size:14px;line-height:1.4;color:#A7A3BC;margin-top:6px;">Long-relationship energy. Twelve years in. Knows his coffee order.</div></div>
+      <div style="background:#12101c;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px;"><div style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#5FD38A;">Lefty</div><div style="font-family:'Nunito';font-weight:600;font-size:14px;line-height:1.4;color:#A7A3BC;margin-top:6px;">The twin who doesn't take it as seriously. Ribbed, never punished.</div></div>
+      <div style="background:#12101c;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px;"><div style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#BFE3F5;">Peg</div><div style="font-family:'Nunito';font-weight:600;font-size:14px;line-height:1.4;color:#A7A3BC;margin-top:6px;">Off-screen voice. The "did you check?" from the other room. Loving, not nagging.</div></div>
+      <div style="background:#12101c;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px;"><div style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#E8C98F;">The Dog</div><div style="font-family:'Nunito';font-weight:600;font-size:14px;line-height:1.4;color:#A7A3BC;margin-top:6px;">Leaves the 3am floor hazards. Never apologizes.</div></div>
+    </div>
+  </section>
+
+  <!-- ============ 07 · TEMPLATES ============ -->
+  <section style="padding:60px 80px;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:30px;">
+      <span style="font-family:'JetBrains Mono';font-weight:700;font-size:15px;color:#8B5CF6;">07</span>
+      <h2 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:34px;color:#fff;">Layout templates</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:24px;"><div style="font-family:'Baloo 2';font-weight:700;font-size:13px;letter-spacing:1px;color:#8B5CF6;">TEMPLATE A</div><div style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#fff;margin:6px 0 10px;">Four-Beat Bit</div><div style="font-family:'Nunito';font-weight:600;font-size:14px;line-height:1.5;color:#A7A3BC;">Setup → the bit → the habit, deadpan → end card. Adult pacing. 4:5.</div></div>
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:24px;"><div style="font-family:'Baloo 2';font-weight:700;font-size:13px;letter-spacing:1px;color:#F0876B;">TEMPLATE B</div><div style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#fff;margin:6px 0 10px;">Tip Card</div><div style="font-family:'Nunito';font-weight:600;font-size:14px;line-height:1.5;color:#A7A3BC;">One habit, one dry line, club sign-off. 1:1. For remix / reposts.</div></div>
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:24px;"><div style="font-family:'Baloo 2';font-weight:700;font-size:13px;letter-spacing:1px;color:#5FD38A;">VIDEO</div><div style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#fff;margin:6px 0 10px;">4-Beat Short</div><div style="font-family:'Nunito';font-weight:600;font-size:14px;line-height:1.5;color:#A7A3BC;">9:16, 18–28s. Hook → punchline (hold 1.5s) → habit → end card.</div></div>
+      <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:24px;"><div style="font-family:'Baloo 2';font-weight:700;font-size:13px;letter-spacing:1px;color:#B794F6;">TEMPLATE C</div><div style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#fff;margin:6px 0 10px;">End Card</div><div style="font-family:'Nunito';font-weight:600;font-size:14px;line-height:1.5;color:#A7A3BC;">Identical every episode. Shaka Freddy + sign-off + Foot Guide.</div></div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <section style="padding:56px 80px 64px;border-top:1px solid rgba(255,255,255,0.08);background:radial-gradient(70% 120% at 80% 0%, rgba(240,135,107,0.18), rgba(240,135,107,0) 60%), #12101c;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div style="font-family:'Baloo 2';font-weight:800;font-size:36px;color:#fff;">24/7 club. Check first. 🤙</div>
+    <div style="display:flex;align-items:center;gap:22px;">
+      <span style="display:inline-flex;align-items:center;gap:10px;"><svg viewBox="0 0 40 52" style="width:24px;height:31px;fill:#3E8E4E;"><use href="#print"/></svg><span style="font-family:'Baloo 2';font-weight:800;font-size:20px;letter-spacing:1px;color:#3E8E4E;">FOOT GUIDE</span></span>
+    </div>
+    <div style="width:100%;font-family:'JetBrains Mono';font-weight:500;font-size:11px;color:#4c4960;line-height:1.6;border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;">Legacy tagline retained on-lockup: "Fun Stories. Smart Feet. Happy Steps." · Freddy shown as vector proxy for the final Pixar-adjacent 3D render · Swarm &amp; Bee · SudoHash LLC</div>
+  </section>
+
+</div>
+</div>
+<script>
+  // Fit the fixed 1240px artboard to the viewport width; never upscale past 1:1.
+  (function(){
+    var art = document.getElementById('artboard');
+    var stage = document.getElementById('stage');
+    function fit(){
+      var pad = 0; // full-bleed
+      var scale = Math.min(1, (window.innerWidth - pad) / 1240);
+      art.style.transform = 'scale(' + scale + ')';
+      // reserve the scaled height so nothing clips / no dead space
+      stage.style.height = (art.offsetHeight * scale) + 'px';
+    }
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+    fit();
+  })();
+</script>
+</body>
+</html>
