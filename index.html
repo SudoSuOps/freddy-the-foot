@@ -1,474 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Freddy the Foot — The Show</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,700;0,800;1,400&family=Alfa+Slab+One&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freddy the Foot — Foot care for people who live it 24/7</title>
+<meta name="description" content="Freddy the Foot — foot care for people who live it 24/7. A Gen-X sitcom-dad everyman managing diabetes: one clinical risk, one habit, one adventure. Watch Season 1 of the 24/7 Club.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://freddythefoot.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Freddy the Foot — the 24/7 Club">
+<meta property="og:description" content="Freddy the Foot — foot care for people who live it 24/7. A Gen-X sitcom-dad everyman managing diabetes: one clinical risk, one habit, one adventure. Watch Season 1 of the 24/7 Club.">
+<meta property="og:url" content="https://freddythefoot.com/">
+<meta name="theme-color" content="#0f0e15">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600;1,700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --freddy-blue:#2456B8; --freddy-red:#D93A2B; --sky-wash:#BFE3F5;
-    --sand-warm:#E8C98F; --skin-peach:#F2B98C; --tip-green:#3E8E4E;
-    --alert-amber:#F5A623; --paper-cream:#FAF6EC; --tiedye-purple:#7B5EA7;
-    --sunset-coral:#F0876B; --denim-fade:#6E8CB8; --ink:#22304a;
+  html,body{margin:0;padding:0;background:#0f0e15;}
+  *{box-sizing:border-box;}
+  @keyframes freddyGlow{0%,100%{opacity:.5}50%{opacity:.9}}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  a{text-decoration:none;color:inherit;}
+</style>
+
+<style>
+  /* Production responsive layer — desktop pixels unchanged; overrides kick in on small screens.
+     (Design uses inline styles, so overrides are class-scoped with !important.) */
+  @media (max-width:860px){
+    .hero-row{flex-direction:column !important;text-align:center;gap:24px !important;padding:56px 22px 60px !important;}
+    .hero-h1{font-size:42px !important;}
+    .hero-art svg{width:230px !important;height:339px !important;}
+    .hero-art > div[style*="width:400px"]{width:300px !important;height:300px !important;}
+    .meet-row{flex-direction:column !important;gap:30px !important;align-items:center !important;}
+    .grid3{grid-template-columns:1fr !important;}
+    .club-card{padding:40px 26px !important;}
+    .club-art{display:none !important;}
+    .nav-links{gap:16px !important;}
+    .nav-links .navlink{display:none !important;}
   }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--paper-cream);overflow-x:hidden}
-
-  /* ---------- SITCOM TITLE CARD ---------- */
-  #titlecard{position:fixed;inset:0;z-index:100;background:var(--paper-cream);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center;transition:opacity .8s ease;cursor:pointer}
-  #titlecard .pres{font-weight:800;letter-spacing:.35em;text-transform:uppercase;font-size:12px;color:var(--tiedye-purple)}
-  #titlecard h1{font-family:'Alfa Slab One',serif;font-size:clamp(42px,9vw,110px);color:var(--freddy-blue);line-height:.95;text-shadow:4px 4px 0 var(--sunset-coral)}
-  #titlecard .ep{font-family:'Alfa Slab One',serif;font-size:clamp(16px,3vw,28px);color:var(--freddy-red)}
-  #titlecard .skip{font-size:11px;color:var(--denim-fade);letter-spacing:.2em;text-transform:uppercase;margin-top:22px}
-  #titlecard.gone{opacity:0;pointer-events:none}
-
-  /* ---------- STAGE ---------- */
-  .stage{position:relative;min-height:100svh;display:flex;flex-direction:column;
-    background:linear-gradient(180deg,#7B5EA7 0%,#a76ba0 22%,#F0876B 48%,#f5b06b 62%,var(--sand-warm) 62.2%,#dfba7f 100%);}
-  .stage::before{content:"";position:absolute;left:50%;top:30%;width:170px;height:170px;margin-left:-250px;border-radius:50%;
-    background:radial-gradient(circle,#ffe9b8 0%,#ffd27a 55%,transparent 72%);opacity:.9;pointer-events:none}
-  nav{position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:18px 28px}
-  .brand{font-family:'Fredoka';font-weight:700;font-size:22px;color:#fff;text-shadow:2px 2px 0 rgba(36,86,184,.55)}
-  .brand .foot{color:#ffe9b8}
-  nav .club{font-weight:800;font-size:13px;color:#fff;background:rgba(36,86,184,.45);border:2px solid rgba(255,255,255,.5);padding:8px 16px;border-radius:999px;text-decoration:none}
-  .airing{position:relative;z-index:5;text-align:center;margin-top:4px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:11px;color:rgba(255,255,255,.85)}
-  .airing .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--freddy-red);margin-right:8px;animation:blinkdot 1.6s infinite}
-  @keyframes blinkdot{50%{opacity:.2}}
-
-  #scene{position:relative;flex:1;min-height:560px;display:flex;align-items:flex-end;justify-content:center}
-  #freddy3d{position:absolute;inset:0;width:100%;height:100%;display:none;touch-action:pan-y}
-  #scene.webgl #freddy3d{display:block}
-  #scene.webgl #freddyCSS{display:none}
-
-  #bubble{position:absolute;z-index:6;left:50%;top:10%;transform:translateX(6%);max-width:300px;background:#fff;border-radius:18px;padding:14px 18px;font-weight:800;font-size:16px;box-shadow:0 6px 0 rgba(36,86,184,.18);opacity:0;transition:opacity .45s ease}
-  #bubble::after{content:"";position:absolute;bottom:-12px;left:34px;border:12px solid transparent;border-top-color:#fff;border-bottom:0}
-  #bubble.show{opacity:1}
-
-  /* ---------- CSS FREDDY (universal fallback / default) ---------- */
-  #freddyCSS{position:relative;width:300px;height:430px;margin-bottom:120px;animation:bob 3.2s ease-in-out infinite;transform-origin:50% 100%}
-  @keyframes bob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-14px) rotate(1deg)}}
-  #freddyCSS.jump{animation:jump .9s ease-out}
-  @keyframes jump{0%{transform:translateY(0)}35%{transform:translateY(-90px) rotate(-3deg)}70%{transform:translateY(0)}82%{transform:translateY(-18px)}100%{transform:translateY(0)}}
-  .f-shadow{position:absolute;bottom:-96px;left:50%;transform:translateX(-50%);width:230px;height:36px;border-radius:50%;background:rgba(90,60,20,.28)}
-  /* body: foot on its heel */
-  .f-body{position:absolute;left:50%;bottom:60px;transform:translateX(-50%);width:210px;height:300px;background:var(--skin-peach);
-    border-radius:48% 48% 44% 44% / 55% 55% 42% 42%;box-shadow:inset -14px -18px 0 rgba(0,0,0,.05)}
-  .f-heel{position:absolute;left:50%;bottom:52px;transform:translateX(-50%);width:150px;height:80px;background:var(--skin-peach);border-radius:50%}
-  /* toes = crown */
-  .f-toe{position:absolute;background:var(--skin-peach);border-radius:50%;box-shadow:inset -3px -4px 0 rgba(0,0,0,.05);animation:wiggle 2.6s ease-in-out infinite}
-  @keyframes wiggle{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-  .t1{width:56px;height:56px;left:26px;bottom:342px}
-  .t2{width:46px;height:46px;left:82px;bottom:358px;animation-delay:.2s}
-  .t3{width:40px;height:40px;left:128px;bottom:364px;animation-delay:.4s}
-  .t4{width:36px;height:36px;left:168px;bottom:360px;animation-delay:.6s}
-  .t5{width:32px;height:32px;left:204px;bottom:350px;animation-delay:.8s}
-  /* shades parked on toes */
-  .f-shades{position:absolute;left:50%;bottom:336px;transform:translateX(-50%) rotate(-4deg);width:150px;height:34px;z-index:3}
-  .f-shades::before,.f-shades::after{content:"";position:absolute;top:0;width:60px;height:32px;background:var(--freddy-blue);border-radius:10px;box-shadow:inset 0 6px 0 rgba(255,255,255,.25)}
-  .f-shades::before{left:0}.f-shades::after{right:0}
-  .f-shades .bridge{position:absolute;left:60px;top:10px;width:30px;height:9px;background:var(--freddy-blue)}
-  /* face */
-  .f-eye{position:absolute;width:52px;height:52px;background:#fff;border-radius:50%;bottom:248px;z-index:2;box-shadow:0 2px 0 rgba(0,0,0,.08);transition:transform .12s}
-  .f-eye.l{left:62px}.f-eye.r{left:136px}
-  .f-pupil{position:absolute;width:22px;height:22px;background:#2a2a2e;border-radius:50%;left:15px;top:15px}
-  .f-eye.blink{transform:scaleY(.08)}
-  .f-brow{position:absolute;width:58px;height:12px;background:linear-gradient(90deg,#7d746b,#a49a8d 45%,#7d746b);border-radius:6px;bottom:308px;z-index:2}
-  .f-brow.l{left:56px;transform:rotate(8deg)}.f-brow.r{left:134px;transform:rotate(-8deg)}
-  .f-blush{display:none}
-  .f-mouth{position:absolute;left:50%;transform:translateX(-50%);bottom:196px;width:74px;height:30px;background:#7a3b2e;border-radius:0 0 60px 60px;animation:chat 4s ease-in-out infinite}
-  @keyframes chat{0%,100%{height:26px}50%{height:36px}}
-  /* tie-dye tee */
-  .f-tee{position:absolute;left:50%;transform:translateX(-50%);bottom:104px;width:224px;height:100px;border-radius:26px 26px 14px 14px;overflow:hidden;z-index:2;
-    background:repeating-conic-gradient(from 0deg at 50% 45%,var(--tiedye-purple) 0 18deg,var(--sunset-coral) 18deg 36deg,var(--sky-wash) 36deg 54deg,var(--freddy-blue) 54deg 72deg,var(--alert-amber) 72deg 90deg);filter:saturate(.9)}
-  .f-tee::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.5) 0 12px,transparent 40px)}
-  /* cargo shorts */
-  .f-shorts{position:absolute;left:50%;transform:translateX(-50%);bottom:58px;width:210px;height:56px;background:#CBB78E;border-radius:10px 10px 16px 16px;z-index:2}
-  .f-shorts::before,.f-shorts::after{content:"";position:absolute;top:16px;width:34px;height:26px;background:#B5A176;border-radius:5px}
-  .f-shorts::before{left:22px}.f-shorts::after{right:22px}
-  /* arms + gloves */
-  .f-arm{position:absolute;bottom:150px;width:26px;height:96px;border-radius:14px;z-index:1;
-    background:linear-gradient(180deg,var(--tiedye-purple),var(--sunset-coral));transform-origin:top center}
-  .f-arm.l{left:8px;transform:rotate(38deg);animation:swingL 3.2s ease-in-out infinite}
-  .f-arm.r{right:8px;transform:rotate(-38deg);animation:swingR 3.2s ease-in-out infinite}
-  @keyframes swingL{0%,100%{transform:rotate(38deg)}50%{transform:rotate(30deg)}}
-  @keyframes swingR{0%,100%{transform:rotate(-38deg)}50%{transform:rotate(-30deg)}}
-  #freddyCSS.jump .f-arm.r{animation:shaka .9s ease-out}
-  @keyframes shaka{0%{transform:rotate(-38deg)}30%,70%{transform:rotate(-150deg)}100%{transform:rotate(-38deg)}}
-  .f-glove{position:absolute;bottom:-30px;left:-8px;width:42px;height:42px;background:#fff;border-radius:50%;box-shadow:0 3px 0 rgba(0,0,0,.1)}
-  /* sandals: a foot with feet (canon) */
-  .f-leg{position:absolute;bottom:26px;width:24px;height:44px;background:var(--skin-peach);z-index:0}
-  .f-leg.l{left:96px}.f-leg.r{left:180px}
-  .f-sandal{position:absolute;bottom:8px;width:74px;height:22px;background:var(--freddy-blue);border-radius:10px 26px 12px 10px;box-shadow:0 4px 0 #1a3f8a;z-index:1}
-  .f-sandal.l{left:72px}.f-sandal.r{left:156px}
-
-  .applause-wrap{position:absolute;z-index:6;bottom:26px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:10px}
-  #applause{font-family:'Fredoka';font-weight:700;font-size:18px;letter-spacing:.12em;color:#fff;background:var(--freddy-red);border:none;border-radius:14px;padding:16px 34px;cursor:pointer;box-shadow:0 6px 0 #a32619;transition:transform .08s, box-shadow .08s}
-  #applause:active{transform:translateY(5px);box-shadow:0 1px 0 #a32619}
-  #applause.lit{animation:signflash .5s 3}
-  @keyframes signflash{50%{background:var(--alert-amber);box-shadow:0 6px 0 #b97b12}}
-  .applause-wrap .hint{font-size:12px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.15em;text-transform:uppercase}
-  .clap{position:absolute;z-index:7;font-size:26px;pointer-events:none;animation:flyup 1.4s ease-out forwards}
-  @keyframes flyup{0%{transform:translateY(0) scale(.6);opacity:1}100%{transform:translateY(-240px) scale(1.4) rotate(20deg);opacity:0}}
-
-  .strip{background:var(--freddy-blue);color:#fff;text-align:center;padding:26px 20px}
-  .strip h2{font-family:'Fredoka';font-weight:600;font-size:clamp(20px,3.4vw,30px)}
-  .strip p{margin-top:6px;font-size:15px;opacity:.92;font-weight:700}
-
-  .season{max-width:1100px;margin:0 auto;padding:64px 24px 30px}
-  .eyebrow{font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:var(--sunset-coral)}
-  .season h2{font-family:'Fredoka';font-weight:700;font-size:clamp(28px,4.5vw,44px);color:var(--freddy-blue);margin:6px 0 4px}
-  .season .sub{font-weight:700;color:var(--denim-fade);max-width:640px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:30px}
-  .card{background:#fff;border-radius:16px;padding:20px 20px 18px;box-shadow:0 4px 0 rgba(36,86,184,.12);border:2px solid transparent;transition:transform .15s ease,border-color .15s ease;display:flex;flex-direction:column;gap:8px}
-  .card:hover{transform:translateY(-4px);border-color:var(--sky-wash)}
-  .card .tag{display:flex;justify-content:space-between;align-items:center}
-  .card .num{font-family:'Fredoka';font-weight:700;font-size:13px;color:#fff;background:var(--freddy-blue);border-radius:8px;padding:4px 10px}
-  .card .pill{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
-  .pill.premiere{background:var(--freddy-red);color:#fff}
-  .pill.soon{background:var(--sky-wash);color:var(--freddy-blue)}
-  .card h3{font-family:'Fredoka';font-weight:600;font-size:19px;line-height:1.2}
-  .card .log{font-style:italic;font-weight:700;color:var(--tiedye-purple);font-size:14px}
-  .card .habit{font-size:13px;font-weight:700;color:var(--tip-green);margin-top:auto;padding-top:6px;border-top:2px dashed var(--paper-cream)}
-
-  .club-band{background:linear-gradient(120deg,var(--tiedye-purple),var(--freddy-blue) 55%,var(--denim-fade));color:#fff;margin-top:56px}
-  .club-inner{max-width:1100px;margin:0 auto;padding:60px 24px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
-  .club-inner h2{font-family:'Fredoka';font-weight:700;font-size:clamp(26px,4vw,40px)}
-  .club-inner p{margin-top:10px;max-width:520px;font-weight:700;font-size:16px;opacity:.94}
-  .cta{display:inline-block;font-family:'Fredoka';font-weight:700;font-size:18px;background:#fff;color:var(--freddy-blue);text-decoration:none;padding:16px 30px;border-radius:14px;box-shadow:0 6px 0 rgba(0,0,0,.18);transition:transform .1s}
-  .cta:active{transform:translateY(4px)}
-  footer{background:var(--ink);color:var(--paper-cream);text-align:center;padding:30px 20px;font-weight:700;font-size:13px}
-  footer .sig{font-family:'Fredoka';font-size:16px;margin-bottom:6px;color:var(--sky-wash)}
-
-  @media (prefers-reduced-motion: reduce){
-    #titlecard{display:none}
-    #freddyCSS,.f-toe,.f-arm.l,.f-arm.r,.f-mouth,.airing .dot{animation:none!important}
-  }
-  @media (max-width:640px){
-    #bubble{left:6%;transform:none;top:6%;max-width:230px;font-size:14px}
-    #freddyCSS{transform:scale(.82);transform-origin:bottom center}
-    .stage::before{margin-left:-140px;width:110px;height:110px}
+  @media (max-width:520px){
+    .hero-h1{font-size:34px !important;}
   }
 </style>
+
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="tiedye" cx="44%" cy="38%" r="78%">
+      <stop offset="0%" stop-color="#F0876B"/>
+      <stop offset="34%" stop-color="#7B5EA7"/>
+      <stop offset="70%" stop-color="#6E8CB8"/>
+      <stop offset="100%" stop-color="#52709c"/>
+    </radialGradient>
+    <radialGradient id="iris" cx="42%" cy="36%" r="66%">
+      <stop offset="0%" stop-color="#DFF3EC"/>
+      <stop offset="40%" stop-color="#3E8E4E"/>
+      <stop offset="100%" stop-color="#2b5f7a"/>
+    </radialGradient>
+    <clipPath id="robeClip"><path d="M62,240 C96,232 168,232 202,240 L206,302 C206,342 170,358 132,358 C94,358 58,342 58,302 Z"/></clipPath>
+    <clipPath id="teeClip"><path d="M58,220 C96,213 168,213 202,220 L205,296 L55,296 Z"/></clipPath>
+    <clipPath id="flanL"><path d="M118,218 L60,222 L58,300 C58,338 84,355 118,357 Z"/></clipPath>
+    <clipPath id="flanR"><path d="M142,218 L204,222 L206,300 C206,338 180,355 142,357 Z"/></clipPath>
+  </defs>
+  <symbol id="print" viewBox="0 0 40 52">
+    <ellipse cx="17" cy="35" rx="14" ry="16"/>
+    <ellipse cx="31" cy="17" rx="5" ry="6"/>
+    <ellipse cx="23" cy="9" rx="4" ry="5"/>
+    <ellipse cx="14" cy="7" rx="3.6" ry="4.6"/>
+    <ellipse cx="6" cy="13" rx="3" ry="4"/>
+  </symbol>
+  <symbol id="freddyBase" viewBox="0 0 260 384">
+    <ellipse cx="132" cy="368" rx="74" ry="13" fill="rgba(0,0,0,0.22)"/>
+    <path d="M132,44 C82,44 64,100 62,170 L60,274 C58,334 94,356 132,356 C170,356 206,334 204,274 L202,170 C200,100 182,44 132,44 Z" fill="#F2B98C" stroke="#D99A63" stroke-width="3"/>
+    <path d="M152,62 C186,92 190,152 188,262 C186,322 168,348 140,354 C182,352 206,332 204,274 L202,170 C200,112 182,68 152,62 Z" fill="#E0A56F" opacity="0.4"/>
+    <path d="M67,130 q-7,28 -1,56 q11,4 17,-3 q-6,-27 -3,-51 q-7,-5 -13,-2 Z" fill="#5A3B1E"/>
+    <path d="M193,130 q7,28 1,56 q-11,4 -17,-3 q6,-27 3,-51 q7,-5 13,-2 Z" fill="#5A3B1E"/>
+    <path d="M71,150 q-2,18 2,34" stroke="#9c8a78" stroke-width="2" fill="none" opacity="0.75"/>
+    <path d="M189,150 q2,18 -2,34" stroke="#9c8a78" stroke-width="2" fill="none" opacity="0.75"/>
+    <g stroke="#D99A63" stroke-width="2.5">
+      <ellipse cx="80" cy="48" rx="18" ry="24" fill="#F2B98C"/>
+      <ellipse cx="104" cy="26" rx="16" ry="22" fill="#F2B98C"/>
+      <ellipse cx="130" cy="20" rx="16" ry="23" fill="#F2B98C"/>
+      <ellipse cx="157" cy="30" rx="15" ry="21" fill="#F2B98C"/>
+      <ellipse cx="183" cy="50" rx="14" ry="19" fill="#F2B98C"/>
+    </g>
+    <g stroke-linejoin="round">
+      <path d="M75,36 Q75,33 86,33 L112,33 Q120,33 119,43 Q117,59 96,60 Q78,60 75,36 Z" fill="#2a2320" fill-opacity="0.5" stroke="#C9A227" stroke-width="4"/>
+      <path d="M185,36 Q185,33 174,33 L148,33 Q140,33 141,43 Q143,59 164,60 Q182,60 185,36 Z" fill="#2a2320" fill-opacity="0.5" stroke="#C9A227" stroke-width="4"/>
+      <path d="M119,40 q13,-6 22,0" fill="none" stroke="#E6B93B" stroke-width="4" stroke-linecap="round"/>
+      <path d="M75,39 q-11,-2 -16,5" fill="none" stroke="#E6B93B" stroke-width="4" stroke-linecap="round"/>
+      <path d="M185,39 q11,-2 16,5" fill="none" stroke="#E6B93B" stroke-width="4" stroke-linecap="round"/>
+      <path d="M83,40 l12,11" stroke="#fff" stroke-width="3" opacity="0.45" stroke-linecap="round"/>
+      <path d="M149,40 l12,11" stroke="#fff" stroke-width="3" opacity="0.45" stroke-linecap="round"/>
+    </g>
+    <path d="M84,116 q24,-16 48,-3" fill="none" stroke="#5A3B1E" stroke-width="8" stroke-linecap="round"/>
+    <path d="M150,122 q22,-9 42,-3" fill="none" stroke="#5A3B1E" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="108" cy="152" rx="22" ry="26" fill="#fff" stroke="#D99A63" stroke-width="2"/>
+    <ellipse cx="156" cy="152" rx="22" ry="26" fill="#fff" stroke="#D99A63" stroke-width="2"/>
+    <path d="M88,140 q20,-7 40,-1" fill="none" stroke="#D99A63" stroke-width="3" stroke-linecap="round"/>
+    <path d="M136,140 q20,-7 40,-1" fill="none" stroke="#D99A63" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="110" cy="160" r="11" fill="url(#iris)"/><circle cx="110" cy="160" r="6" fill="#241a12"/><circle cx="106" cy="155" r="3" fill="#fff"/>
+    <circle cx="154" cy="160" r="11" fill="url(#iris)"/><circle cx="154" cy="160" r="6" fill="#241a12"/><circle cx="150" cy="155" r="3" fill="#fff"/>
+    <path d="M84,166 q-7,5 -9,12" fill="none" stroke="#D99A63" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M180,166 q7,5 9,12" fill="none" stroke="#D99A63" stroke-width="2.5" stroke-linecap="round"/>
+    <ellipse cx="86" cy="190" rx="15" ry="10" fill="#D93A2B" opacity="0.16"/>
+    <ellipse cx="178" cy="190" rx="15" ry="10" fill="#D93A2B" opacity="0.16"/>
+    <path d="M104,206 q28,10 54,-3" fill="none" stroke="#7A4A2E" stroke-width="6" stroke-linecap="round"/>
+    <path d="M123,219 Q132,237 141,219 Q132,225 123,219 Z" fill="#5A3B1E"/>
+  </symbol>
 
-<!-- COLD OPEN -->
-<div id="titlecard">
-  <div class="pres">Swarm &amp; Bee presents</div>
-  <h1>FREDDY<br>THE FOOT</h1>
-  <div class="ep">"Those Were the Feet"</div>
-  <div class="skip">tap to skip</div>
-</div>
+  <symbol id="hands" viewBox="0 0 260 384">
+    <g stroke="#D7D7DE" stroke-width="2.5">
+      <circle cx="50" cy="276" r="21" fill="#fff"/>
+      <circle cx="214" cy="276" r="21" fill="#fff"/>
+      <circle cx="35" cy="266" r="8" fill="#fff"/>
+      <circle cx="229" cy="266" r="8" fill="#fff"/>
+    </g>
+  </symbol>
 
-<!-- THE STAGE -->
-<section class="stage">
-  <nav>
-    <div class="brand">Freddy <span class="foot">the Foot</span></div>
-    <a class="club" href="#club">24/7 Club 🤙</a>
+  <symbol id="flower" viewBox="0 0 24 24">
+    <circle cx="12" cy="5" r="4.2"/><circle cx="19" cy="10" r="4.2"/><circle cx="16" cy="18" r="4.2"/><circle cx="8" cy="18" r="4.2"/><circle cx="5" cy="10" r="4.2"/>
+    <circle cx="12" cy="12" r="3.4" fill="#F5A623"/>
+  </symbol>
+
+  <g id="chainDefs"></g>
+
+  <!-- ep05 · solid-purple robe (3AM rockstar) -->
+  <symbol id="freddy" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M62,240 C96,232 168,232 202,240 L206,302 C206,342 170,358 132,358 C94,358 58,342 58,302 Z" fill="#7B5EA7" stroke="#5f4a86" stroke-width="3"/>
+    <path d="M132,232 L108,238 L129,286 Z" fill="#5f4a86"/>
+    <path d="M132,232 L156,238 L135,286 Z" fill="#5f4a86"/>
+    <use href="#hands"/>
+  </symbol>
+
+  <!-- default / beach · solid coral tee + cargo shorts -->
+  <symbol id="freddyCargo" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M58,220 C88,214 108,216 116,232 Q132,248 148,232 C160,216 174,214 202,220 L205,296 L55,296 Z" fill="#F0876B" stroke="#d06f52" stroke-width="2.5"/>
+    <path d="M55,296 L205,296 L207,330 C207,347 176,358 132,358 C88,358 57,347 57,330 Z" fill="#E8C98F" stroke="#c9a85f" stroke-width="2.5"/>
+    <rect x="55" y="294" width="150" height="9" fill="#c9a85f" opacity="0.6"/>
+    <rect x="70" y="309" width="36" height="34" rx="4" fill="none" stroke="#b6924e" stroke-width="2.5"/>
+    <path d="M70,317 h36" stroke="#b6924e" stroke-width="2.5"/>
+    <rect x="154" y="309" width="36" height="34" rx="4" fill="none" stroke="#b6924e" stroke-width="2.5"/>
+    <path d="M154,317 h36" stroke="#b6924e" stroke-width="2.5"/>
+    <use href="#hands"/>
+  </symbol>
+
+  <!-- beach alt · Hawaiian aloha shirt -->
+  <symbol id="freddyHawaii" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M58,222 C88,216 106,218 116,236 Q132,252 148,236 C162,218 176,216 202,222 L206,300 C206,342 170,358 132,358 C94,358 58,342 58,300 Z" fill="#BFE3F5" stroke="#8fc4dd" stroke-width="2.5"/>
+    <use href="#flower" x="70" y="258" width="30" height="30" fill="#F0876B"/>
+    <use href="#flower" x="150" y="252" width="32" height="32" fill="#7B5EA7"/>
+    <use href="#flower" x="102" y="306" width="30" height="30" fill="#3E8E4E"/>
+    <use href="#flower" x="158" y="310" width="28" height="28" fill="#F0876B"/>
+    <use href="#flower" x="66" y="316" width="26" height="26" fill="#7B5EA7"/>
+    <path d="M116,236 L96,226 L114,258 Z" fill="#8fc4dd"/>
+    <path d="M148,236 L168,226 L150,258 Z" fill="#a6d3e8"/>
+    <use href="#hands"/>
+  </symbol>
+
+  <!-- ep02 · garage flannel over tee -->
+  <symbol id="freddyFlannel" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M58,222 C96,215 168,215 202,222 L206,300 C206,342 170,358 132,358 C94,358 58,342 58,300 Z" fill="#FAF6EC" stroke="#e3dcc6" stroke-width="2.5"/>
+    <path d="M118,218 L60,222 L58,300 C58,338 84,355 118,357 Z" fill="#6E8CB8"/>
+    <g clip-path="url(#flanL)">
+      <line x1="72" y1="212" x2="72" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="98" y1="212" x2="98" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="85" y1="212" x2="85" y2="360" stroke="#FAF6EC" stroke-width="3" opacity="0.5"/>
+      <line x1="50" y1="252" x2="130" y2="252" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="50" y1="302" x2="130" y2="302" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="50" y1="277" x2="130" y2="277" stroke="#F0876B" stroke-width="2.5" opacity="0.6"/>
+    </g>
+    <path d="M142,218 L204,222 L206,300 C206,338 180,355 142,357 Z" fill="#6E8CB8"/>
+    <g clip-path="url(#flanR)">
+      <line x1="162" y1="212" x2="162" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="188" y1="212" x2="188" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="175" y1="212" x2="175" y2="360" stroke="#FAF6EC" stroke-width="3" opacity="0.5"/>
+      <line x1="130" y1="252" x2="210" y2="252" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="130" y1="302" x2="210" y2="302" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="130" y1="277" x2="210" y2="277" stroke="#F0876B" stroke-width="2.5" opacity="0.6"/>
+    </g>
+    <path d="M120,218 L102,224 L120,246 Z" fill="#5a7194"/>
+    <path d="M140,218 L158,224 L140,246 Z" fill="#5a7194"/>
+    <use href="#hands"/>
+  </symbol>
+</svg>
+
+<div style="width:100%;background:#0f0e15;font-family:'Nunito',sans-serif;color:#F3F1FA;overflow-x:hidden;">
+
+  <!-- ===== NAV ===== -->
+  <nav style="width:100%;display:flex;justify-content:center;border-bottom:1px solid rgba(255,255,255,0.07);position:sticky;top:0;z-index:20;background:rgba(15,14,21,0.82);backdrop-filter:blur(14px);">
+    <div style="width:100%;max-width:1180px;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;">
+      <div style="line-height:.8;"><span style="font-family:'Baloo 2';font-weight:800;font-size:26px;color:#4f7fe0;text-shadow:1.5px 1.5px 0 #fff,-1px 1px 0 #fff;">Freddy</span> <span style="font-family:'Baloo 2';font-weight:800;font-size:26px;color:#D93A2B;text-shadow:1.5px 1.5px 0 #fff,-1px 1px 0 #fff;">the Foot</span></div>
+      <div class="nav-links" style="display:flex;align-items:center;gap:30px;font-family:'Nunito';font-weight:700;font-size:15px;color:#A7A3BC;">
+        <a class="navlink" href="#episodes" style="color:#A7A3BC;">Episodes</a>
+        <a class="navlink" href="#club" style="color:#A7A3BC;">The 24/7 Club</a>
+        <a class="navlink" href="#guide" style="color:#A7A3BC;">Field Guide</a>
+        <a href="#club" style="background:linear-gradient(135deg,#2456B8,#7B5EA7);color:#fff;font-family:'Baloo 2';font-weight:700;font-size:15px;padding:10px 20px;border-radius:100px;">Join the Club 🤙</a>
+      </div>
+    </div>
   </nav>
-  <div class="airing"><span class="dot"></span>Filmed before a live studio audience</div>
 
-  <div id="scene">
-    <canvas id="freddy3d"></canvas>
-
-    <!-- CSS FREDDY: works everywhere, WebGL replaces it when available -->
-    <div id="freddyCSS" aria-label="Freddy the Foot, waving">
-      <div class="f-shadow"></div>
-      <div class="f-arm l"><div class="f-glove"></div></div>
-      <div class="f-arm r"><div class="f-glove"></div></div>
-      <div class="f-leg l"></div><div class="f-leg r"></div>
-      <div class="f-sandal l"></div><div class="f-sandal r"></div>
-      <div class="f-heel"></div>
-      <div class="f-body"></div>
-      <div class="f-toe t1"></div><div class="f-toe t2"></div><div class="f-toe t3"></div><div class="f-toe t4"></div><div class="f-toe t5"></div>
-      <div class="f-shades"><div class="bridge"></div></div>
-      <div class="f-brow l"></div><div class="f-brow r"></div>
-      <div class="f-eye l"><div class="f-pupil"></div></div>
-      <div class="f-eye r"><div class="f-pupil"></div></div>
-      <div class="f-blush l"></div><div class="f-blush r"></div>
-      <div class="f-mouth"></div>
-      <div class="f-tee"></div>
-      <div class="f-shorts"></div>
+  <!-- ===== HERO ===== -->
+  <section style="position:relative;display:flex;justify-content:center;overflow:hidden;background:radial-gradient(55% 80% at 10% 0%, rgba(123,94,167,0.5) 0%, rgba(123,94,167,0) 55%), radial-gradient(55% 80% at 95% 30%, rgba(240,135,107,0.38) 0%, rgba(240,135,107,0) 55%), #12101c;">
+    <div class="hero-row" style="width:100%;max-width:1180px;padding:80px 40px 76px;display:flex;align-items:center;gap:40px;">
+      <div style="flex:1;">
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:100px;padding:7px 16px;font-family:'JetBrains Mono';font-weight:700;font-size:12px;letter-spacing:1px;color:#B794F6;">🤙 THE 24/7 CLUB · SEASON 1 IS LIVE</div>
+        <h1 class="hero-h1" style="margin:24px 0 0;font-family:'Baloo 2';font-weight:800;font-size:66px;line-height:.98;color:#fff;letter-spacing:-1px;">Foot care for<br>people who live<br>it <span style="color:#F0876B;">24/7.</span></h1>
+        <p style="margin:24px 0 0;font-family:'Nunito';font-weight:700;font-size:20px;line-height:1.5;color:#A7A3BC;max-width:480px;">Meet Freddy — mid-40s, dry, been managing this for years. He doesn't lecture. He riffs, he checks first, and he gets it. No pamphlet energy.</p>
+        <div style="margin-top:34px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+          <a href="#episodes" style="background:linear-gradient(135deg,#2456B8,#7B5EA7);color:#fff;font-family:'Baloo 2';font-weight:800;font-size:18px;padding:15px 30px;border-radius:100px;box-shadow:0 12px 30px -10px rgba(123,94,167,.7);">Watch Season 1</a>
+          <a href="#club" style="border:1.5px solid rgba(255,255,255,0.25);color:#fff;font-family:'Baloo 2';font-weight:700;font-size:18px;padding:15px 28px;border-radius:100px;">Join the 24/7 Club</a>
+        </div>
+        <p style="margin:26px 0 0;font-family:'Baloo 2';font-weight:700;font-size:17px;color:#B794F6;">24/7 club. Check first. 🤙</p>
+      </div>
+      <div class="hero-art" style="flex:none;position:relative;">
+        <div style="position:absolute;top:6%;left:50%;transform:translateX(-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle, rgba(240,135,107,0.32) 0%, rgba(240,135,107,0) 68%);animation:freddyGlow 5s ease-in-out infinite;"></div>
+        <div style="animation:floaty 6s ease-in-out infinite;"><svg viewBox="0 0 260 384" style="width:360px;height:531px;position:relative;filter:drop-shadow(0 26px 38px rgba(0,0,0,.55));"><use href="#freddyCargo"/></svg></div>
+      </div>
     </div>
+  </section>
 
-    <div id="bubble"></div>
-    <div class="applause-wrap">
-      <button id="applause">APPLAUSE</button>
-      <div class="hint">go ahead. he lives for it.</div>
+  <!-- ===== STRIP ===== -->
+  <section style="display:flex;justify-content:center;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);background:#12101c;">
+    <div style="width:100%;max-width:1180px;padding:26px 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:'Baloo 2';">
+      <div><span style="font-weight:800;font-size:30px;color:#fff;">10</span> <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#8a86a0;">episodes, one per week</span></div>
+      <div><span style="font-weight:800;font-size:30px;color:#F0876B;">1</span> <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#8a86a0;">habit per story — no lists</span></div>
+      <div><span style="font-weight:800;font-size:30px;color:#5FD38A;">24/7</span> <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#8a86a0;">real life, still living</span></div>
+      <div><span style="font-weight:800;font-size:30px;color:#B794F6;">0</span> <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#8a86a0;">pity, ever</span></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="strip">
-  <h2>“I love my recliner. Why? My feet do.”</h2>
-  <p>He complains the entire time. He does it anyway. Real laughs for people managing the real thing — 24/7.</p>
+  <!-- ===== MEET FREDDY ===== -->
+  <section style="display:flex;justify-content:center;padding:80px 40px;">
+    <div class="meet-row" style="width:100%;max-width:1180px;display:flex;gap:56px;align-items:center;">
+      <div style="flex:none;position:relative;background:radial-gradient(80% 70% at 50% 30%, #221e31 0%, #14111f 100%);border:1px solid rgba(255,255,255,0.08);border-radius:28px;padding:34px 46px;">
+        <svg viewBox="0 0 260 384" style="width:240px;height:354px;filter:drop-shadow(0 14px 22px rgba(0,0,0,.5));"><use href="#freddyFlannel"/></svg>
+      </div>
+      <div style="flex:1;">
+        <div style="font-family:'JetBrains Mono';font-weight:700;font-size:13px;letter-spacing:1.5px;color:#8B5CF6;margin-bottom:14px;">MEET FREDDY</div>
+        <h2 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:44px;line-height:1.02;color:#fff;">He's not a mascot<br>teaching lessons.</h2>
+        <p style="margin:22px 0 0;font-family:'Nunito';font-weight:700;font-size:19px;line-height:1.55;color:#A7A3BC;max-width:520px;">He's one of us — a Gen-X sitcom-dad everyman living the routine imperfectly, with commentary. Checks his feet like you lock your door. It's just Tuesday.</p>
+        <div style="margin-top:28px;display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:12px;align-items:center;"><span style="width:26px;height:26px;border-radius:50%;background:rgba(95,211,138,0.15);display:flex;align-items:center;justify-content:center;flex:none;"><svg viewBox="0 0 24 24" style="width:15px;height:15px;" fill="none" stroke="#5FD38A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span style="font-family:'Nunito';font-weight:700;font-size:16px;color:#F3F1FA;">Laughs <em style="font-style:normal;color:#F0876B;">with</em> the life — never at the disease.</span></div>
+          <div style="display:flex;gap:12px;align-items:center;"><span style="width:26px;height:26px;border-radius:50%;background:rgba(95,211,138,0.15);display:flex;align-items:center;justify-content:center;flex:none;"><svg viewBox="0 0 24 24" style="width:15px;height:15px;" fill="none" stroke="#5FD38A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span style="font-family:'Nunito';font-weight:700;font-size:16px;color:#F3F1FA;">Punchline first. The reminder is the aftertaste.</span></div>
+          <div style="display:flex;gap:12px;align-items:center;"><span style="width:26px;height:26px;border-radius:50%;background:rgba(95,211,138,0.15);display:flex;align-items:center;justify-content:center;flex:none;"><svg viewBox="0 0 24 24" style="width:15px;height:15px;" fill="none" stroke="#5FD38A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span style="font-family:'Nunito';font-weight:700;font-size:16px;color:#F3F1FA;">One clinical risk → one habit → one adventure.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EPISODES ===== -->
+  <section id="episodes" style="display:flex;justify-content:center;padding:70px 40px;background:#12101c;border-top:1px solid rgba(255,255,255,0.07);">
+    <div style="width:100%;max-width:1180px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:34px;flex-wrap:wrap;gap:12px;">
+        <div>
+          <div style="font-family:'JetBrains Mono';font-weight:700;font-size:13px;letter-spacing:1.5px;color:#8B5CF6;margin-bottom:8px;">SEASON 1 · THE 24/7 CLUB</div>
+          <h2 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:40px;color:#fff;">Watch the bits</h2>
+        </div>
+        <span style="font-family:'Nunito';font-weight:700;font-size:15px;color:#8a86a0;">New episode every week · 18–28s each</span>
+      </div>
+      <div class="grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+
+        <a href="/ep05" style="display:block;background:linear-gradient(170deg,#241f3d,#14111f);border:1px solid rgba(255,255,255,0.09);border-radius:24px;overflow:hidden;">
+          <div style="height:250px;position:relative;background:radial-gradient(90% 70% at 50% 26%, #3a3566 0%, #1b1830 100%);display:flex;align-items:flex-end;justify-content:center;">
+            <div style="position:absolute;top:16px;left:18px;background:#211d3a;border:1.5px solid #6E8CB8;border-radius:9px;padding:3px 10px;font-family:'Baloo 2';font-weight:700;font-size:16px;color:#F5A623;">3:04</div>
+            <svg viewBox="0 0 260 384" style="width:158px;height:233px;filter:drop-shadow(0 10px 16px rgba(0,0,0,.5));"><use href="#freddy"/></svg>
+          </div>
+          <div style="padding:22px 24px 24px;">
+            <div style="font-family:'JetBrains Mono';font-weight:700;font-size:12px;color:#B794F6;">EP05 · 3AM</div>
+            <div style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#fff;margin:6px 0 8px;line-height:1.1;">Found a LEGO at 3am. Never emotionally recovered.</div>
+            <div style="font-family:'Nunito';font-weight:700;font-size:14px;color:#8a86a0;">Slides by the bed. Shake first, then step.</div>
+            <div style="margin-top:16px;font-family:'Baloo 2';font-weight:700;font-size:15px;color:#F0876B;">Watch the short →</div>
+          </div>
+        </a>
+
+        <a href="/ep02" style="display:block;background:linear-gradient(170deg,#241f3d,#14111f);border:1px solid rgba(255,255,255,0.09);border-radius:24px;overflow:hidden;">
+          <div style="height:250px;position:relative;background:radial-gradient(90% 70% at 50% 26%, #2f4a63 0%, #1b1830 100%);display:flex;align-items:flex-end;justify-content:center;">
+            <div style="position:absolute;top:16px;left:18px;background:#211d3a;border:1.5px solid #6E8CB8;border-radius:9px;padding:3px 10px;font-family:'Baloo 2';font-weight:700;font-size:16px;color:#F5A623;">DAY 1</div>
+            <svg viewBox="0 0 260 384" style="width:158px;height:233px;filter:drop-shadow(0 10px 16px rgba(0,0,0,.5));"><use href="#freddyFlannel"/></svg>
+          </div>
+          <div style="padding:22px 24px 24px;">
+            <div style="font-family:'JetBrains Mono';font-weight:700;font-size:12px;color:#B794F6;">EP02 · DAD SHOES</div>
+            <div style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#fff;margin:6px 0 8px;line-height:1.1;">Freddy fought the New Balance. The New Balance won.</div>
+            <div style="font-family:'Nunito';font-weight:700;font-size:14px;color:#8a86a0;">One hour at a time. Check for hot spots.</div>
+            <div style="margin-top:16px;font-family:'Baloo 2';font-weight:700;font-size:15px;color:#F0876B;">Watch the short →</div>
+          </div>
+        </a>
+
+        <a href="/ep01" style="display:block;background:linear-gradient(170deg,#241f3d,#14111f);border:1px solid rgba(255,255,255,0.09);border-radius:24px;overflow:hidden;">
+          <div style="height:250px;position:relative;background:radial-gradient(90% 70% at 50% 26%, #6b4a63 0%, #1b1830 100%);display:flex;align-items:flex-end;justify-content:center;">
+            <div style="position:absolute;top:16px;left:18px;background:#211d3a;border:1.5px solid #6E8CB8;border-radius:9px;padding:3px 10px;font-family:'Baloo 2';font-weight:700;font-size:16px;color:#F5A623;">97°</div>
+            <svg viewBox="0 0 260 384" style="width:158px;height:233px;filter:drop-shadow(0 10px 16px rgba(0,0,0,.5));"><use href="#freddyCargo"/></svg>
+          </div>
+          <div style="padding:22px 24px 24px;">
+            <div style="font-family:'JetBrains Mono';font-weight:700;font-size:12px;color:#B794F6;">EP01 · BEACH</div>
+            <div style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#fff;margin:6px 0 8px;line-height:1.1;">Hasn't felt hot sand since Clinton was in office.</div>
+            <div style="font-family:'Nunito';font-weight:700;font-size:14px;color:#8a86a0;">Can't feel it doesn't mean it can't burn.</div>
+            <div style="margin-top:16px;font-family:'Baloo 2';font-weight:700;font-size:15px;color:#F0876B;">Watch the short →</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 24/7 CLUB ===== -->
+  <section id="club" style="display:flex;justify-content:center;padding:84px 40px;">
+    <div class="club-card" style="width:100%;max-width:1180px;position:relative;overflow:hidden;border-radius:32px;border:1px solid rgba(255,255,255,0.1);background:radial-gradient(70% 130% at 15% 0%, rgba(123,94,167,0.5), rgba(123,94,167,0) 60%), radial-gradient(60% 120% at 90% 100%, rgba(240,135,107,0.32), rgba(240,135,107,0) 60%), #1a1727;padding:60px 56px;">
+      <div style="max-width:620px;">
+        <div style="font-family:'JetBrains Mono';font-weight:700;font-size:13px;letter-spacing:1.5px;color:#B794F6;margin-bottom:14px;">THE 24/7 CLUB</div>
+        <h2 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:46px;line-height:1.04;color:#fff;">Not a product.<br>A belonging.</h2>
+        <p style="margin:22px 0 0;font-family:'Nunito';font-weight:700;font-size:19px;line-height:1.55;color:#EDE9F6;">Everyone managing diabetes around the clock. Membership is automatic — the badge is a 🤙. Freddy gets it: 24/7 management, real life, still living.</p>
+        <div style="margin-top:32px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+          <a href="https://opendiabetic.org" style="background:#fff;color:#2456B8;font-family:'Baloo 2';font-weight:800;font-size:18px;padding:15px 30px;border-radius:100px;">More at OpenDiabetic</a>
+          <span style="font-family:'JetBrains Mono';font-weight:700;font-size:15px;color:#BFE3F5;">#SmartFeet #247Club</span>
+        </div>
+      </div>
+      <div class="club-art" style="position:absolute;right:36px;bottom:-20px;opacity:.9;"><svg viewBox="0 0 260 384" style="width:220px;height:324px;filter:drop-shadow(0 14px 22px rgba(0,0,0,.45));"><use href="#freddyCargo"/></svg></div>
+    </div>
+  </section>
+
+  <!-- ===== FIELD GUIDE ===== -->
+  <section id="guide" style="display:flex;justify-content:center;padding:70px 40px 90px;border-top:1px solid rgba(255,255,255,0.07);background:#12101c;">
+    <div style="width:100%;max-width:1180px;">
+      <div style="text-align:center;margin-bottom:40px;">
+        <div style="font-family:'JetBrains Mono';font-weight:700;font-size:13px;letter-spacing:1.5px;color:#8B5CF6;margin-bottom:10px;">HOW IT WORKS</div>
+        <h2 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:40px;color:#fff;">Freddy's the on-ramp. The Field Guide is the depth.</h2>
+      </div>
+      <div class="grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+        <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:22px;padding:30px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(240,135,107,0.15);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2';font-weight:800;font-size:22px;color:#F0876B;">1</div>
+          <div style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#fff;margin:16px 0 8px;">Laugh</div>
+          <div style="font-family:'Nunito';font-weight:600;font-size:15px;line-height:1.5;color:#A7A3BC;">A 20-second bit that feels like your life, not a pamphlet. You share it because it's <em style="font-style:normal;color:#F0876B;">seen.</em></div>
+        </div>
+        <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:22px;padding:30px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(123,94,167,0.18);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2';font-weight:800;font-size:22px;color:#B794F6;">2</div>
+          <div style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#fff;margin:16px 0 8px;">Remember</div>
+          <div style="font-family:'Nunito';font-weight:600;font-size:15px;line-height:1.5;color:#A7A3BC;">One habit sticks — check first, shake first, hand check. The reminder rides the end card, two seconds after the smile.</div>
+        </div>
+        <div style="background:#1a1727;border:1px solid rgba(255,255,255,0.08);border-radius:22px;padding:30px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(62,142,78,0.18);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2';font-weight:800;font-size:22px;color:#5FD38A;">3</div>
+          <div style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#fff;margin:16px 0 8px;">Go deeper</div>
+          <div style="font-family:'Nunito';font-weight:600;font-size:15px;line-height:1.5;color:#A7A3BC;">Same hazard, clinical altitude. Freddy hands you to the Field Guide when you're ready for the real detail.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="display:flex;justify-content:center;background:radial-gradient(70% 130% at 82% 0%, rgba(240,135,107,0.16), rgba(240,135,107,0) 60%), #0c0b12;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="width:100%;max-width:1180px;padding:52px 40px 40px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+        <div style="font-family:'Baloo 2';font-weight:800;font-size:32px;color:#fff;">24/7 club. Check first. 🤙</div>
+        <span style="display:inline-flex;align-items:center;gap:10px;"><svg viewBox="0 0 40 52" style="width:24px;height:31px;fill:#3E8E4E;"><use href="#print"/></svg><span style="font-family:'Baloo 2';font-weight:800;font-size:20px;letter-spacing:1px;color:#3E8E4E;">FOOT GUIDE</span></span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:28px;border-top:1px solid rgba(255,255,255,0.07);padding-top:22px;">
+        <div style="line-height:.8;"><span style="font-family:'Baloo 2';font-weight:800;font-size:20px;color:#4f7fe0;">Freddy</span> <span style="font-family:'Baloo 2';font-weight:800;font-size:20px;color:#D93A2B;">the Foot</span></div>
+        <div style="font-family:'JetBrains Mono';font-weight:500;font-size:11px;color:#4c4960;text-align:right;line-height:1.6;">"Fun Stories. Smart Feet. Happy Steps." · OpenDiabetic / Swarm &amp; Bee AI · SudoHash LLC<br>Freddy shown as vector proxy for the final 3D render.</div>
+      </div>
+    </div>
+  </footer>
+
 </div>
-
-<section class="season" id="season">
-  <div class="eyebrow">Season One</div>
-  <h2>The 24/7 Club</h2>
-  <p class="sub">Ten episodes from the recliner. Every one hides a habit that keeps feet in the game. Freddy's been doing this for years — under protest, without fail.</p>
-  <div class="grid" id="epgrid"></div>
-</section>
-
-<div class="club-band" id="club">
-  <div class="club-inner">
-    <div>
-      <h2>Welcome to the 24/7 Club.</h2>
-      <p>Membership is automatic. You already know the drill: check first, laugh anyway, keep living. Freddy is the front door — the deep stuff lives at OpenDiabetic.</p>
-    </div>
-    <a class="cta" href="https://opendiabetic.org" target="_blank" rel="noopener">Visit OpenDiabetic →</a>
-  </div>
-</div>
-
-<footer>
-  <div class="sig">24/7 club. Check first. 🤙</div>
-  Freddy the Foot · a Swarm &amp; Bee / OpenDiabetic production · #SmartFeet #247Club
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" onerror="window.__noThree=true"></script>
-<script>
-/* ============ SHARED LAYER (renderer-independent) ============ */
-const EPS=[
- {n:"S1 · E04",t:"Freddy's Nightly Address to the Nation",log:"“Freddy did not want to. Freddy did it anyway. This is the whole biography.”",habit:"Mirror, look, photo. 40 seconds a night.",pill:"premiere"},
- {n:"S1 · E05",t:"Freddy at 3AM (The Kitchen Run)",log:"“The dog has never once apologized.”",habit:"Slides by the bed. Shake first, then step.",pill:"soon"},
- {n:"S1 · E02",t:"Freddy vs. The Dad Shoes",log:"“The New Balance does not care. They've reached an understanding.”",habit:"New shoes one hour at a time. Check for hot spots.",pill:"soon"},
- {n:"S1 · E01",t:"Freddy Hits the Beach (Under Protest)",log:"“The sand does not know this. The sand does not care.”",habit:"Hand check the sand, then walk.",pill:"soon"},
- {n:"S1 · E03",t:"Freddy's Bath: A Trust Exercise",log:"“Perfect brisket. I mean bath.”",habit:"Elbow or thermometer — never trust the feet.",pill:"soon"},
- {n:"S1 · E06",t:"Freddy Retires “It's Nothing”",log:"“The burgers observed a moment of silence.”",habit:"Wash it, cover it, watch it daily.",pill:"soon"},
- {n:"S1 · E07",t:"Freddy's Toenail Summit",log:"“Grandpa would have questions.”",habit:"Straight across. Corners go to the pro.",pill:"soon"},
- {n:"S1 · E08",t:"Freddy's Yard: Beautiful, Hostile",log:"“It's tried to take him out more than his 20s did. And his 20s TRIED.”",habit:"Shoes by every door. Even on your own grass.",pill:"soon"},
- {n:"S1 · E09",t:"Freddy's Sock Drawer Has Standards",log:"“They know what they did.”",habit:"Seamless, loose tops, fresh daily.",pill:"soon"},
- {n:"S1 · E10",t:"Freddy & Dr. Sole: 12 Years of Complaints",log:"“He has never once missed it.”",habit:"“Feels fine” still gets checked.",pill:"soon"},
-];
-document.getElementById('epgrid').innerHTML=EPS.map(e=>`
- <div class="card">
-   <div class="tag"><span class="num">${e.n}</span>
-   <span class="pill ${e.pill}">${e.pill==="premiere"?"Series premiere":"Coming soon"}</span></div>
-   <h3>${e.t}</h3><div class="log">${e.log}</div>
-   <div class="habit">✔ ${e.habit}</div>
- </div>`).join('');
-
-const tc=document.getElementById('titlecard');
-const killTC=()=>tc.classList.add('gone');
-tc.addEventListener('click',killTC);
-setTimeout(killTC,3200);
-
-const LINES=["I love my recliner. Why? My feet do.","Freddy did not want to. Freddy did it anyway.","Oh good. Visitors. Freddy loves visitors.","Found a LEGO at 3am. Never emotionally recovered.","Perfect brisket. I mean bath.","PEG: “DID YOU CHECK?” ...I was already checking.","The dog has never once apologized.","They know what they did.","Check first. 🤙"];
-const bubble=document.getElementById('bubble');
-let li=0;
-function sayNext(){
-  bubble.classList.remove('show');
-  setTimeout(()=>{bubble.textContent=LINES[li%LINES.length];li++;bubble.classList.add('show');},500);
-}
-setTimeout(sayNext,3600); setInterval(sayNext,6200);
-
-const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const sceneEl=document.getElementById('scene');
-const applause=document.getElementById('applause');
-let onApplause=[];  // renderer hooks register here
-applause.addEventListener('click',()=>{
-  applause.classList.add('lit');
-  setTimeout(()=>applause.classList.remove('lit'),1600);
-  bubble.textContent="Check first. 🤙"; bubble.classList.add('show');
-  const em=['👏','🤙','😂','👏','🦶','👏'];
-  for(let i=0;i<14;i++){
-    const s=document.createElement('span'); s.className='clap';
-    s.textContent=em[i%em.length];
-    s.style.left=(15+Math.random()*70)+'%';
-    s.style.bottom=(60+Math.random()*60)+'px';
-    s.style.animationDelay=(Math.random()*.4)+'s';
-    sceneEl.appendChild(s); setTimeout(()=>s.remove(),1900);
-  }
-  onApplause.forEach(fn=>fn());
-});
-
-let mx=0,my=0;
-window.addEventListener('pointermove',e=>{
-  mx=(e.clientX/window.innerWidth)*2-1;
-  my=-(e.clientY/window.innerHeight)*2+1;
-});
-
-/* ============ RENDERER SELECTION ============ */
-function webglAvailable(){
-  if(window.__noThree || typeof THREE==='undefined') return false;
-  try{
-    const c=document.createElement('canvas');
-    return !!(window.WebGLRenderingContext && (c.getContext('webgl')||c.getContext('experimental-webgl')));
-  }catch(e){return false}
-}
-
-/* ---------- PATH A: CSS FREDDY (default, universal) ---------- */
-function initCSSFreddy(){
-  const f=document.getElementById('freddyCSS');
-  const eyes=[...f.querySelectorAll('.f-eye')];
-  const pupils=[...f.querySelectorAll('.f-pupil')];
-  if(!reduced){
-    /* pupils track pointer */
-    setInterval(()=>{
-      pupils.forEach(p=>{p.style.transform=`translate(${mx*8}px,${-my*6}px)`;});
-    },50);
-    /* randomized blink */
-    (function blinkLoop(){
-      const wait=2200+Math.random()*3000;
-      setTimeout(()=>{
-        eyes.forEach(e=>e.classList.add('blink'));
-        setTimeout(()=>eyes.forEach(e=>e.classList.remove('blink')),140);
-        blinkLoop();
-      },wait);
-    })();
-  }
-  onApplause.push(()=>{
-    f.classList.remove('jump'); void f.offsetWidth; /* restart animation */
-    f.classList.add('jump');
-  });
-}
-
-/* ---------- PATH B: WEBGL FREDDY (progressive enhancement) ---------- */
-function initWebGLFreddy(){
-  const canvas=document.getElementById('freddy3d');
-  let renderer;
-  try{
-    renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
-  }catch(e){ return false; }
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-  const scene=new THREE.Scene();
-  const camera=new THREE.PerspectiveCamera(38,1,0.1,100);
-  camera.position.set(0,1.15,6.4);
-
-  scene.add(new THREE.AmbientLight(0xffffff,.75));
-  const sun=new THREE.DirectionalLight(0xfff2d0,1.0); sun.position.set(-3,5,4); scene.add(sun);
-  const rim=new THREE.DirectionalLight(0xF0876B,.5); rim.position.set(3,2,-3); scene.add(rim);
-
-  const M=(c,r=.6)=>new THREE.MeshStandardMaterial({color:c,roughness:r,metalness:0});
-  const SKIN=M(0xF2B98C,.55), DARK=M(0x2a2a2e,.4), WHITE=M(0xffffff,.5),
-        BLUE=M(0x2456B8,.45), KHAKI=M(0xCBB78E,.7);
-
-  const t2=document.createElement('canvas'); t2.width=t2.height=256;
-  const g=t2.getContext('2d');
-  const cols=['#7B5EA7','#F0876B','#BFE3F5','#2456B8','#F5A623'];
-  g.fillStyle='#7B5EA7'; g.fillRect(0,0,256,256);
-  for(let i=0;i<7;i++){const gr=g.createRadialGradient(128,128,6+i*16,128,128,26+i*18);
-    gr.addColorStop(0,cols[i%cols.length]); gr.addColorStop(1,cols[(i+1)%cols.length]);
-    g.globalAlpha=.55; g.fillStyle=gr; g.beginPath(); g.arc(128,128,26+i*18,0,7); g.fill();}
-  g.globalAlpha=1;
-  for(let a=0;a<24;a++){g.strokeStyle='rgba(255,255,255,.20)';g.lineWidth=2;g.beginPath();
-    g.moveTo(128,128); g.lineTo(128+Math.cos(a/24*6.283)*180,128+Math.sin(a/24*6.283)*180); g.stroke();}
-  const TIEDYE=new THREE.MeshStandardMaterial({map:new THREE.CanvasTexture(t2),roughness:.75});
-
-  const freddy=new THREE.Group(); scene.add(freddy);
-  const body=new THREE.Mesh(new THREE.SphereGeometry(1,32,32),SKIN);
-  body.scale.set(.82,1.28,.62); body.position.y=1.32; freddy.add(body);
-  const heel=new THREE.Mesh(new THREE.SphereGeometry(.5,24,24),SKIN);
-  heel.position.set(0,.45,-.28); heel.scale.set(.8,.7,.9); freddy.add(heel);
-
-  const toes=[]; const toeS=[.21,.17,.15,.135,.12];
-  for(let i=0;i<5;i++){
-    const t=new THREE.Mesh(new THREE.SphereGeometry(toeS[i],20,20),SKIN);
-    const x=-.52+i*.26;
-    t.position.set(x,2.52-Math.abs(x)*.28,.12); freddy.add(t); toes.push(t);
-  }
-  const shade=new THREE.Group();
-  [[-.26],[.26]].forEach(([x])=>{const l=new THREE.Mesh(new THREE.BoxGeometry(.4,.22,.1),BLUE);l.position.x=x;shade.add(l);});
-  shade.add(Object.assign(new THREE.Mesh(new THREE.BoxGeometry(.14,.06,.08),BLUE)));
-  shade.position.set(0,2.3,.5); shade.rotation.x=-.35; freddy.add(shade);
-
-  const eyeG=[];
-  [[-.3],[.3]].forEach(([x])=>{
-    const grp=new THREE.Group();
-    const w=new THREE.Mesh(new THREE.SphereGeometry(.19,20,20),WHITE); grp.add(w);
-    const p=new THREE.Mesh(new THREE.SphereGeometry(.085,16,16),DARK); p.position.z=.14; grp.add(p);
-    const brow=new THREE.Mesh(new THREE.BoxGeometry(.32,.075,.07),M(0x8d8578,.7));
-    brow.position.set(0,.26,.06); brow.rotation.z=x<0?.15:-.15; grp.add(brow);
-    grp.position.set(x,1.78,.52); freddy.add(grp);
-    eyeG.push({grp,p});
-  });
-  const GRAYSKIN=M(0xD9C9B3,.6); /* graying outer toe-crown */
-  const grayL=new THREE.Mesh(new THREE.SphereGeometry(.08,12,12),GRAYSKIN);
-  grayL.position.set(-.55,2.44,.16); freddy.add(grayL);
-  const grayR=new THREE.Mesh(new THREE.SphereGeometry(.06,12,12),GRAYSKIN);
-  grayR.position.set(.54,2.36,.15); freddy.add(grayR);
-  const mouth=new THREE.Mesh(new THREE.SphereGeometry(.16,20,20),M(0x7a3b2e,.5));
-  mouth.scale.set(1.4,.55,.4); mouth.position.set(0,1.28,.56); freddy.add(mouth);
-
-  const tee=new THREE.Mesh(new THREE.CylinderGeometry(.72,.8,.78,24),TIEDYE);
-  tee.position.y=.98; freddy.add(tee);
-  const shorts=new THREE.Mesh(new THREE.CylinderGeometry(.8,.72,.5,24),KHAKI);
-  shorts.position.y=.42; freddy.add(shorts);
-  [[-.45],[.45]].forEach(([x])=>{const pk=new THREE.Mesh(new THREE.BoxGeometry(.22,.18,.06),M(0xB5A176,.7));
-    pk.position.set(x,.42,.66); freddy.add(pk);});
-
-  function arm(side){
-    const a=new THREE.Group();
-    const up=new THREE.Mesh(new THREE.CylinderGeometry(.09,.09,.62,12),TIEDYE);
-    up.position.y=-.31; a.add(up);
-    const glove=new THREE.Mesh(new THREE.SphereGeometry(.19,18,18),WHITE);
-    glove.position.y=-.68; a.add(glove);
-    a.position.set(.78*side,1.35,0); a.rotation.z=side*.9; freddy.add(a);
-    return a;
-  }
-  const armR=arm(1), armL=arm(-1);
-
-  [[-.3],[.3]].forEach(([x])=>{
-    const s=new THREE.Mesh(new THREE.BoxGeometry(.34,.1,.55),BLUE);
-    s.position.set(x,.06,.1); freddy.add(s);
-    const leg=new THREE.Mesh(new THREE.CylinderGeometry(.1,.1,.3,10),SKIN);
-    leg.position.set(x,.22,0); freddy.add(leg);
-  });
-
-  const shadow=new THREE.Mesh(new THREE.CircleGeometry(1.15,32),
-    new THREE.MeshBasicMaterial({color:0x8a6a3a,transparent:true,opacity:.28}));
-  shadow.rotation.x=-Math.PI/2; shadow.position.y=.015; scene.add(shadow);
-  freddy.position.y=-.15;
-
-  let jump=0,wave=0,blink=0,nextBlink=2.5;
-  onApplause.push(()=>{jump=1;wave=1;});
-
-  function resize(){
-    const w=sceneEl.clientWidth,h=sceneEl.clientHeight;
-    renderer.setSize(w,h,false);
-    camera.aspect=w/h; camera.updateProjectionMatrix();
-    camera.position.z=w<640?7.6:6.4;
-  }
-  window.addEventListener('resize',resize); resize();
-
-  let last=performance.now();
-  function loop(now){
-    requestAnimationFrame(loop);
-    const t=now/1000, dt=Math.min(.05,(now-last)/1000); last=now;
-    if(!reduced){
-      freddy.position.y=-.15+Math.sin(t*1.6)*.06;
-      freddy.rotation.y=Math.sin(t*.5)*.12 + mx*.25;
-      freddy.rotation.z=Math.sin(t*.8)*.02;
-      toes.forEach((toe,i)=>{toe.position.z=.12+Math.sin(t*3+i*1.1)*.03;});
-      armL.rotation.z=-.9+Math.sin(t*1.6)*.08;
-      if(wave>0){wave-=dt*.5; armR.rotation.z=.2+Math.sin(t*10)*.45;}
-      else armR.rotation.z=.9+Math.sin(t*1.6+1)*.08;
-      if(jump>0){jump-=dt*1.4; freddy.position.y+=Math.sin(Math.min(1,1-jump)*Math.PI)*.55;}
-      nextBlink-=dt;
-      if(nextBlink<=0){blink=.22;nextBlink=2.4+Math.random()*3;}
-      if(blink>0){blink-=dt;}
-      eyeG.forEach(e=>{
-        e.grp.scale.y=blink>0?.12:1;
-        e.p.position.x=mx*.07; e.p.position.y=my*.05;
-      });
-      mouth.scale.y=.55+Math.abs(Math.sin(t*.9))*.15;
-    }
-    renderer.render(scene,camera);
-  }
-  requestAnimationFrame(loop);
-  return true;
-}
-
-/* ============ BOOT ============ */
-initCSSFreddy();                       // floor: always alive
-if(webglAvailable()){
-  try{
-    if(initWebGLFreddy()) sceneEl.classList.add('webgl');   // upgrade if context succeeds
-  }catch(e){ /* CSS Freddy stays on stage */ }
-}
-</script>
 </body>
 </html>
