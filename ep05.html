@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freddy the Foot — EP05 · 3AM</title>
+<meta name="description" content="Freddy at 3AM: the floor is a minefield and the dog owns it. Slides live by the bed — shake first, then step, even at 3am. A 24/7 Club short.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://freddythefoot.com/ep05">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Freddy the Foot — EP05 · 3AM">
+<meta property="og:description" content="Freddy at 3AM: the floor is a minefield and the dog owns it. Slides live by the bed — shake first, then step, even at 3am. A 24/7 Club short.">
+<meta property="og:url" content="https://freddythefoot.com/ep05">
+<meta name="theme-color" content="#131118">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;background:#131118;}
+  *{box-sizing:border-box;}
+  @keyframes freddyGlow{0%,100%{opacity:.55}50%{opacity:.9}}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+  @keyframes shakeit{0%,100%{transform:rotate(-3deg)}25%{transform:rotate(4deg)}50%{transform:rotate(-4deg)}75%{transform:rotate(3deg)}}
+  @keyframes legofloat{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-8px) rotate(6deg)}}
+</style>
+<style>
+  html,body{background:#131118;overflow-x:hidden;}
+  #stage{display:flex;justify-content:center;}
+  #board{transform-origin:top center;}
+</style>
+</head>
+<body>
+<a href="/" style="position:fixed;top:16px;left:18px;z-index:50;display:inline-flex;align-items:center;gap:8px;background:rgba(15,14,21,0.72);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.14);border-radius:100px;padding:9px 16px;text-decoration:none;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:14px;color:#F3F1FA;">← <span style="color:#4f7fe0;">Freddy</span>&nbsp;<span style="color:#D93A2B;">the Foot</span></a>
+<div id="stage">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="tiedye" cx="44%" cy="38%" r="78%">
+      <stop offset="0%" stop-color="#F0876B"/>
+      <stop offset="34%" stop-color="#7B5EA7"/>
+      <stop offset="70%" stop-color="#6E8CB8"/>
+      <stop offset="100%" stop-color="#52709c"/>
+    </radialGradient>
+    <radialGradient id="iris" cx="42%" cy="36%" r="66%">
+      <stop offset="0%" stop-color="#DFF3EC"/>
+      <stop offset="40%" stop-color="#3E8E4E"/>
+      <stop offset="100%" stop-color="#2b5f7a"/>
+    </radialGradient>
+    <clipPath id="robeClip"><path d="M62,240 C96,232 168,232 202,240 L206,302 C206,342 170,358 132,358 C94,358 58,342 58,302 Z"/></clipPath>
+    <clipPath id="teeClip"><path d="M58,220 C96,213 168,213 202,220 L205,296 L55,296 Z"/></clipPath>
+    <clipPath id="flanL"><path d="M118,218 L60,222 L58,300 C58,338 84,355 118,357 Z"/></clipPath>
+    <clipPath id="flanR"><path d="M142,218 L204,222 L206,300 C206,338 180,355 142,357 Z"/></clipPath>
+  </defs>
+  <symbol id="print" viewBox="0 0 40 52">
+    <ellipse cx="17" cy="35" rx="14" ry="16"/>
+    <ellipse cx="31" cy="17" rx="5" ry="6"/>
+    <ellipse cx="23" cy="9" rx="4" ry="5"/>
+    <ellipse cx="14" cy="7" rx="3.6" ry="4.6"/>
+    <ellipse cx="6" cy="13" rx="3" ry="4"/>
+  </symbol>
+  <symbol id="freddyBase" viewBox="0 0 260 384">
+    <ellipse cx="132" cy="368" rx="74" ry="13" fill="rgba(0,0,0,0.22)"/>
+    <path d="M132,44 C82,44 64,100 62,170 L60,274 C58,334 94,356 132,356 C170,356 206,334 204,274 L202,170 C200,100 182,44 132,44 Z" fill="#F2B98C" stroke="#D99A63" stroke-width="3"/>
+    <path d="M152,62 C186,92 190,152 188,262 C186,322 168,348 140,354 C182,352 206,332 204,274 L202,170 C200,112 182,68 152,62 Z" fill="#E0A56F" opacity="0.4"/>
+    <path d="M67,130 q-7,28 -1,56 q11,4 17,-3 q-6,-27 -3,-51 q-7,-5 -13,-2 Z" fill="#5A3B1E"/>
+    <path d="M193,130 q7,28 1,56 q-11,4 -17,-3 q6,-27 3,-51 q7,-5 13,-2 Z" fill="#5A3B1E"/>
+    <path d="M71,150 q-2,18 2,34" stroke="#9c8a78" stroke-width="2" fill="none" opacity="0.75"/>
+    <path d="M189,150 q2,18 -2,34" stroke="#9c8a78" stroke-width="2" fill="none" opacity="0.75"/>
+    <g stroke="#D99A63" stroke-width="2.5">
+      <ellipse cx="80" cy="48" rx="18" ry="24" fill="#F2B98C"/>
+      <ellipse cx="104" cy="26" rx="16" ry="22" fill="#F2B98C"/>
+      <ellipse cx="130" cy="20" rx="16" ry="23" fill="#F2B98C"/>
+      <ellipse cx="157" cy="30" rx="15" ry="21" fill="#F2B98C"/>
+      <ellipse cx="183" cy="50" rx="14" ry="19" fill="#F2B98C"/>
+    </g>
+    <g stroke-linejoin="round">
+      <path d="M75,36 Q75,33 86,33 L112,33 Q120,33 119,43 Q117,59 96,60 Q78,60 75,36 Z" fill="#2a2320" fill-opacity="0.5" stroke="#C9A227" stroke-width="4"/>
+      <path d="M185,36 Q185,33 174,33 L148,33 Q140,33 141,43 Q143,59 164,60 Q182,60 185,36 Z" fill="#2a2320" fill-opacity="0.5" stroke="#C9A227" stroke-width="4"/>
+      <path d="M119,40 q13,-6 22,0" fill="none" stroke="#E6B93B" stroke-width="4" stroke-linecap="round"/>
+      <path d="M75,39 q-11,-2 -16,5" fill="none" stroke="#E6B93B" stroke-width="4" stroke-linecap="round"/>
+      <path d="M185,39 q11,-2 16,5" fill="none" stroke="#E6B93B" stroke-width="4" stroke-linecap="round"/>
+      <path d="M83,40 l12,11" stroke="#fff" stroke-width="3" opacity="0.45" stroke-linecap="round"/>
+      <path d="M149,40 l12,11" stroke="#fff" stroke-width="3" opacity="0.45" stroke-linecap="round"/>
+    </g>
+    <path d="M84,116 q24,-16 48,-3" fill="none" stroke="#5A3B1E" stroke-width="8" stroke-linecap="round"/>
+    <path d="M150,122 q22,-9 42,-3" fill="none" stroke="#5A3B1E" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="108" cy="152" rx="22" ry="26" fill="#fff" stroke="#D99A63" stroke-width="2"/>
+    <ellipse cx="156" cy="152" rx="22" ry="26" fill="#fff" stroke="#D99A63" stroke-width="2"/>
+    <path d="M88,140 q20,-7 40,-1" fill="none" stroke="#D99A63" stroke-width="3" stroke-linecap="round"/>
+    <path d="M136,140 q20,-7 40,-1" fill="none" stroke="#D99A63" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="110" cy="160" r="11" fill="url(#iris)"/><circle cx="110" cy="160" r="6" fill="#241a12"/><circle cx="106" cy="155" r="3" fill="#fff"/>
+    <circle cx="154" cy="160" r="11" fill="url(#iris)"/><circle cx="154" cy="160" r="6" fill="#241a12"/><circle cx="150" cy="155" r="3" fill="#fff"/>
+    <path d="M84,166 q-7,5 -9,12" fill="none" stroke="#D99A63" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M180,166 q7,5 9,12" fill="none" stroke="#D99A63" stroke-width="2.5" stroke-linecap="round"/>
+    <ellipse cx="86" cy="190" rx="15" ry="10" fill="#D93A2B" opacity="0.16"/>
+    <ellipse cx="178" cy="190" rx="15" ry="10" fill="#D93A2B" opacity="0.16"/>
+    <path d="M104,206 q28,10 54,-3" fill="none" stroke="#7A4A2E" stroke-width="6" stroke-linecap="round"/>
+    <path d="M123,219 Q132,237 141,219 Q132,225 123,219 Z" fill="#5A3B1E"/>
+  </symbol>
+
+  <symbol id="hands" viewBox="0 0 260 384">
+    <g stroke="#D7D7DE" stroke-width="2.5">
+      <circle cx="50" cy="276" r="21" fill="#fff"/>
+      <circle cx="214" cy="276" r="21" fill="#fff"/>
+      <circle cx="35" cy="266" r="8" fill="#fff"/>
+      <circle cx="229" cy="266" r="8" fill="#fff"/>
+    </g>
+  </symbol>
+
+  <symbol id="flower" viewBox="0 0 24 24">
+    <circle cx="12" cy="5" r="4.2"/><circle cx="19" cy="10" r="4.2"/><circle cx="16" cy="18" r="4.2"/><circle cx="8" cy="18" r="4.2"/><circle cx="5" cy="10" r="4.2"/>
+    <circle cx="12" cy="12" r="3.4" fill="#F5A623"/>
+  </symbol>
+
+  <g id="chainDefs"></g>
+
+  <!-- ep05 · solid-purple robe (3AM rockstar) -->
+  <symbol id="freddy" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M62,240 C96,232 168,232 202,240 L206,302 C206,342 170,358 132,358 C94,358 58,342 58,302 Z" fill="#7B5EA7" stroke="#5f4a86" stroke-width="3"/>
+    <path d="M132,232 L108,238 L129,286 Z" fill="#5f4a86"/>
+    <path d="M132,232 L156,238 L135,286 Z" fill="#5f4a86"/>
+    <use href="#hands"/>
+  </symbol>
+
+  <!-- default / beach · solid coral tee + cargo shorts -->
+  <symbol id="freddyCargo" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M58,220 C88,214 108,216 116,232 Q132,248 148,232 C160,216 174,214 202,220 L205,296 L55,296 Z" fill="#F0876B" stroke="#d06f52" stroke-width="2.5"/>
+    <path d="M55,296 L205,296 L207,330 C207,347 176,358 132,358 C88,358 57,347 57,330 Z" fill="#E8C98F" stroke="#c9a85f" stroke-width="2.5"/>
+    <rect x="55" y="294" width="150" height="9" fill="#c9a85f" opacity="0.6"/>
+    <rect x="70" y="309" width="36" height="34" rx="4" fill="none" stroke="#b6924e" stroke-width="2.5"/>
+    <path d="M70,317 h36" stroke="#b6924e" stroke-width="2.5"/>
+    <rect x="154" y="309" width="36" height="34" rx="4" fill="none" stroke="#b6924e" stroke-width="2.5"/>
+    <path d="M154,317 h36" stroke="#b6924e" stroke-width="2.5"/>
+    <use href="#hands"/>
+  </symbol>
+
+  <!-- beach alt · Hawaiian aloha shirt -->
+  <symbol id="freddyHawaii" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M58,222 C88,216 106,218 116,236 Q132,252 148,236 C162,218 176,216 202,222 L206,300 C206,342 170,358 132,358 C94,358 58,342 58,300 Z" fill="#BFE3F5" stroke="#8fc4dd" stroke-width="2.5"/>
+    <use href="#flower" x="70" y="258" width="30" height="30" fill="#F0876B"/>
+    <use href="#flower" x="150" y="252" width="32" height="32" fill="#7B5EA7"/>
+    <use href="#flower" x="102" y="306" width="30" height="30" fill="#3E8E4E"/>
+    <use href="#flower" x="158" y="310" width="28" height="28" fill="#F0876B"/>
+    <use href="#flower" x="66" y="316" width="26" height="26" fill="#7B5EA7"/>
+    <path d="M116,236 L96,226 L114,258 Z" fill="#8fc4dd"/>
+    <path d="M148,236 L168,226 L150,258 Z" fill="#a6d3e8"/>
+    <use href="#hands"/>
+  </symbol>
+
+  <!-- ep02 · garage flannel over tee -->
+  <symbol id="freddyFlannel" viewBox="0 0 260 384">
+    <use href="#freddyBase"/>
+    <path d="M58,222 C96,215 168,215 202,222 L206,300 C206,342 170,358 132,358 C94,358 58,342 58,300 Z" fill="#FAF6EC" stroke="#e3dcc6" stroke-width="2.5"/>
+    <path d="M118,218 L60,222 L58,300 C58,338 84,355 118,357 Z" fill="#6E8CB8"/>
+    <g clip-path="url(#flanL)">
+      <line x1="72" y1="212" x2="72" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="98" y1="212" x2="98" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="85" y1="212" x2="85" y2="360" stroke="#FAF6EC" stroke-width="3" opacity="0.5"/>
+      <line x1="50" y1="252" x2="130" y2="252" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="50" y1="302" x2="130" y2="302" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="50" y1="277" x2="130" y2="277" stroke="#F0876B" stroke-width="2.5" opacity="0.6"/>
+    </g>
+    <path d="M142,218 L204,222 L206,300 C206,338 180,355 142,357 Z" fill="#6E8CB8"/>
+    <g clip-path="url(#flanR)">
+      <line x1="162" y1="212" x2="162" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="188" y1="212" x2="188" y2="360" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="175" y1="212" x2="175" y2="360" stroke="#FAF6EC" stroke-width="3" opacity="0.5"/>
+      <line x1="130" y1="252" x2="210" y2="252" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="130" y1="302" x2="210" y2="302" stroke="#3a4f74" stroke-width="7" opacity="0.7"/>
+      <line x1="130" y1="277" x2="210" y2="277" stroke="#F0876B" stroke-width="2.5" opacity="0.6"/>
+    </g>
+    <path d="M120,218 L102,224 L120,246 Z" fill="#5a7194"/>
+    <path d="M140,218 L158,224 L140,246 Z" fill="#5a7194"/>
+    <use href="#hands"/>
+  </symbol>
+</svg>
+
+<div id="board" style="width:1224px;background:#131118;padding:64px 72px 120px;display:flex;flex-direction:column;align-items:center;gap:70px;font-family:'Nunito',sans-serif;">
+
+  <!-- ===== BOARD HEADER ===== -->
+  <div style="width:100%;max-width:1180px;display:flex;flex-direction:column;gap:14px;color:#EDEBF2;">
+    <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;">
+      <span style="font-family:'Baloo 2';font-weight:800;font-size:15px;letter-spacing:2px;color:#7B5EA7;">24/7 CLUB · SEASON 1</span>
+      <span style="font-family:'Nunito';font-weight:700;font-size:13px;color:#6E6A83;">VOICE: 24-7 (PRIMARY) · SOCIAL CUT</span>
+    </div>
+    <h1 style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:40px;color:#fff;letter-spacing:-.5px;">ep05 — Freddy at 3AM (The Kitchen Run)</h1>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:#A7A3BC;font-weight:600;">
+      <span><b style="color:#6E8CB8;">HABIT</b>&nbsp;&nbsp;Slides by the bed. Shoes on before walking, even at 3am. Shake them first.</span>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;font-size:13px;color:#6E6A83;font-weight:600;">
+      <span><b style="color:#6E6A83;">WARDROBE</b>&nbsp;&nbsp;Robe, hair-toes askew, phone flashlight, kitchen at 3am</span>
+    </div>
+    <div style="height:1px;background:rgba(255,255,255,0.09);margin-top:6px;"></div>
+  </div>
+
+  <!-- ===== WARDROBE LINEUP ===== -->
+  <div style="width:100%;max-width:1180px;display:flex;flex-direction:column;gap:18px;">
+    <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+      <span style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#EDEBF2;">FREDDY — WARDROBE LINEUP</span>
+      <span style="font-family:'Nunito';font-weight:700;font-size:13px;color:#6E6A83;">Gen-X rockstar · gold aviators · green eyes · sideburns · chain</span>
+    </div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <div style="width:262px;background:linear-gradient(165deg,#211d3a,#14111f);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:22px 18px 16px;display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="height:250px;display:flex;align-items:flex-end;"><svg viewBox="0 0 260 384" style="width:168px;height:248px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));"><use href="#freddyCargo"/></svg></div>
+        <div style="text-align:center;"><div style="font-family:'Baloo 2';font-weight:800;font-size:17px;color:#fff;">Coral tee + cargo</div><div style="font-family:'Nunito';font-weight:600;font-size:12.5px;color:#8a86a0;">default · everyday</div></div>
+      </div>
+      <div style="width:262px;background:linear-gradient(165deg,#211d3a,#14111f);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:22px 18px 16px;display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="height:250px;display:flex;align-items:flex-end;"><svg viewBox="0 0 260 384" style="width:168px;height:248px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));"><use href="#freddyHawaii"/></svg></div>
+        <div style="text-align:center;"><div style="font-family:'Baloo 2';font-weight:800;font-size:17px;color:#fff;">Aloha shirt</div><div style="font-family:'Nunito';font-weight:600;font-size:12.5px;color:#8a86a0;">ep01 · beach</div></div>
+      </div>
+      <div style="width:262px;background:linear-gradient(165deg,#211d3a,#14111f);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:22px 18px 16px;display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="height:250px;display:flex;align-items:flex-end;"><svg viewBox="0 0 260 384" style="width:168px;height:248px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));"><use href="#freddyFlannel"/></svg></div>
+        <div style="text-align:center;"><div style="font-family:'Baloo 2';font-weight:800;font-size:17px;color:#fff;">Garage flannel</div><div style="font-family:'Nunito';font-weight:600;font-size:12.5px;color:#8a86a0;">ep02 · dad shoes</div></div>
+      </div>
+      <div style="width:262px;background:linear-gradient(165deg,#211d3a,#14111f);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:22px 18px 16px;display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="height:250px;display:flex;align-items:flex-end;"><svg viewBox="0 0 260 384" style="width:168px;height:248px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));"><use href="#freddy"/></svg></div>
+        <div style="text-align:center;"><div style="font-family:'Baloo 2';font-weight:800;font-size:17px;color:#fff;">Purple robe</div><div style="font-family:'Nunito';font-weight:600;font-size:12.5px;color:#8a86a0;">ep05 · 3AM</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ANIMATED SHORT (autoplay preview) -->
+  <!-- ============================================================ -->
+  <div style="display:flex;flex-direction:column;gap:16px;align-items:center;">
+    <div style="width:360px;display:flex;justify-content:space-between;align-items:flex-end;color:#A7A3BC;">
+      <span style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#EDEBF2;">▶ ANIMATED SHORT</span>
+      <span style="font-family:'Nunito';font-weight:700;font-size:12px;color:#6E6A83;">autoplay · loops</span>
+    </div>
+
+    <div data-screen-label="ep05 animated short" style="width:360px;height:640px;border-radius:26px;overflow:hidden;position:relative;background:#1b1830;box-shadow:0 34px 70px -26px rgba(0,0,0,0.85);">
+      <!-- top bar -->
+      <div style="position:absolute;top:0;left:0;right:0;z-index:6;display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:linear-gradient(#00000066,#0000);font-family:'Nunito';font-weight:800;font-size:11px;letter-spacing:1.5px;color:#fff;">
+        <span id="fShortLabel">HOOK / SETUP</span><span id="fShortTime" style="opacity:.65;">0–5s</span>
+      </div>
+
+      <!-- BEAT 0: HOOK -->
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity .55s ease;pointer-events:none;opacity:1;background:radial-gradient(90% 60% at 60% 26%, #3f3a5f 0%, #1b1830 72%);">
+        <div style="position:absolute;top:60px;left:20px;background:#211d3a;border:1.5px solid #6E8CB8;border-radius:9px;padding:4px 11px;font-family:'Baloo 2';font-weight:700;font-size:18px;color:#F5A623;">3:04</div>
+        <div style="animation:bob 2.6s ease-in-out infinite;">
+          <svg viewBox="0 0 260 384" style="width:206px;height:304px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.5));"><use href="#freddy"/>
+            <ellipse cx="30" cy="250" rx="66" ry="50" fill="#FAF6EC" opacity="0.16"/>
+            <rect x="28" y="252" width="30" height="54" rx="6" fill="#211d3a" stroke="#6E8CB8" stroke-width="2.5" transform="rotate(-16 43 279)"/>
+          </svg>
+        </div>
+        <div style="position:absolute;left:22px;right:22px;bottom:70px;display:flex;justify-content:center;">
+          <div style="background:#fff;border-radius:13px;padding:11px 16px;box-shadow:0 8px 18px -6px rgba(0,0,0,.6);"><p style="margin:0;font-family:'Nunito';font-weight:800;font-size:17px;line-height:1.25;color:#2456B8;text-align:center;">3AM. The dog has been busy. Freddy has a system.</p></div>
+        </div>
+      </div>
+
+      <!-- BEAT 1: PUNCHLINE -->
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity .55s ease;pointer-events:none;opacity:0;background:radial-gradient(70% 50% at 50% 58%, #4a3f2a 0%, #1b1830 74%);">
+        <svg viewBox="0 0 260 384" style="width:206px;height:304px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.5));"><use href="#freddy"/></svg>
+        <div style="position:absolute;bottom:196px;right:56px;animation:legofloat 2.4s ease-in-out infinite;">
+          <div style="width:52px;height:30px;background:#D93A2B;border-radius:5px;position:relative;box-shadow:0 4px 8px rgba(0,0,0,.6);">
+            <span style="position:absolute;top:-7px;left:7px;width:12px;height:12px;border-radius:50%;background:#e75a4d;"></span>
+            <span style="position:absolute;top:-7px;left:31px;width:12px;height:12px;border-radius:50%;background:#e75a4d;"></span>
+          </div>
+        </div>
+        <div style="position:absolute;left:22px;right:22px;bottom:70px;display:flex;justify-content:center;">
+          <div style="background:#fff;border-radius:13px;padding:11px 16px;box-shadow:0 8px 18px -6px rgba(0,0,0,.6);"><p style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:20px;line-height:1.16;color:#2456B8;text-align:center;">Found a LEGO at 3am. Never emotionally recovered.</p></div>
+        </div>
+      </div>
+
+      <!-- BEAT 2: HABIT -->
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity .55s ease;pointer-events:none;opacity:0;background:radial-gradient(85% 55% at 45% 42%, #33456a 0%, #1b1830 90%);">
+        <div style="animation:shakeit .62s ease-in-out infinite;transform-origin:50% 70%;">
+          <svg viewBox="0 0 260 384" style="width:206px;height:304px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.5));"><use href="#freddy"/>
+            <path d="M214,246 q16,-7 26,-2 M216,266 q16,-7 26,-2" fill="none" stroke="#BFE3F5" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+            <g transform="translate(200 296) rotate(18)"><ellipse cx="0" cy="0" rx="34" ry="15" fill="#E8C98F" stroke="#c9a85f" stroke-width="2.5"/><path d="M-18,-2 q18,-16 36,0" fill="none" stroke="#7B5EA7" stroke-width="8" stroke-linecap="round"/></g>
+          </svg>
+        </div>
+        <div style="position:absolute;left:22px;right:22px;bottom:70px;display:flex;justify-content:center;">
+          <div style="background:#fff;border-radius:13px;padding:11px 16px;box-shadow:0 8px 18px -6px rgba(0,0,0,.6);"><p style="margin:0;font-family:'Nunito';font-weight:800;font-size:17px;line-height:1.25;color:#2456B8;text-align:center;">The system works even when Freddy doesn't.</p></div>
+        </div>
+      </div>
+
+      <!-- BEAT 3: END CARD -->
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 26px;text-align:center;transition:opacity .55s ease;pointer-events:none;opacity:0;background:radial-gradient(100% 70% at 50% 30%, #7B5EA7 0%, #3a3566 55%, #211d3a 100%);">
+        <div style="position:absolute;top:26%;left:50%;transform:translateX(-50%);width:260px;height:260px;border-radius:50%;background:radial-gradient(circle, rgba(240,135,107,0.42) 0%, rgba(240,135,107,0) 68%);animation:freddyGlow 4s ease-in-out infinite;"></div>
+        <svg viewBox="0 0 260 384" style="width:170px;height:250px;position:relative;filter:drop-shadow(0 12px 20px rgba(0,0,0,.5));"><use href="#freddy"/>
+          <g transform="translate(230 250)"><circle cx="0" cy="0" r="22" fill="#fff" stroke="#D7D7DE" stroke-width="2.5"/><circle cx="-15" cy="-5" r="8" fill="#fff" stroke="#D7D7DE" stroke-width="2"/><circle cx="18" cy="2" r="8" fill="#fff" stroke="#D7D7DE" stroke-width="2"/></g>
+        </svg>
+        <p style="margin:14px 0 0;font-family:'Baloo 2';font-weight:800;font-size:26px;line-height:1.1;color:#fff;position:relative;">24/7 club.<br>Check first. 🤙</p>
+        <p style="margin:12px 0 0;font-family:'Nunito';font-weight:700;font-style:italic;font-size:14px;line-height:1.35;color:#EDE9F6;position:relative;">Slides live by the bed. Shake first, then step. Even at 3am.</p>
+        <span style="margin-top:12px;font-family:'Nunito';font-weight:800;font-size:12px;color:#BFE3F5;position:relative;">#SmartFeet  #247Club</span>
+        <span style="margin-top:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);padding:7px 15px;border-radius:100px;position:relative;"><svg viewBox="0 0 40 52" style="width:18px;height:24px;fill:#5FD38A;"><use href="#print"/></svg><span style="font-family:'Baloo 2';font-weight:800;font-size:14px;letter-spacing:1px;color:#5FD38A;">FOOT GUIDE</span></span>
+      </div>
+
+      <!-- beat dots -->
+      <div style="position:absolute;bottom:22px;left:0;right:0;z-index:6;display:flex;gap:8px;justify-content:center;">
+        <span style="width:8px;height:8px;border-radius:50%;background:#fff;transition:opacity .4s;opacity:1;"></span>
+        <span style="width:8px;height:8px;border-radius:50%;background:#fff;transition:opacity .4s;opacity:0.3;"></span>
+        <span style="width:8px;height:8px;border-radius:50%;background:#fff;transition:opacity .4s;opacity:0.3;"></span>
+        <span style="width:8px;height:8px;border-radius:50%;background:#fff;transition:opacity .4s;opacity:0.3;"></span>
+      </div>
+    </div>
+    <p style="width:360px;margin:0;font-family:'Nunito';font-style:italic;font-weight:600;font-size:12px;color:#6E6A83;line-height:1.5;text-align:center;">Motion mock of the 9:16 short — beats auto-advance on the spec's timing. Final render swaps in 3D Freddy.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ASSET 1 — 4-BEAT STATIC (4:5) -->
+  <!-- ============================================================ -->
+  <div style="display:flex;flex-direction:column;gap:16px;align-items:center;">
+    <div style="width:1080px;display:flex;justify-content:space-between;align-items:flex-end;color:#A7A3BC;">
+      <span style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#EDEBF2;">① FOUR-BEAT STATIC · Template A v1.1 · 4:5</span>
+      <span style="font-family:'Nunito';font-weight:700;font-size:13px;color:#6E6A83;">ep05_247_4beat.png · 1080×1350</span>
+    </div>
+
+    <div data-screen-label="ep05 4-beat static" style="width:1080px;height:1350px;border-radius:8px;overflow:hidden;position:relative;background:radial-gradient(120% 90% at 78% 8%, #7B5EA7 0%, #3a3566 46%, #211d3a 100%);box-shadow:0 40px 90px -30px rgba(0,0,0,0.8);">
+      <!-- top lockup row -->
+      <div style="position:absolute;top:40px;left:48px;right:48px;display:flex;justify-content:space-between;align-items:flex-start;z-index:3;">
+        <div style="line-height:.82;">
+          <div style="font-family:'Baloo 2';font-weight:800;font-size:38px;color:#2456B8;text-shadow:2px 2px 0 #fff,-2px 2px 0 #fff,2px -2px 0 #fff,-2px -2px 0 #fff,0 4px 8px rgba(0,0,0,.3);">Freddy</div>
+          <div style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#D93A2B;text-shadow:1.5px 1.5px 0 #fff,-1px 1px 0 #fff;">the Foot</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
+          <div style="background:#fff;color:#2456B8;font-family:'Baloo 2';font-weight:800;font-size:19px;letter-spacing:.5px;padding:9px 20px;border-radius:100px;box-shadow:0 6px 16px -6px rgba(0,0,0,.5);">FREDDY AT 3AM</div>
+          <div style="background:rgba(123,94,167,0.35);border:1.5px solid rgba(255,255,255,0.5);color:#fff;font-family:'Nunito';font-weight:800;font-size:12px;letter-spacing:1.5px;padding:5px 14px;border-radius:100px;">🤙 24/7 CLUB</div>
+        </div>
+      </div>
+
+      <!-- beats stack -->
+      <div style="position:absolute;top:132px;left:44px;right:44px;bottom:40px;display:flex;flex-direction:column;gap:16px;">
+
+        <!-- BEAT 1: SETUP -->
+        <div style="flex:1;display:flex;background:rgba(20,17,32,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:26px;overflow:hidden;backdrop-filter:blur(6px);">
+          <div style="width:250px;flex:none;position:relative;background:radial-gradient(80% 70% at 30% 30%, #3f3a5f 0%, #1b1830 100%);display:flex;align-items:flex-end;justify-content:center;">
+            <div style="position:absolute;top:16px;right:16px;background:#211d3a;border:1.5px solid #6E8CB8;border-radius:9px;padding:4px 10px;font-family:'Baloo 2';font-weight:700;font-size:20px;color:#F5A623;">3:04</div>
+            <svg viewBox="0 0 260 384" style="width:180px;height:266px;filter:drop-shadow(0 8px 14px rgba(0,0,0,.4));"><use href="#freddy"/>
+              <ellipse cx="30" cy="250" rx="60" ry="46" fill="#FAF6EC" opacity="0.14"/>
+              <rect x="30" y="256" width="30" height="52" rx="6" fill="#211d3a" stroke="#6E8CB8" stroke-width="2.5" transform="rotate(-16 45 282)"/>
+            </svg>
+            <div style="position:absolute;bottom:10px;left:14px;font-family:'Nunito';font-weight:800;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.5);">SETUP</div>
+          </div>
+          <div style="flex:1;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="width:30px;height:30px;border-radius:50%;background:#2456B8;color:#fff;font-family:'Baloo 2';font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;">1</span>
+              <span style="font-family:'Baloo 2';font-weight:700;font-size:14px;letter-spacing:2px;color:#BFE3F5;">SETUP</span>
+            </div>
+            <p style="margin:0;font-family:'Nunito';font-weight:700;font-size:25px;line-height:1.28;color:#F3F1FA;">3:04 AM. Freddy needs water. The house is a minefield and the dog owns the minefield.</p>
+          </div>
+        </div>
+
+        <!-- BEAT 2: THE BIT (punchline) -->
+        <div style="flex:1;display:flex;background:rgba(20,17,32,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:26px;overflow:hidden;backdrop-filter:blur(6px);">
+          <div style="width:250px;flex:none;position:relative;background:radial-gradient(70% 60% at 50% 62%, #4a3f2a 0%, #1b1830 74%);display:flex;align-items:flex-end;justify-content:center;">
+            <svg viewBox="0 0 260 384" style="width:180px;height:266px;filter:drop-shadow(0 8px 14px rgba(0,0,0,.4));"><use href="#freddy"/></svg>
+            <!-- LEGO in a spotlight -->
+            <div style="position:absolute;bottom:22px;right:26px;text-align:center;">
+              <div style="width:46px;height:26px;background:#D93A2B;border-radius:4px;position:relative;box-shadow:0 3px 6px rgba(0,0,0,.5);">
+                <span style="position:absolute;top:-6px;left:6px;width:10px;height:10px;border-radius:50%;background:#e75a4d;"></span>
+                <span style="position:absolute;top:-6px;left:26px;width:10px;height:10px;border-radius:50%;background:#e75a4d;"></span>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:10px;left:14px;font-family:'Nunito';font-weight:800;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.5);">THE BIT</div>
+          </div>
+          <div style="flex:1;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;gap:10px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="width:30px;height:30px;border-radius:50%;background:#2456B8;color:#fff;font-family:'Baloo 2';font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;">2</span>
+              <span style="font-family:'Baloo 2';font-weight:700;font-size:14px;letter-spacing:2px;color:#F0876B;">THE BIT</span>
+            </div>
+            <p style="margin:0;font-family:'Baloo 2';font-weight:700;font-size:29px;line-height:1.2;color:#fff;">Freddy found a LEGO in his shoe once at 3am. He never emotionally recovered.</p>
+          </div>
+        </div>
+
+        <!-- BEAT 3: THE HABIT, DEADPAN -->
+        <div style="flex:1;display:flex;background:rgba(20,17,32,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:26px;overflow:hidden;backdrop-filter:blur(6px);">
+          <div style="width:250px;flex:none;position:relative;background:radial-gradient(80% 70% at 40% 40%, #33456a 0%, #1b1830 100%);display:flex;align-items:flex-end;justify-content:center;">
+            <svg viewBox="0 0 260 384" style="width:180px;height:266px;filter:drop-shadow(0 8px 14px rgba(0,0,0,.4));"><use href="#freddy"/>
+              <!-- motion shake lines -->
+              <path d="M212,250 q14,-6 22,-2 M214,268 q14,-6 22,-2" fill="none" stroke="#BFE3F5" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+              <!-- slide being shaken -->
+              <g transform="translate(196 292) rotate(18)"><ellipse cx="0" cy="0" rx="30" ry="13" fill="#E8C98F" stroke="#c9a85f" stroke-width="2"/><path d="M-16,-2 q16,-14 32,0" fill="none" stroke="#7B5EA7" stroke-width="7" stroke-linecap="round"/></g>
+            </svg>
+            <div style="position:absolute;bottom:10px;left:14px;font-family:'Nunito';font-weight:800;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.5);">HABIT</div>
+          </div>
+          <div style="flex:1;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;gap:12px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="width:30px;height:30px;border-radius:50%;background:#2456B8;color:#fff;font-family:'Baloo 2';font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;">3</span>
+              <span style="font-family:'Baloo 2';font-weight:700;font-size:14px;letter-spacing:2px;color:#3E8E4E;">THE HABIT, DEADPAN</span>
+            </div>
+            <!-- speech bubble -->
+            <div style="align-self:flex-start;position:relative;background:#fff;border-radius:18px;padding:16px 22px;box-shadow:0 8px 18px -8px rgba(0,0,0,.5);max-width:96%;">
+              <p style="margin:0;font-family:'Nunito';font-weight:800;font-size:24px;line-height:1.25;color:#2456B8;">The system works even when Freddy doesn't.</p>
+              <div style="position:absolute;left:-9px;bottom:16px;width:0;height:0;border-top:11px solid transparent;border-bottom:11px solid transparent;border-right:14px solid #fff;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BEAT 4: END CARD -->
+        <div style="flex:0.92;display:flex;flex-direction:column;justify-content:center;background:#FAF6EC;border-radius:26px;padding:26px 34px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:20px;right:26px;font-family:'Nunito';font-weight:800;font-size:11px;letter-spacing:2px;color:#b7ad93;">END CARD · REMINDER</div>
+          <div style="display:flex;align-items:center;gap:22px;">
+            <svg viewBox="0 0 260 384" style="width:118px;height:174px;flex:none;">
+              <use href="#freddy"/>
+              <!-- shaka hand -->
+              <g transform="translate(226 250)"><circle cx="0" cy="0" r="20" fill="#fff" stroke="#D7D7DE" stroke-width="2.5"/><circle cx="-14" cy="-4" r="7" fill="#fff" stroke="#D7D7DE" stroke-width="2"/><circle cx="16" cy="2" r="7" fill="#fff" stroke="#D7D7DE" stroke-width="2"/></g>
+            </svg>
+            <div style="flex:1;">
+              <p style="margin:0 0 6px;font-family:'Baloo 2';font-weight:700;font-size:15px;letter-spacing:1px;color:#3E8E4E;">THE REMINDER</p>
+              <p style="margin:0 0 16px;font-family:'Nunito';font-weight:800;font-size:27px;line-height:1.24;color:#211d3a;">Slides live by the bed. Shake first, then step. Even at 3am.</p>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:2px dashed #e3dcc6;padding-top:14px;">
+                <span style="font-family:'Baloo 2';font-weight:800;font-size:22px;color:#2456B8;">24/7 club. Check first. 🤙</span>
+                <span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 40 52" style="width:20px;height:26px;fill:#3E8E4E;"><use href="#print"/></svg><span style="font-family:'Baloo 2';font-weight:800;font-size:17px;letter-spacing:1px;color:#3E8E4E;">FOOT GUIDE</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <p style="width:1080px;margin:2px 0 0;font-family:'Nunito';font-style:italic;font-weight:600;font-size:13px;color:#6E6A83;line-height:1.5;">Art direction (verbatim beats): <b style="color:#8a86a0;">1</b> 3:04 AM. Freddy needs water. The house is a minefield and the dog owns the minefield. &nbsp;·&nbsp; <b style="color:#8a86a0;">2</b> Caption: 'Freddy found a LEGO in his shoe once at 3am. He never emotionally recovered.' &nbsp;·&nbsp; <b style="color:#8a86a0;">3</b> Freddy shakes out his slides ON AUTOPILOT, half asleep, before stepping in. 'The system works even when Freddy doesn't.' &nbsp;·&nbsp; <b style="color:#8a86a0;">4</b> End card: water acquired, dog unrepentant, feet intact.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ASSET 2 — TIP CARD (1:1) -->
+  <!-- ============================================================ -->
+  <div style="display:flex;flex-direction:column;gap:16px;align-items:center;">
+    <div style="width:1080px;display:flex;justify-content:space-between;align-items:flex-end;color:#A7A3BC;">
+      <span style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#EDEBF2;">② TIP CARD · Template B · 1:1</span>
+      <span style="font-family:'Nunito';font-weight:700;font-size:13px;color:#6E6A83;">ep05_tipcard_1x1.png · 1080×1080</span>
+    </div>
+
+    <div data-screen-label="ep05 tip card" style="width:1080px;height:1080px;border-radius:8px;overflow:hidden;position:relative;background:radial-gradient(115% 90% at 80% 12%, #7B5EA7 0%, #3a3566 50%, #211d3a 100%);box-shadow:0 40px 90px -30px rgba(0,0,0,0.8);display:flex;flex-direction:column;">
+      <!-- top -->
+      <div style="padding:52px 56px 0;display:flex;justify-content:space-between;align-items:flex-start;">
+        <div style="line-height:.82;">
+          <div style="font-family:'Baloo 2';font-weight:800;font-size:40px;color:#2456B8;text-shadow:2px 2px 0 #fff,-2px 2px 0 #fff,2px -2px 0 #fff,-2px -2px 0 #fff;">Freddy</div>
+          <div style="font-family:'Baloo 2';font-weight:800;font-size:23px;color:#D93A2B;text-shadow:1.5px 1.5px 0 #fff,-1px 1px 0 #fff;">the Foot</div>
+        </div>
+        <div style="background:rgba(123,94,167,0.35);border:1.5px solid rgba(255,255,255,0.5);color:#fff;font-family:'Nunito';font-weight:800;font-size:14px;letter-spacing:1.5px;padding:8px 18px;border-radius:100px;">🤙 24/7 CLUB</div>
+      </div>
+
+      <!-- center -->
+      <div style="flex:1;display:flex;align-items:center;padding:20px 56px;gap:24px;">
+        <div style="flex:1;display:flex;flex-direction:column;gap:22px;">
+          <p style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:66px;line-height:1.02;color:#fff;letter-spacing:-1px;">Found a LEGO at 3am. Never emotionally recovered.</p>
+          <div style="background:rgba(62,142,78,0.16);border:1.5px solid rgba(95,211,138,0.4);border-radius:20px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start;">
+            <svg viewBox="0 0 24 24" style="width:30px;height:30px;flex:none;margin-top:2px;" fill="none" stroke="#5FD38A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <p style="margin:0;font-family:'Nunito';font-weight:700;font-size:26px;line-height:1.3;color:#EAF7EE;">Slides by the bed. Shoes on before walking, even at 3am. Shake them first.</p>
+          </div>
+        </div>
+        <svg viewBox="0 0 260 384" style="width:300px;height:443px;flex:none;filter:drop-shadow(0 16px 26px rgba(0,0,0,.5));"><use href="#freddy"/>
+          <g transform="translate(232 250)"><circle cx="0" cy="0" r="22" fill="#fff" stroke="#D7D7DE" stroke-width="2.5"/><circle cx="-15" cy="-5" r="8" fill="#fff" stroke="#D7D7DE" stroke-width="2"/><circle cx="18" cy="2" r="8" fill="#fff" stroke="#D7D7DE" stroke-width="2"/></g>
+        </svg>
+      </div>
+
+      <!-- signoff bar -->
+      <div style="background:#FAF6EC;padding:26px 56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+        <span style="font-family:'Baloo 2';font-weight:800;font-size:30px;color:#2456B8;">24/7 club. Check first. 🤙</span>
+        <div style="display:flex;align-items:center;gap:18px;">
+          <span style="font-family:'Nunito';font-weight:800;font-size:16px;color:#7B5EA7;">#SmartFeet  #247Club</span>
+          <span style="display:inline-flex;align-items:center;gap:9px;"><svg viewBox="0 0 40 52" style="width:24px;height:31px;fill:#3E8E4E;"><use href="#print"/></svg><span style="font-family:'Baloo 2';font-weight:800;font-size:20px;letter-spacing:1px;color:#3E8E4E;">FOOT GUIDE</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ASSET 3 — STORYBOARD (4 frames, 9:16) -->
+  <!-- ============================================================ -->
+  <div style="display:flex;flex-direction:column;gap:16px;align-items:center;">
+    <div style="width:100%;max-width:1080px;display:flex;justify-content:space-between;align-items:flex-end;color:#A7A3BC;">
+      <span style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#EDEBF2;">③ VIDEO STORYBOARD · 4 beats · 9:16 · 18–28s</span>
+      <span style="font-family:'Nunito';font-weight:700;font-size:13px;color:#6E6A83;">ep05_247_video_9x16.mp4</span>
+    </div>
+
+    <div style="display:flex;gap:28px;flex-wrap:wrap;justify-content:center;">
+
+      <!-- FRAME 1: HOOK / SETUP -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;justify-content:space-between;font-family:'Nunito';font-weight:800;font-size:12px;color:#A7A3BC;"><span style="color:#BFE3F5;">HOOK / SETUP</span><span style="color:#6E6A83;">0–5s</span></div>
+        <div data-screen-label="storyboard f1" style="width:392px;height:697px;border-radius:22px;overflow:hidden;position:relative;background:radial-gradient(90% 60% at 60% 22%, #3f3a5f 0%, #1b1830 70%);box-shadow:0 24px 50px -20px rgba(0,0,0,.7);">
+          <div style="position:absolute;top:18px;left:18px;background:#211d3a;border:1.5px solid #6E8CB8;border-radius:9px;padding:4px 11px;font-family:'Baloo 2';font-weight:700;font-size:20px;color:#F5A623;">3:04</div>
+          <div style="position:absolute;top:18px;right:18px;font-family:'Nunito';font-weight:800;font-size:11px;letter-spacing:1px;color:rgba(255,255,255,.45);">🤙 24/7</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 260 384" style="width:240px;height:354px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.5));"><use href="#freddy"/>
+              <ellipse cx="30" cy="250" rx="70" ry="52" fill="#FAF6EC" opacity="0.16"/>
+              <rect x="28" y="252" width="32" height="56" rx="6" fill="#211d3a" stroke="#6E8CB8" stroke-width="2.5" transform="rotate(-16 44 280)"/>
+            </svg>
+          </div>
+          <!-- caption pill -->
+          <div style="position:absolute;left:20px;right:20px;bottom:26px;display:flex;justify-content:center;">
+            <div style="background:#fff;border-radius:14px;padding:12px 18px;box-shadow:0 8px 18px -6px rgba(0,0,0,.6);"><p style="margin:0;font-family:'Nunito';font-weight:800;font-size:19px;line-height:1.25;color:#2456B8;text-align:center;">3AM. The dog has been busy. Freddy has a system.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FRAME 2: PUNCHLINE -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;justify-content:space-between;font-family:'Nunito';font-weight:800;font-size:12px;color:#A7A3BC;"><span style="color:#F0876B;">PUNCHLINE · hold 1.5s</span><span style="color:#6E6A83;">5–12s</span></div>
+        <div data-screen-label="storyboard f2" style="width:392px;height:697px;border-radius:22px;overflow:hidden;position:relative;background:radial-gradient(70% 50% at 50% 60%, #4a3f2a 0%, #1b1830 74%);box-shadow:0 24px 50px -20px rgba(0,0,0,.7);">
+          <div style="position:absolute;top:18px;right:18px;font-family:'Nunito';font-weight:800;font-size:11px;letter-spacing:1px;color:rgba(255,255,255,.45);">🤙 24/7</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 260 384" style="width:240px;height:354px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.5));"><use href="#freddy"/></svg>
+          </div>
+          <div style="position:absolute;bottom:150px;right:44px;text-align:center;">
+            <div style="width:56px;height:32px;background:#D93A2B;border-radius:5px;position:relative;box-shadow:0 4px 8px rgba(0,0,0,.6);">
+              <span style="position:absolute;top:-7px;left:8px;width:12px;height:12px;border-radius:50%;background:#e75a4d;"></span>
+              <span style="position:absolute;top:-7px;left:34px;width:12px;height:12px;border-radius:50%;background:#e75a4d;"></span>
+            </div>
+          </div>
+          <div style="position:absolute;left:20px;right:20px;bottom:26px;display:flex;justify-content:center;">
+            <div style="background:#fff;border-radius:14px;padding:12px 18px;box-shadow:0 8px 18px -6px rgba(0,0,0,.6);"><p style="margin:0;font-family:'Baloo 2';font-weight:800;font-size:22px;line-height:1.16;color:#2456B8;text-align:center;">Found a LEGO at 3am. Never emotionally recovered.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FRAME 3: HABIT, DEADPAN -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;justify-content:space-between;font-family:'Nunito';font-weight:800;font-size:12px;color:#A7A3BC;"><span style="color:#3E8E4E;">HABIT, DEADPAN</span><span style="color:#6E6A83;">12–20s</span></div>
+        <div data-screen-label="storyboard f3" style="width:392px;height:697px;border-radius:22px;overflow:hidden;position:relative;background:radial-gradient(85% 55% at 45% 42%, #33456a 0%, #1b1830 90%);box-shadow:0 24px 50px -20px rgba(0,0,0,.7);">
+          <div style="position:absolute;top:18px;right:18px;font-family:'Nunito';font-weight:800;font-size:11px;letter-spacing:1px;color:rgba(255,255,255,.45);">🤙 24/7</div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 260 384" style="width:240px;height:354px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.5));"><use href="#freddy"/>
+              <path d="M214,246 q16,-7 26,-2 M216,266 q16,-7 26,-2" fill="none" stroke="#BFE3F5" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+              <g transform="translate(200 296) rotate(18)"><ellipse cx="0" cy="0" rx="34" ry="15" fill="#E8C98F" stroke="#c9a85f" stroke-width="2.5"/><path d="M-18,-2 q18,-16 36,0" fill="none" stroke="#7B5EA7" stroke-width="8" stroke-linecap="round"/></g>
+            </svg>
+          </div>
+          <div style="position:absolute;left:20px;right:20px;bottom:26px;display:flex;justify-content:center;">
+            <div style="background:#fff;border-radius:14px;padding:12px 18px;box-shadow:0 8px 18px -6px rgba(0,0,0,.6);"><p style="margin:0;font-family:'Nunito';font-weight:800;font-size:19px;line-height:1.25;color:#2456B8;text-align:center;">The system works even when Freddy doesn't.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FRAME 4: END CARD -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;justify-content:space-between;font-family:'Nunito';font-weight:800;font-size:12px;color:#A7A3BC;"><span style="color:#7B5EA7;">END CARD</span><span style="color:#6E6A83;">20–26s</span></div>
+        <div data-screen-label="storyboard f4" style="width:392px;height:697px;border-radius:22px;overflow:hidden;position:relative;background:radial-gradient(100% 70% at 50% 30%, #7B5EA7 0%, #3a3566 55%, #211d3a 100%);box-shadow:0 24px 50px -20px rgba(0,0,0,.7);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 26px;text-align:center;">
+          <svg viewBox="0 0 260 384" style="width:186px;height:274px;filter:drop-shadow(0 12px 20px rgba(0,0,0,.5));"><use href="#freddy"/>
+            <g transform="translate(230 250)"><circle cx="0" cy="0" r="22" fill="#fff" stroke="#D7D7DE" stroke-width="2.5"/><circle cx="-15" cy="-5" r="8" fill="#fff" stroke="#D7D7DE" stroke-width="2"/><circle cx="18" cy="2" r="8" fill="#fff" stroke="#D7D7DE" stroke-width="2"/></g>
+          </svg>
+          <p style="margin:16px 0 4px;font-family:'Nunito';font-weight:700;font-style:italic;font-size:16px;line-height:1.35;color:#EDE9F6;">Slides live by the bed. Shake first, then step. Even at 3am.</p>
+          <p style="margin:14px 0 0;font-family:'Baloo 2';font-weight:800;font-size:26px;line-height:1.1;color:#fff;">24/7 club.<br>Check first. 🤙</p>
+          <span style="margin-top:12px;font-family:'Nunito';font-weight:800;font-size:13px;color:#BFE3F5;">#SmartFeet  #247Club</span>
+          <span style="margin-top:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);padding:7px 16px;border-radius:100px;"><svg viewBox="0 0 40 52" style="width:19px;height:25px;fill:#5FD38A;"><use href="#print"/></svg><span style="font-family:'Baloo 2';font-weight:800;font-size:15px;letter-spacing:1px;color:#5FD38A;">FOOT GUIDE</span></span>
+        </div>
+      </div>
+
+    </div>
+    <p style="width:100%;max-width:1080px;margin:2px 0 0;font-family:'Nunito';font-style:italic;font-weight:600;font-size:13px;color:#6E6A83;line-height:1.5;">Caption / description (not on-screen) — UGC prompt: <b style="color:#8a86a0;">“What has YOUR floor tried to kill you with at 3am?”</b> &nbsp;·&nbsp; Punchline holds 1.5s min with a beat of silence · reminder rides the end card only.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ASSET 4 — END CARD (Template C, 9:16) -->
+  <!-- ============================================================ -->
+  <div style="display:flex;flex-direction:column;gap:16px;align-items:center;">
+    <div style="width:640px;display:flex;justify-content:space-between;align-items:flex-end;color:#A7A3BC;">
+      <span style="font-family:'Baloo 2';font-weight:800;font-size:18px;color:#EDEBF2;">④ END CARD · Template C v1.1 · 9:16</span>
+      <span style="font-family:'Nunito';font-weight:700;font-size:13px;color:#6E6A83;">ep05_247_endcard_9x16 · 1080×1920</span>
+    </div>
+
+    <div data-screen-label="ep05 end card" style="width:640px;height:1138px;border-radius:10px;overflow:hidden;position:relative;background:radial-gradient(105% 65% at 50% 26%, #7B5EA7 0%, #3a3566 52%, #1c1834 100%);box-shadow:0 40px 90px -30px rgba(0,0,0,0.8);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 54px;text-align:center;">
+      <!-- warm glow behind Freddy -->
+      <div style="position:absolute;top:24%;left:50%;transform:translateX(-50%);width:420px;height:420px;border-radius:50%;background:radial-gradient(circle, rgba(240,135,107,0.4) 0%, rgba(240,135,107,0) 68%);animation:freddyGlow 4s ease-in-out infinite;"></div>
+      <div style="position:absolute;top:40px;left:0;right:0;display:flex;justify-content:center;">
+        <div style="line-height:.82;text-align:center;">
+          <div style="font-family:'Baloo 2';font-weight:800;font-size:34px;color:#2456B8;text-shadow:2px 2px 0 #fff,-2px 2px 0 #fff,2px -2px 0 #fff,-2px -2px 0 #fff;">Freddy</div>
+          <div style="font-family:'Baloo 2';font-weight:800;font-size:19px;color:#D93A2B;text-shadow:1.5px 1.5px 0 #fff,-1px 1px 0 #fff;">the Foot</div>
+        </div>
+      </div>
+
+      <svg viewBox="0 0 260 384" style="width:270px;height:399px;position:relative;filter:drop-shadow(0 16px 26px rgba(0,0,0,.5));"><use href="#freddy"/>
+        <g transform="translate(234 248)"><circle cx="0" cy="0" r="24" fill="#fff" stroke="#D7D7DE" stroke-width="2.5"/><circle cx="-16" cy="-6" r="9" fill="#fff" stroke="#D7D7DE" stroke-width="2"/><circle cx="19" cy="2" r="9" fill="#fff" stroke="#D7D7DE" stroke-width="2"/></g>
+      </svg>
+
+      <p style="margin:26px 0 0;font-family:'Baloo 2';font-weight:800;font-size:46px;line-height:1.04;color:#fff;position:relative;">24/7 club.<br>Check first. 🤙</p>
+      <p style="margin:20px 0 0;font-family:'Nunito';font-weight:700;font-style:italic;font-size:19px;line-height:1.4;color:#EDE9F6;position:relative;max-width:440px;">Slides live by the bed. Shake first, then step. Even at 3am.</p>
+      <span style="margin-top:22px;font-family:'Nunito';font-weight:800;font-size:17px;letter-spacing:.5px;color:#BFE3F5;position:relative;">#SmartFeet  #247Club</span>
+      <span style="margin-top:30px;display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);padding:10px 22px;border-radius:100px;position:relative;"><svg viewBox="0 0 40 52" style="width:24px;height:31px;fill:#5FD38A;"><use href="#print"/></svg><span style="font-family:'Baloo 2';font-weight:800;font-size:20px;letter-spacing:1px;color:#5FD38A;">FOOT GUIDE</span></span>
+    </div>
+  </div>
+
+  <div style="width:100%;max-width:1180px;font-family:'Nunito';font-size:12px;color:#4c4960;line-height:1.6;border-top:1px solid rgba(255,255,255,0.07);padding-top:20px;">
+    Palette: Freddy Sunshine + v1.1 (§5.1) only · Freddy shown as vector proxy for the final Pixar-adjacent 3D render · Social Cut, no clinical photos · Copy verbatim from voice_247 · Deadpan lines carry no exclamation points.
+  </div>
+
+</div>
+</div>
+<script>
+  (function(){
+    var board=document.getElementById('board'), stage=document.getElementById('stage');
+    function fit(){
+      var scale=Math.min(1, window.innerWidth/1224);
+      board.style.transform='scale('+scale+')';
+      stage.style.height=(board.offsetHeight*scale)+'px';
+    }
+    window.addEventListener('resize',fit); window.addEventListener('load',fit); fit();
+  })();
+</script>
+
+<script>
+  (function(){
+    var beats=document.querySelectorAll('[style*="opacity .55s ease"]');
+    var dots=document.querySelectorAll('[style*="opacity .4s"]');
+    if(!beats.length) return;
+    var lbl=document.getElementById('fShortLabel'), tm=document.getElementById('fShortTime');
+    var durations=[3800, 4200, 4600, 4400];
+    var labels=["HOOK / SETUP", "PUNCHLINE", "HABIT, DEADPAN", "END CARD"];
+    var times=["0\u20135s", "5\u201312s", "12\u201320s", "20\u201326s"];
+    var b=0;
+    function show(){
+      for(var i=0;i<beats.length;i++) beats[i].style.opacity=(i===b)?'1':'0';
+      for(var j=0;j<dots.length;j++) dots[j].style.opacity=(j===b)?'1':'0.3';
+      if(lbl) lbl.textContent=labels[b];
+      if(tm) tm.textContent=times[b];
+    }
+    function tick(){ setTimeout(function(){ b=(b+1)%beats.length; show(); tick(); }, durations[b]); }
+    show(); tick();
+  })();
+</script>
+</body>
+</html>
