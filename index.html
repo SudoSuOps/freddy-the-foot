@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freddy the Foot — The Show</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,700;0,800;1,400&family=Alfa+Slab+One&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --freddy-blue:#2456B8; --freddy-red:#D93A2B; --sky-wash:#BFE3F5;
+    --sand-warm:#E8C98F; --skin-peach:#F2B98C; --tip-green:#3E8E4E;
+    --alert-amber:#F5A623; --paper-cream:#FAF6EC; --tiedye-purple:#7B5EA7;
+    --sunset-coral:#F0876B; --denim-fade:#6E8CB8; --ink:#22304a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--paper-cream);overflow-x:hidden}
+
+  /* ---------- SITCOM TITLE CARD ---------- */
+  #titlecard{position:fixed;inset:0;z-index:100;background:var(--paper-cream);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center;transition:opacity .8s ease;cursor:pointer}
+  #titlecard .pres{font-weight:800;letter-spacing:.35em;text-transform:uppercase;font-size:12px;color:var(--tiedye-purple)}
+  #titlecard h1{font-family:'Alfa Slab One',serif;font-size:clamp(42px,9vw,110px);color:var(--freddy-blue);line-height:.95;text-shadow:4px 4px 0 var(--sunset-coral)}
+  #titlecard .ep{font-family:'Alfa Slab One',serif;font-size:clamp(16px,3vw,28px);color:var(--freddy-red)}
+  #titlecard .skip{font-size:11px;color:var(--denim-fade);letter-spacing:.2em;text-transform:uppercase;margin-top:22px}
+  #titlecard.gone{opacity:0;pointer-events:none}
+
+  /* ---------- STAGE ---------- */
+  .stage{position:relative;min-height:100svh;display:flex;flex-direction:column;
+    background:linear-gradient(180deg,#7B5EA7 0%,#a76ba0 22%,#F0876B 48%,#f5b06b 62%,var(--sand-warm) 62.2%,#dfba7f 100%);}
+  .stage::before{content:"";position:absolute;left:50%;top:30%;width:170px;height:170px;margin-left:-250px;border-radius:50%;
+    background:radial-gradient(circle,#ffe9b8 0%,#ffd27a 55%,transparent 72%);opacity:.9;pointer-events:none}
+  nav{position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:18px 28px}
+  .brand{font-family:'Fredoka';font-weight:700;font-size:22px;color:#fff;text-shadow:2px 2px 0 rgba(36,86,184,.55)}
+  .brand .foot{color:#ffe9b8}
+  nav .club{font-weight:800;font-size:13px;color:#fff;background:rgba(36,86,184,.45);border:2px solid rgba(255,255,255,.5);padding:8px 16px;border-radius:999px;text-decoration:none}
+  .airing{position:relative;z-index:5;text-align:center;margin-top:4px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:11px;color:rgba(255,255,255,.85)}
+  .airing .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--freddy-red);margin-right:8px;animation:blinkdot 1.6s infinite}
+  @keyframes blinkdot{50%{opacity:.2}}
+
+  #scene{position:relative;flex:1;min-height:560px;display:flex;align-items:flex-end;justify-content:center}
+  #freddy3d{position:absolute;inset:0;width:100%;height:100%;display:none;touch-action:pan-y}
+  #scene.webgl #freddy3d{display:block}
+  #scene.webgl #freddyCSS{display:none}
+
+  #bubble{position:absolute;z-index:6;left:50%;top:10%;transform:translateX(6%);max-width:300px;background:#fff;border-radius:18px;padding:14px 18px;font-weight:800;font-size:16px;box-shadow:0 6px 0 rgba(36,86,184,.18);opacity:0;transition:opacity .45s ease}
+  #bubble::after{content:"";position:absolute;bottom:-12px;left:34px;border:12px solid transparent;border-top-color:#fff;border-bottom:0}
+  #bubble.show{opacity:1}
+
+  /* ---------- CSS FREDDY (universal fallback / default) ---------- */
+  #freddyCSS{position:relative;width:300px;height:430px;margin-bottom:120px;animation:bob 3.2s ease-in-out infinite;transform-origin:50% 100%}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-14px) rotate(1deg)}}
+  #freddyCSS.jump{animation:jump .9s ease-out}
+  @keyframes jump{0%{transform:translateY(0)}35%{transform:translateY(-90px) rotate(-3deg)}70%{transform:translateY(0)}82%{transform:translateY(-18px)}100%{transform:translateY(0)}}
+  .f-shadow{position:absolute;bottom:-96px;left:50%;transform:translateX(-50%);width:230px;height:36px;border-radius:50%;background:rgba(90,60,20,.28)}
+  /* body: foot on its heel */
+  .f-body{position:absolute;left:50%;bottom:60px;transform:translateX(-50%);width:210px;height:300px;background:var(--skin-peach);
+    border-radius:48% 48% 44% 44% / 55% 55% 42% 42%;box-shadow:inset -14px -18px 0 rgba(0,0,0,.05)}
+  .f-heel{position:absolute;left:50%;bottom:52px;transform:translateX(-50%);width:150px;height:80px;background:var(--skin-peach);border-radius:50%}
+  /* toes = crown */
+  .f-toe{position:absolute;background:var(--skin-peach);border-radius:50%;box-shadow:inset -3px -4px 0 rgba(0,0,0,.05);animation:wiggle 2.6s ease-in-out infinite}
+  @keyframes wiggle{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  .t1{width:56px;height:56px;left:26px;bottom:342px}
+  .t2{width:46px;height:46px;left:82px;bottom:358px;animation-delay:.2s}
+  .t3{width:40px;height:40px;left:128px;bottom:364px;animation-delay:.4s}
+  .t4{width:36px;height:36px;left:168px;bottom:360px;animation-delay:.6s}
+  .t5{width:32px;height:32px;left:204px;bottom:350px;animation-delay:.8s}
+  /* shades parked on toes */
+  .f-shades{position:absolute;left:50%;bottom:336px;transform:translateX(-50%) rotate(-4deg);width:150px;height:34px;z-index:3}
+  .f-shades::before,.f-shades::after{content:"";position:absolute;top:0;width:60px;height:32px;background:var(--freddy-blue);border-radius:10px;box-shadow:inset 0 6px 0 rgba(255,255,255,.25)}
+  .f-shades::before{left:0}.f-shades::after{right:0}
+  .f-shades .bridge{position:absolute;left:60px;top:10px;width:30px;height:9px;background:var(--freddy-blue)}
+  /* face */
+  .f-eye{position:absolute;width:52px;height:52px;background:#fff;border-radius:50%;bottom:248px;z-index:2;box-shadow:0 2px 0 rgba(0,0,0,.08);transition:transform .12s}
+  .f-eye.l{left:62px}.f-eye.r{left:136px}
+  .f-pupil{position:absolute;width:22px;height:22px;background:#2a2a2e;border-radius:50%;left:15px;top:15px}
+  .f-eye.blink{transform:scaleY(.08)}
+  .f-brow{position:absolute;width:58px;height:12px;background:linear-gradient(90deg,#7d746b,#a49a8d 45%,#7d746b);border-radius:6px;bottom:308px;z-index:2}
+  .f-brow.l{left:56px;transform:rotate(8deg)}.f-brow.r{left:134px;transform:rotate(-8deg)}
+  .f-blush{display:none}
+  .f-mouth{position:absolute;left:50%;transform:translateX(-50%);bottom:196px;width:74px;height:30px;background:#7a3b2e;border-radius:0 0 60px 60px;animation:chat 4s ease-in-out infinite}
+  @keyframes chat{0%,100%{height:26px}50%{height:36px}}
+  /* tie-dye tee */
+  .f-tee{position:absolute;left:50%;transform:translateX(-50%);bottom:104px;width:224px;height:100px;border-radius:26px 26px 14px 14px;overflow:hidden;z-index:2;
+    background:repeating-conic-gradient(from 0deg at 50% 45%,var(--tiedye-purple) 0 18deg,var(--sunset-coral) 18deg 36deg,var(--sky-wash) 36deg 54deg,var(--freddy-blue) 54deg 72deg,var(--alert-amber) 72deg 90deg);filter:saturate(.9)}
+  .f-tee::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.5) 0 12px,transparent 40px)}
+  /* cargo shorts */
+  .f-shorts{position:absolute;left:50%;transform:translateX(-50%);bottom:58px;width:210px;height:56px;background:#CBB78E;border-radius:10px 10px 16px 16px;z-index:2}
+  .f-shorts::before,.f-shorts::after{content:"";position:absolute;top:16px;width:34px;height:26px;background:#B5A176;border-radius:5px}
+  .f-shorts::before{left:22px}.f-shorts::after{right:22px}
+  /* arms + gloves */
+  .f-arm{position:absolute;bottom:150px;width:26px;height:96px;border-radius:14px;z-index:1;
+    background:linear-gradient(180deg,var(--tiedye-purple),var(--sunset-coral));transform-origin:top center}
+  .f-arm.l{left:8px;transform:rotate(38deg);animation:swingL 3.2s ease-in-out infinite}
+  .f-arm.r{right:8px;transform:rotate(-38deg);animation:swingR 3.2s ease-in-out infinite}
+  @keyframes swingL{0%,100%{transform:rotate(38deg)}50%{transform:rotate(30deg)}}
+  @keyframes swingR{0%,100%{transform:rotate(-38deg)}50%{transform:rotate(-30deg)}}
+  #freddyCSS.jump .f-arm.r{animation:shaka .9s ease-out}
+  @keyframes shaka{0%{transform:rotate(-38deg)}30%,70%{transform:rotate(-150deg)}100%{transform:rotate(-38deg)}}
+  .f-glove{position:absolute;bottom:-30px;left:-8px;width:42px;height:42px;background:#fff;border-radius:50%;box-shadow:0 3px 0 rgba(0,0,0,.1)}
+  /* sandals: a foot with feet (canon) */
+  .f-leg{position:absolute;bottom:26px;width:24px;height:44px;background:var(--skin-peach);z-index:0}
+  .f-leg.l{left:96px}.f-leg.r{left:180px}
+  .f-sandal{position:absolute;bottom:8px;width:74px;height:22px;background:var(--freddy-blue);border-radius:10px 26px 12px 10px;box-shadow:0 4px 0 #1a3f8a;z-index:1}
+  .f-sandal.l{left:72px}.f-sandal.r{left:156px}
+
+  .applause-wrap{position:absolute;z-index:6;bottom:26px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+  #applause{font-family:'Fredoka';font-weight:700;font-size:18px;letter-spacing:.12em;color:#fff;background:var(--freddy-red);border:none;border-radius:14px;padding:16px 34px;cursor:pointer;box-shadow:0 6px 0 #a32619;transition:transform .08s, box-shadow .08s}
+  #applause:active{transform:translateY(5px);box-shadow:0 1px 0 #a32619}
+  #applause.lit{animation:signflash .5s 3}
+  @keyframes signflash{50%{background:var(--alert-amber);box-shadow:0 6px 0 #b97b12}}
+  .applause-wrap .hint{font-size:12px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.15em;text-transform:uppercase}
+  .clap{position:absolute;z-index:7;font-size:26px;pointer-events:none;animation:flyup 1.4s ease-out forwards}
+  @keyframes flyup{0%{transform:translateY(0) scale(.6);opacity:1}100%{transform:translateY(-240px) scale(1.4) rotate(20deg);opacity:0}}
+
+  .strip{background:var(--freddy-blue);color:#fff;text-align:center;padding:26px 20px}
+  .strip h2{font-family:'Fredoka';font-weight:600;font-size:clamp(20px,3.4vw,30px)}
+  .strip p{margin-top:6px;font-size:15px;opacity:.92;font-weight:700}
+
+  .season{max-width:1100px;margin:0 auto;padding:64px 24px 30px}
+  .eyebrow{font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:var(--sunset-coral)}
+  .season h2{font-family:'Fredoka';font-weight:700;font-size:clamp(28px,4.5vw,44px);color:var(--freddy-blue);margin:6px 0 4px}
+  .season .sub{font-weight:700;color:var(--denim-fade);max-width:640px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:30px}
+  .card{background:#fff;border-radius:16px;padding:20px 20px 18px;box-shadow:0 4px 0 rgba(36,86,184,.12);border:2px solid transparent;transition:transform .15s ease,border-color .15s ease;display:flex;flex-direction:column;gap:8px}
+  .card:hover{transform:translateY(-4px);border-color:var(--sky-wash)}
+  .card .tag{display:flex;justify-content:space-between;align-items:center}
+  .card .num{font-family:'Fredoka';font-weight:700;font-size:13px;color:#fff;background:var(--freddy-blue);border-radius:8px;padding:4px 10px}
+  .card .pill{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .pill.premiere{background:var(--freddy-red);color:#fff}
+  .pill.soon{background:var(--sky-wash);color:var(--freddy-blue)}
+  .card h3{font-family:'Fredoka';font-weight:600;font-size:19px;line-height:1.2}
+  .card .log{font-style:italic;font-weight:700;color:var(--tiedye-purple);font-size:14px}
+  .card .habit{font-size:13px;font-weight:700;color:var(--tip-green);margin-top:auto;padding-top:6px;border-top:2px dashed var(--paper-cream)}
+
+  .club-band{background:linear-gradient(120deg,var(--tiedye-purple),var(--freddy-blue) 55%,var(--denim-fade));color:#fff;margin-top:56px}
+  .club-inner{max-width:1100px;margin:0 auto;padding:60px 24px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+  .club-inner h2{font-family:'Fredoka';font-weight:700;font-size:clamp(26px,4vw,40px)}
+  .club-inner p{margin-top:10px;max-width:520px;font-weight:700;font-size:16px;opacity:.94}
+  .cta{display:inline-block;font-family:'Fredoka';font-weight:700;font-size:18px;background:#fff;color:var(--freddy-blue);text-decoration:none;padding:16px 30px;border-radius:14px;box-shadow:0 6px 0 rgba(0,0,0,.18);transition:transform .1s}
+  .cta:active{transform:translateY(4px)}
+  footer{background:var(--ink);color:var(--paper-cream);text-align:center;padding:30px 20px;font-weight:700;font-size:13px}
+  footer .sig{font-family:'Fredoka';font-size:16px;margin-bottom:6px;color:var(--sky-wash)}
+
+  @media (prefers-reduced-motion: reduce){
+    #titlecard{display:none}
+    #freddyCSS,.f-toe,.f-arm.l,.f-arm.r,.f-mouth,.airing .dot{animation:none!important}
+  }
+  @media (max-width:640px){
+    #bubble{left:6%;transform:none;top:6%;max-width:230px;font-size:14px}
+    #freddyCSS{transform:scale(.82);transform-origin:bottom center}
+    .stage::before{margin-left:-140px;width:110px;height:110px}
+  }
+</style>
+</head>
+<body>
+
+<!-- COLD OPEN -->
+<div id="titlecard">
+  <div class="pres">Swarm &amp; Bee presents</div>
+  <h1>FREDDY<br>THE FOOT</h1>
+  <div class="ep">"Those Were the Feet"</div>
+  <div class="skip">tap to skip</div>
+</div>
+
+<!-- THE STAGE -->
+<section class="stage">
+  <nav>
+    <div class="brand">Freddy <span class="foot">the Foot</span></div>
+    <a class="club" href="#club">24/7 Club 🤙</a>
+  </nav>
+  <div class="airing"><span class="dot"></span>Filmed before a live studio audience</div>
+
+  <div id="scene">
+    <canvas id="freddy3d"></canvas>
+
+    <!-- CSS FREDDY: works everywhere, WebGL replaces it when available -->
+    <div id="freddyCSS" aria-label="Freddy the Foot, waving">
+      <div class="f-shadow"></div>
+      <div class="f-arm l"><div class="f-glove"></div></div>
+      <div class="f-arm r"><div class="f-glove"></div></div>
+      <div class="f-leg l"></div><div class="f-leg r"></div>
+      <div class="f-sandal l"></div><div class="f-sandal r"></div>
+      <div class="f-heel"></div>
+      <div class="f-body"></div>
+      <div class="f-toe t1"></div><div class="f-toe t2"></div><div class="f-toe t3"></div><div class="f-toe t4"></div><div class="f-toe t5"></div>
+      <div class="f-shades"><div class="bridge"></div></div>
+      <div class="f-brow l"></div><div class="f-brow r"></div>
+      <div class="f-eye l"><div class="f-pupil"></div></div>
+      <div class="f-eye r"><div class="f-pupil"></div></div>
+      <div class="f-blush l"></div><div class="f-blush r"></div>
+      <div class="f-mouth"></div>
+      <div class="f-tee"></div>
+      <div class="f-shorts"></div>
+    </div>
+
+    <div id="bubble"></div>
+    <div class="applause-wrap">
+      <button id="applause">APPLAUSE</button>
+      <div class="hint">go ahead. he lives for it.</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <h2>“I love my recliner. Why? My feet do.”</h2>
+  <p>He complains the entire time. He does it anyway. Real laughs for people managing the real thing — 24/7.</p>
+</div>
+
+<section class="season" id="season">
+  <div class="eyebrow">Season One</div>
+  <h2>The 24/7 Club</h2>
+  <p class="sub">Ten episodes from the recliner. Every one hides a habit that keeps feet in the game. Freddy's been doing this for years — under protest, without fail.</p>
+  <div class="grid" id="epgrid"></div>
+</section>
+
+<div class="club-band" id="club">
+  <div class="club-inner">
+    <div>
+      <h2>Welcome to the 24/7 Club.</h2>
+      <p>Membership is automatic. You already know the drill: check first, laugh anyway, keep living. Freddy is the front door — the deep stuff lives at OpenDiabetic.</p>
+    </div>
+    <a class="cta" href="https://opendiabetic.org" target="_blank" rel="noopener">Visit OpenDiabetic →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="sig">24/7 club. Check first. 🤙</div>
+  Freddy the Foot · a Swarm &amp; Bee / OpenDiabetic production · #SmartFeet #247Club
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" onerror="window.__noThree=true"></script>
+<script>
+/* ============ SHARED LAYER (renderer-independent) ============ */
+const EPS=[
+ {n:"S1 · E04",t:"Freddy's Nightly Address to the Nation",log:"“Freddy did not want to. Freddy did it anyway. This is the whole biography.”",habit:"Mirror, look, photo. 40 seconds a night.",pill:"premiere"},
+ {n:"S1 · E05",t:"Freddy at 3AM (The Kitchen Run)",log:"“The dog has never once apologized.”",habit:"Slides by the bed. Shake first, then step.",pill:"soon"},
+ {n:"S1 · E02",t:"Freddy vs. The Dad Shoes",log:"“The New Balance does not care. They've reached an understanding.”",habit:"New shoes one hour at a time. Check for hot spots.",pill:"soon"},
+ {n:"S1 · E01",t:"Freddy Hits the Beach (Under Protest)",log:"“The sand does not know this. The sand does not care.”",habit:"Hand check the sand, then walk.",pill:"soon"},
+ {n:"S1 · E03",t:"Freddy's Bath: A Trust Exercise",log:"“Perfect brisket. I mean bath.”",habit:"Elbow or thermometer — never trust the feet.",pill:"soon"},
+ {n:"S1 · E06",t:"Freddy Retires “It's Nothing”",log:"“The burgers observed a moment of silence.”",habit:"Wash it, cover it, watch it daily.",pill:"soon"},
+ {n:"S1 · E07",t:"Freddy's Toenail Summit",log:"“Grandpa would have questions.”",habit:"Straight across. Corners go to the pro.",pill:"soon"},
+ {n:"S1 · E08",t:"Freddy's Yard: Beautiful, Hostile",log:"“It's tried to take him out more than his 20s did. And his 20s TRIED.”",habit:"Shoes by every door. Even on your own grass.",pill:"soon"},
+ {n:"S1 · E09",t:"Freddy's Sock Drawer Has Standards",log:"“They know what they did.”",habit:"Seamless, loose tops, fresh daily.",pill:"soon"},
+ {n:"S1 · E10",t:"Freddy & Dr. Sole: 12 Years of Complaints",log:"“He has never once missed it.”",habit:"“Feels fine” still gets checked.",pill:"soon"},
+];
+document.getElementById('epgrid').innerHTML=EPS.map(e=>`
+ <div class="card">
+   <div class="tag"><span class="num">${e.n}</span>
+   <span class="pill ${e.pill}">${e.pill==="premiere"?"Series premiere":"Coming soon"}</span></div>
+   <h3>${e.t}</h3><div class="log">${e.log}</div>
+   <div class="habit">✔ ${e.habit}</div>
+ </div>`).join('');
+
+const tc=document.getElementById('titlecard');
+const killTC=()=>tc.classList.add('gone');
+tc.addEventListener('click',killTC);
+setTimeout(killTC,3200);
+
+const LINES=["I love my recliner. Why? My feet do.","Freddy did not want to. Freddy did it anyway.","Oh good. Visitors. Freddy loves visitors.","Found a LEGO at 3am. Never emotionally recovered.","Perfect brisket. I mean bath.","PEG: “DID YOU CHECK?” ...I was already checking.","The dog has never once apologized.","They know what they did.","Check first. 🤙"];
+const bubble=document.getElementById('bubble');
+let li=0;
+function sayNext(){
+  bubble.classList.remove('show');
+  setTimeout(()=>{bubble.textContent=LINES[li%LINES.length];li++;bubble.classList.add('show');},500);
+}
+setTimeout(sayNext,3600); setInterval(sayNext,6200);
+
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sceneEl=document.getElementById('scene');
+const applause=document.getElementById('applause');
+let onApplause=[];  // renderer hooks register here
+applause.addEventListener('click',()=>{
+  applause.classList.add('lit');
+  setTimeout(()=>applause.classList.remove('lit'),1600);
+  bubble.textContent="Check first. 🤙"; bubble.classList.add('show');
+  const em=['👏','🤙','😂','👏','🦶','👏'];
+  for(let i=0;i<14;i++){
+    const s=document.createElement('span'); s.className='clap';
+    s.textContent=em[i%em.length];
+    s.style.left=(15+Math.random()*70)+'%';
+    s.style.bottom=(60+Math.random()*60)+'px';
+    s.style.animationDelay=(Math.random()*.4)+'s';
+    sceneEl.appendChild(s); setTimeout(()=>s.remove(),1900);
+  }
+  onApplause.forEach(fn=>fn());
+});
+
+let mx=0,my=0;
+window.addEventListener('pointermove',e=>{
+  mx=(e.clientX/window.innerWidth)*2-1;
+  my=-(e.clientY/window.innerHeight)*2+1;
+});
+
+/* ============ RENDERER SELECTION ============ */
+function webglAvailable(){
+  if(window.__noThree || typeof THREE==='undefined') return false;
+  try{
+    const c=document.createElement('canvas');
+    return !!(window.WebGLRenderingContext && (c.getContext('webgl')||c.getContext('experimental-webgl')));
+  }catch(e){return false}
+}
+
+/* ---------- PATH A: CSS FREDDY (default, universal) ---------- */
+function initCSSFreddy(){
+  const f=document.getElementById('freddyCSS');
+  const eyes=[...f.querySelectorAll('.f-eye')];
+  const pupils=[...f.querySelectorAll('.f-pupil')];
+  if(!reduced){
+    /* pupils track pointer */
+    setInterval(()=>{
+      pupils.forEach(p=>{p.style.transform=`translate(${mx*8}px,${-my*6}px)`;});
+    },50);
+    /* randomized blink */
+    (function blinkLoop(){
+      const wait=2200+Math.random()*3000;
+      setTimeout(()=>{
+        eyes.forEach(e=>e.classList.add('blink'));
+        setTimeout(()=>eyes.forEach(e=>e.classList.remove('blink')),140);
+        blinkLoop();
+      },wait);
+    })();
+  }
+  onApplause.push(()=>{
+    f.classList.remove('jump'); void f.offsetWidth; /* restart animation */
+    f.classList.add('jump');
+  });
+}
+
+/* ---------- PATH B: WEBGL FREDDY (progressive enhancement) ---------- */
+function initWebGLFreddy(){
+  const canvas=document.getElementById('freddy3d');
+  let renderer;
+  try{
+    renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  }catch(e){ return false; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(38,1,0.1,100);
+  camera.position.set(0,1.15,6.4);
+
+  scene.add(new THREE.AmbientLight(0xffffff,.75));
+  const sun=new THREE.DirectionalLight(0xfff2d0,1.0); sun.position.set(-3,5,4); scene.add(sun);
+  const rim=new THREE.DirectionalLight(0xF0876B,.5); rim.position.set(3,2,-3); scene.add(rim);
+
+  const M=(c,r=.6)=>new THREE.MeshStandardMaterial({color:c,roughness:r,metalness:0});
+  const SKIN=M(0xF2B98C,.55), DARK=M(0x2a2a2e,.4), WHITE=M(0xffffff,.5),
+        BLUE=M(0x2456B8,.45), KHAKI=M(0xCBB78E,.7);
+
+  const t2=document.createElement('canvas'); t2.width=t2.height=256;
+  const g=t2.getContext('2d');
+  const cols=['#7B5EA7','#F0876B','#BFE3F5','#2456B8','#F5A623'];
+  g.fillStyle='#7B5EA7'; g.fillRect(0,0,256,256);
+  for(let i=0;i<7;i++){const gr=g.createRadialGradient(128,128,6+i*16,128,128,26+i*18);
+    gr.addColorStop(0,cols[i%cols.length]); gr.addColorStop(1,cols[(i+1)%cols.length]);
+    g.globalAlpha=.55; g.fillStyle=gr; g.beginPath(); g.arc(128,128,26+i*18,0,7); g.fill();}
+  g.globalAlpha=1;
+  for(let a=0;a<24;a++){g.strokeStyle='rgba(255,255,255,.20)';g.lineWidth=2;g.beginPath();
+    g.moveTo(128,128); g.lineTo(128+Math.cos(a/24*6.283)*180,128+Math.sin(a/24*6.283)*180); g.stroke();}
+  const TIEDYE=new THREE.MeshStandardMaterial({map:new THREE.CanvasTexture(t2),roughness:.75});
+
+  const freddy=new THREE.Group(); scene.add(freddy);
+  const body=new THREE.Mesh(new THREE.SphereGeometry(1,32,32),SKIN);
+  body.scale.set(.82,1.28,.62); body.position.y=1.32; freddy.add(body);
+  const heel=new THREE.Mesh(new THREE.SphereGeometry(.5,24,24),SKIN);
+  heel.position.set(0,.45,-.28); heel.scale.set(.8,.7,.9); freddy.add(heel);
+
+  const toes=[]; const toeS=[.21,.17,.15,.135,.12];
+  for(let i=0;i<5;i++){
+    const t=new THREE.Mesh(new THREE.SphereGeometry(toeS[i],20,20),SKIN);
+    const x=-.52+i*.26;
+    t.position.set(x,2.52-Math.abs(x)*.28,.12); freddy.add(t); toes.push(t);
+  }
+  const shade=new THREE.Group();
+  [[-.26],[.26]].forEach(([x])=>{const l=new THREE.Mesh(new THREE.BoxGeometry(.4,.22,.1),BLUE);l.position.x=x;shade.add(l);});
+  shade.add(Object.assign(new THREE.Mesh(new THREE.BoxGeometry(.14,.06,.08),BLUE)));
+  shade.position.set(0,2.3,.5); shade.rotation.x=-.35; freddy.add(shade);
+
+  const eyeG=[];
+  [[-.3],[.3]].forEach(([x])=>{
+    const grp=new THREE.Group();
+    const w=new THREE.Mesh(new THREE.SphereGeometry(.19,20,20),WHITE); grp.add(w);
+    const p=new THREE.Mesh(new THREE.SphereGeometry(.085,16,16),DARK); p.position.z=.14; grp.add(p);
+    const brow=new THREE.Mesh(new THREE.BoxGeometry(.32,.075,.07),M(0x8d8578,.7));
+    brow.position.set(0,.26,.06); brow.rotation.z=x<0?.15:-.15; grp.add(brow);
+    grp.position.set(x,1.78,.52); freddy.add(grp);
+    eyeG.push({grp,p});
+  });
+  const GRAYSKIN=M(0xD9C9B3,.6); /* graying outer toe-crown */
+  const grayL=new THREE.Mesh(new THREE.SphereGeometry(.08,12,12),GRAYSKIN);
+  grayL.position.set(-.55,2.44,.16); freddy.add(grayL);
+  const grayR=new THREE.Mesh(new THREE.SphereGeometry(.06,12,12),GRAYSKIN);
+  grayR.position.set(.54,2.36,.15); freddy.add(grayR);
+  const mouth=new THREE.Mesh(new THREE.SphereGeometry(.16,20,20),M(0x7a3b2e,.5));
+  mouth.scale.set(1.4,.55,.4); mouth.position.set(0,1.28,.56); freddy.add(mouth);
+
+  const tee=new THREE.Mesh(new THREE.CylinderGeometry(.72,.8,.78,24),TIEDYE);
+  tee.position.y=.98; freddy.add(tee);
+  const shorts=new THREE.Mesh(new THREE.CylinderGeometry(.8,.72,.5,24),KHAKI);
+  shorts.position.y=.42; freddy.add(shorts);
+  [[-.45],[.45]].forEach(([x])=>{const pk=new THREE.Mesh(new THREE.BoxGeometry(.22,.18,.06),M(0xB5A176,.7));
+    pk.position.set(x,.42,.66); freddy.add(pk);});
+
+  function arm(side){
+    const a=new THREE.Group();
+    const up=new THREE.Mesh(new THREE.CylinderGeometry(.09,.09,.62,12),TIEDYE);
+    up.position.y=-.31; a.add(up);
+    const glove=new THREE.Mesh(new THREE.SphereGeometry(.19,18,18),WHITE);
+    glove.position.y=-.68; a.add(glove);
+    a.position.set(.78*side,1.35,0); a.rotation.z=side*.9; freddy.add(a);
+    return a;
+  }
+  const armR=arm(1), armL=arm(-1);
+
+  [[-.3],[.3]].forEach(([x])=>{
+    const s=new THREE.Mesh(new THREE.BoxGeometry(.34,.1,.55),BLUE);
+    s.position.set(x,.06,.1); freddy.add(s);
+    const leg=new THREE.Mesh(new THREE.CylinderGeometry(.1,.1,.3,10),SKIN);
+    leg.position.set(x,.22,0); freddy.add(leg);
+  });
+
+  const shadow=new THREE.Mesh(new THREE.CircleGeometry(1.15,32),
+    new THREE.MeshBasicMaterial({color:0x8a6a3a,transparent:true,opacity:.28}));
+  shadow.rotation.x=-Math.PI/2; shadow.position.y=.015; scene.add(shadow);
+  freddy.position.y=-.15;
+
+  let jump=0,wave=0,blink=0,nextBlink=2.5;
+  onApplause.push(()=>{jump=1;wave=1;});
+
+  function resize(){
+    const w=sceneEl.clientWidth,h=sceneEl.clientHeight;
+    renderer.setSize(w,h,false);
+    camera.aspect=w/h; camera.updateProjectionMatrix();
+    camera.position.z=w<640?7.6:6.4;
+  }
+  window.addEventListener('resize',resize); resize();
+
+  let last=performance.now();
+  function loop(now){
+    requestAnimationFrame(loop);
+    const t=now/1000, dt=Math.min(.05,(now-last)/1000); last=now;
+    if(!reduced){
+      freddy.position.y=-.15+Math.sin(t*1.6)*.06;
+      freddy.rotation.y=Math.sin(t*.5)*.12 + mx*.25;
+      freddy.rotation.z=Math.sin(t*.8)*.02;
+      toes.forEach((toe,i)=>{toe.position.z=.12+Math.sin(t*3+i*1.1)*.03;});
+      armL.rotation.z=-.9+Math.sin(t*1.6)*.08;
+      if(wave>0){wave-=dt*.5; armR.rotation.z=.2+Math.sin(t*10)*.45;}
+      else armR.rotation.z=.9+Math.sin(t*1.6+1)*.08;
+      if(jump>0){jump-=dt*1.4; freddy.position.y+=Math.sin(Math.min(1,1-jump)*Math.PI)*.55;}
+      nextBlink-=dt;
+      if(nextBlink<=0){blink=.22;nextBlink=2.4+Math.random()*3;}
+      if(blink>0){blink-=dt;}
+      eyeG.forEach(e=>{
+        e.grp.scale.y=blink>0?.12:1;
+        e.p.position.x=mx*.07; e.p.position.y=my*.05;
+      });
+      mouth.scale.y=.55+Math.abs(Math.sin(t*.9))*.15;
+    }
+    renderer.render(scene,camera);
+  }
+  requestAnimationFrame(loop);
+  return true;
+}
+
+/* ============ BOOT ============ */
+initCSSFreddy();                       // floor: always alive
+if(webglAvailable()){
+  try{
+    if(initWebGLFreddy()) sceneEl.classList.add('webgl');   // upgrade if context succeeds
+  }catch(e){ /* CSS Freddy stays on stage */ }
+}
+</script>
+</body>
+</html>

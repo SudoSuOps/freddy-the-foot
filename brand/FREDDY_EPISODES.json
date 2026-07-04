@@ -1,0 +1,332 @@
+{
+  "collection": "Freddy the Foot — Season 1: The 24/7 Club",
+  "brand_kit_version": "1.3",
+  "invariant": "one clinical risk -> one habit -> one adventure",
+  "delivery_invariant": "a little smile that leaves a real reminder",
+  "persona_invariant": "complains the entire time - does it anyway",
+  "thesis_line": "I love my recliner. Why? My feet do.",
+  "primary_voice": "24-7",
+  "signoff_247": "24/7 club. Check first. 🤙",
+  "hashtags_global": [
+    "#SmartFeet",
+    "#247Club",
+    "#FreddyTheFoot"
+  ],
+  "schema_note": "v1.1 schema + new fields: peg_beat (off-screen line + Freddy's deadpan), set (primary location). voice_classic unchanged from v1.0.",
+  "episodes": [
+    {
+      "id": "ep01",
+      "title": "Freddy Hits the Beach (Under Protest)",
+      "hazard": "Thermal burns from hot surfaces (loss of protective sensation)",
+      "habit": "Check hot surfaces with your hand before stepping.",
+      "field_guide_ref": null,
+      "set": "beach (recliner cameo: he brought a folding one)",
+      "voice_247": {
+        "wardrobe": "Tie-dye, cargo shorts, folding recliner under one arm, cooler in the other",
+        "beats": [
+          "The Sigh: 'Oh good. The beach. Sand in everything for a week. Freddy loves the beach.'",
+          "Caption: 'Freddy hasn't felt hot sand since Clinton was in office. The sand does not know this. The sand does not care.'",
+          "Freddy, crouched, palm flat on the sand like checking a griddle, muttering. 'His hand still works fine. Unlike his knees. Or his back. Or—' [checks sand anyway]",
+          "End card: folding recliner deployed at the waterline, sandals on, drink in hand, at peace against his will."
+        ],
+        "punchline": "The sand does not know this. The sand does not care.",
+        "reminder": "Can't feel it doesn't mean it can't burn. Hand check, then walk.",
+        "peg_beat": {
+          "peg": "HAND FIRST, FREDDY.",
+          "freddy": "...I was already hand-ing."
+        },
+        "video_hook": "Freddy was dragged to the beach. He brought his own chair.",
+        "ugc_prompt": "What do you complain about at the beach but secretly love?"
+      },
+      "voice_classic": {
+        "title": "Freddy Goes to the Beach",
+        "ref": "v1.0 ep01"
+      },
+      "status": "ready"
+    },
+    {
+      "id": "ep02",
+      "title": "Freddy vs. The Dad Shoes",
+      "hazard": "Friction blisters from new/ill-fitting shoes",
+      "habit": "Break new shoes in slowly and check for hot spots.",
+      "field_guide_ref": null,
+      "set": "living room / the recliner",
+      "voice_247": {
+        "wardrobe": "Garage flannel, staring at a shoebox on the ottoman like it's a summons",
+        "beats": [
+          "The Sigh: 'Oh good. New shoes. Freddy loves change.'",
+          "Caption: 'Freddy has opinions about the New Balance. The New Balance does not care. They've reached an understanding.'",
+          "Timer on the phone: one hour. Freddy in the recliner, shoes on, arms crossed, watching the clock like it insulted him. Checks for red spots after. 'They're fine. They're... unbelievably comfortable. Tell no one.'",
+          "End card: mowing the lawn in them. Fully converted. Will deny it under oath."
+        ],
+        "punchline": "The New Balance does not care. They've reached an understanding.",
+        "reminder": "New shoes: one hour at a time. Check for hot spots after every round.",
+        "peg_beat": {
+          "peg": "THE DOCTOR SAID SUPPORTIVE.",
+          "freddy": "The doctor doesn't have to LOOK at them, Peg."
+        },
+        "video_hook": "Every guy over 45 knows this exact shoebox.",
+        "ugc_prompt": "Show us the shoes you fought and lost to."
+      },
+      "voice_classic": {
+        "title": "Freddy Gets New Kicks",
+        "ref": "v1.0 ep02"
+      },
+      "status": "ready"
+    },
+    {
+      "id": "ep03",
+      "title": "Freddy's Bath: A Trust Exercise",
+      "hazard": "Scald burns from bathwater (cannot trust foot sensation)",
+      "habit": "Test water with your elbow or a thermometer before getting in.",
+      "field_guide_ref": null,
+      "set": "bathroom",
+      "voice_247": {
+        "wardrobe": "Robe, towel over shoulder, meat thermometer held with complete authority",
+        "beats": [
+          "The Sigh: 'A bath. Sure. Let's negotiate with water again.'",
+          "Caption: 'Freddy's feet lie to him about temperature. They've been lying since the 90s. He's stopped asking.'",
+          "Meat thermometer in. Pitmaster nod. '98. Perfect brisket. I mean bath.'",
+          "End card: soaking, cucumber slices, deeply at peace, would grumble about it if asked."
+        ],
+        "punchline": "Perfect brisket. I mean bath.",
+        "reminder": "Feet can't be trusted with temperature. Elbow or thermometer, every time.",
+        "peg_beat": {
+          "peg": "IS THAT MY MEAT THERMOMETER?",
+          "freddy": "It's OUR meat thermometer, Peg. We're married."
+        },
+        "video_hook": "Why is Freddy holding a meat thermometer in the bathroom?",
+        "ugc_prompt": "Weirdest thing you've used to test bathwater — go."
+      },
+      "voice_classic": {
+        "title": "Freddy's Warm Bath",
+        "ref": "v1.0 ep03"
+      },
+      "status": "ready"
+    },
+    {
+      "id": "ep04",
+      "title": "Freddy's Nightly Address to the Nation",
+      "hazard": "Unnoticed sores/cuts on soles (daily inspection gap)",
+      "habit": "Check the bottoms of your feet every day with a mirror. Photo it.",
+      "field_guide_ref": "FG-003 Foot Photos",
+      "set": "THE RECLINER (flagship episode for the set)",
+      "voice_247": {
+        "wardrobe": "Robe, reading glasses down, mirror in hand, remote guarded on the armrest, dog eyeing the chair",
+        "beats": [
+          "The Sigh: Freddy settles into the recliner like a king reclaiming a contested throne. 'I love my recliner. Why? My feet do.'",
+          "Caption: 'Freddy has seen the bottom of his foot more than his own hairline. He has thoughts about both.'",
+          "Mirror check, phone photo, muttering through the whole 40 seconds. 'Freddy did not want to. Freddy did it anyway. This is the whole biography.'",
+          "End card: lights low, feet up, dog denied the chair, streak intact."
+        ],
+        "punchline": "Freddy did not want to. Freddy did it anyway. This is the whole biography.",
+        "reminder": "40 seconds a night. Mirror, look, photo. That's the whole job.",
+        "peg_beat": {
+          "peg": "I HEARD THE RECLINER. DID YOU CHECK?",
+          "freddy": "...I was already checking."
+        },
+        "video_hook": "Every night, same chair, same speech. Freddy's nightly address.",
+        "ugc_prompt": "Where does YOUR nightly check happen? Defend your chair."
+      },
+      "voice_classic": {
+        "title": "Freddy Looks Underneath",
+        "ref": "v1.0 ep04"
+      },
+      "status": "ready"
+    },
+    {
+      "id": "ep05",
+      "title": "Freddy at 3AM (The Kitchen Run)",
+      "hazard": "Foreign objects / barefoot hazards going unfelt (neuropathy)",
+      "habit": "Slides by the bed. Shoes on before walking, even at 3am. Shake them first.",
+      "field_guide_ref": null,
+      "set": "hallway / kitchen, 3:04 AM",
+      "voice_247": {
+        "wardrobe": "Robe, hair-toes askew, phone flashlight, the house is dark and hostile",
+        "beats": [
+          "The Sigh: 3:04 AM. 'Water. At 3AM. Because Freddy's body runs on committee decisions now.'",
+          "Caption: 'Freddy found a LEGO in his shoe once at 3am. He never emotionally recovered. The dog has never once apologized.'",
+          "Half-asleep, he STILL shakes the slides out before stepping in. Pure autopilot. 'The system works even when Freddy doesn't. Especially then.'",
+          "End card: water acquired, dog on HIS recliner in the dark, feet intact. One battle won, one lost."
+        ],
+        "punchline": "The dog has never once apologized.",
+        "reminder": "Slides live by the bed. Shake first, then step. Even at 3am.",
+        "peg_beat": {
+          "peg": "[from the bedroom, asleep-voice] SHOES.",
+          "freddy": "[to camera] Thirty years. She can hear bare feet THROUGH A WALL."
+        },
+        "video_hook": "3AM. The dog has been busy. Freddy has a system.",
+        "ugc_prompt": "What has YOUR floor tried to kill you with at 3am?"
+      },
+      "voice_classic": {
+        "title": "Freddy Shakes It Out",
+        "ref": "v1.0 ep05"
+      },
+      "status": "ready"
+    },
+    {
+      "id": "ep06",
+      "title": "Freddy Retires 'It's Nothing'",
+      "hazard": "Minor cuts ignored until they become serious wounds",
+      "habit": "Clean small cuts immediately. Watch daily. Not healing = call the doc.",
+      "field_guide_ref": null,
+      "set": "backyard cookout",
+      "voice_247": {
+        "wardrobe": "Grill apron over the tie-dye, tongs, surrounded by guys nodding at things",
+        "beats": [
+          "The Sigh: deck scrape mid-cookout. Every guy in the yard, in unison: 'It's nothing.' The ancient call of their people.",
+          "Caption: 'Freddy's dad said \"it's nothing\" about everything for 60 years. Freddy retired the phrase. The burgers observed a moment of silence.'",
+          "Washed, covered, back at the grill in 90 seconds, grumbling the entire time. 'Burgers don't wait. Neither do cuts. Neither does Gary, apparently — GARY, OFF THE GRILL.'",
+          "End card: phone reminder set — 'check the nothing' — three days marked. Flame perfect."
+        ],
+        "punchline": "The burgers observed a moment of silence.",
+        "reminder": "Small cut: wash it, cover it, watch it daily. Not healing? Make the call.",
+        "peg_beat": {
+          "peg": "WAS THAT THE DECK BOARD I ASKED YOU TO FIX?",
+          "freddy": "...The cut and I would both like to move on, Peg."
+        },
+        "video_hook": "Three words every guy says. Freddy quit cold turkey.",
+        "ugc_prompt": "What did you once call 'nothing' that taught you a lesson?"
+      },
+      "voice_classic": {
+        "title": "Freddy's Tiny Ouch",
+        "ref": "v1.0 ep06"
+      },
+      "status": "ready"
+    },
+    {
+      "id": "ep07",
+      "title": "Freddy's Toenail Summit",
+      "hazard": "Improper nail cutting causing ingrown nails and skin nicks",
+      "habit": "Cut straight across, never dig corners. Tough nails = podiatrist.",
+      "field_guide_ref": null,
+      "set": "garage workbench",
+      "voice_247": {
+        "wardrobe": "Reading glasses ON, workbench light, clippers laid out with torque-wrench-owner precision",
+        "beats": [
+          "The Sigh: 'Toenail day. The glamour of it all.'",
+          "Caption: 'Freddy measures twice and cuts once. His grandfather said that about lumber. Freddy applies it to toenails. Grandpa would have questions.'",
+          "Straight across, gentle file, zero corner-digging, running commentary. 'Corners are for lumber. And for the dog when he's in trouble. Not for nails.'",
+          "End card: 'The gnarly ones go to Dr. Sole. Freddy knows his trade, and he knows when to call a contractor.'"
+        ],
+        "punchline": "Grandpa would have questions.",
+        "reminder": "Straight across. No corner digging. Tough ones go to the pro.",
+        "peg_beat": {
+          "peg": "NOT OVER THE GOOD RUG.",
+          "freddy": "It's the GARAGE, Peg. Everything in here is the bad rug."
+        },
+        "video_hook": "Freddy treats toenail day like a garage project.",
+        "ugc_prompt": "Rate Freddy's setup. What's on YOUR trimming workbench?"
+      },
+      "voice_classic": {
+        "title": "Freddy Gets a Trim",
+        "ref": "v1.0 ep07"
+      },
+      "status": "ready"
+    },
+    {
+      "id": "ep08",
+      "title": "Freddy's Yard: Beautiful, Hostile",
+      "hazard": "Puncture wounds from going barefoot outdoors/at home",
+      "habit": "Shoes on, always — even at home, even in the yard.",
+      "field_guide_ref": null,
+      "set": "backyard",
+      "voice_247": {
+        "wardrobe": "Garage flannel, work gloves, sturdy yard shoes, hose, surveying his kingdom with suspicion",
+        "beats": [
+          "The Sigh: 'The lawn looks great. Which means something's wrong.'",
+          "Caption: 'Freddy's yard has tried to take him out more times than his 20s did. And his 20s TRIED.'",
+          "Yard shoes by every door, slides by the bed, non-negotiable. 'Barefoot is a lifestyle. Freddy's lifestyle is intact skin and low drama.'",
+          "End card: golden hour, sprinkler on, folding recliner ON the lawn, shoes ON, king of all he surveys."
+        ],
+        "punchline": "And his 20s TRIED.",
+        "reminder": "Shoes by every door. Barefoot isn't worth the gamble — even on your own grass.",
+        "peg_beat": {
+          "peg": "THE DOG BURIED SOMETHING BY THE ROSES.",
+          "freddy": "Of course he did. It's Tuesday."
+        },
+        "video_hook": "The most dangerous place for your feet? You mow it weekly.",
+        "ugc_prompt": "What's the worst thing hiding in YOUR yard right now? Be honest."
+      },
+      "voice_classic": {
+        "title": "Freddy in the Garden",
+        "ref": "v1.0 ep08"
+      },
+      "status": "ready"
+    },
+    {
+      "id": "ep09",
+      "title": "Freddy's Sock Drawer Has Standards",
+      "hazard": "Tight elastic and rough seams restricting circulation / causing friction",
+      "habit": "Seamless socks, no tight elastic. Change daily. Light colors show problems.",
+      "field_guide_ref": null,
+      "set": "bedroom / sock drawer",
+      "voice_247": {
+        "wardrobe": "Tie-dye, holding an ancient tube sock at arm's length like evidence in a trial",
+        "beats": [
+          "The Sigh: 'Sock audit. Peg's idea. Everything is Peg's idea until it works.'",
+          "Caption: 'These socks have been squeezing Freddy since dial-up. They know what they did.'",
+          "New standard installed: seamless, soft, loose tops, light colors. 'Freddy's socks now hug. They used to arrest. Growth.'",
+          "End card: drawer organized, tube socks demoted to car-wash duty. 'A dignified retirement. More than they deserve.'"
+        ],
+        "punchline": "They know what they did.",
+        "reminder": "Seamless, loose tops, fresh daily. Light colors show trouble early.",
+        "peg_beat": {
+          "peg": "TOLD YOU.",
+          "freddy": "[to camera, wearing the comfortable socks] I don't want to talk about it."
+        },
+        "video_hook": "Freddy's sock drawer audit turned emotional fast.",
+        "ugc_prompt": "How old is the oldest sock you're STILL wearing? Confess."
+      },
+      "voice_classic": {
+        "title": "Freddy's Cozy Socks",
+        "ref": "v1.0 ep09"
+      },
+      "status": "ready"
+    },
+    {
+      "id": "ep10",
+      "title": "Freddy & Dr. Sole: 12 Years of Complaints",
+      "hazard": "Avoidance of professional foot exams",
+      "habit": "Regular podiatrist visits — 'feels fine' still gets checked.",
+      "field_guide_ref": null,
+      "set": "waiting room / exam room",
+      "voice_247": {
+        "wardrobe": "The appointment flannel, coffee, judging the waiting-room magazines like it's his job",
+        "beats": [
+          "The Sigh: 'The drive. The parking. The magazines from 2019. Freddy loves appointment day.'",
+          "Caption: 'Freddy has complained about coming here for 12 years. He has never once missed it. Dr. Sole stopped listening to the complaints in year two. They're both fine with this.'",
+          "Exam, old jokes, real answers. 'Feels fine' gets the full look anyway. 'That's the deal. Freddy doesn't make the rules. Peg does.'",
+          "End card: next appointment booked before he's out the door. Fist bump. 'See you in the spring. The magazines better be new.'"
+        ],
+        "punchline": "Dr. Sole stopped listening to the complaints in year two. They're both fine with this.",
+        "reminder": "'Feels fine' still gets checked. Keep the standing appointment.",
+        "peg_beat": {
+          "peg": "[text on his phone] DID YOU ASK ABOUT THE THING?",
+          "freddy": "[typing] Asking about the thing."
+        },
+        "video_hook": "Freddy's longest-running argument? He's never once won it. On purpose.",
+        "ugc_prompt": "Shout out YOUR foot doc. How long have you two been at it?"
+      },
+      "voice_classic": {
+        "title": "Freddy Meets Dr. Sole",
+        "ref": "v1.0 ep10"
+      },
+      "status": "ready"
+    }
+  ],
+  "season_2_backlog": [
+    "Freddy's Winter Walk (cold injury — grumbles about the boots, wears the boots)",
+    "Freddy at the Pool (maceration — 'drying BETWEEN the toes, the forgotten zone')",
+    "Freddy's Long Flight (circulation — middle seat, compression socks, opinions)",
+    "Freddy Breaks in the Work Boots (job-site footwear)",
+    "Freddy's Road Trip (rest-stop walk ritual — Peg navigates, Freddy complies)",
+    "Nobody Sits in the Chair (the dog vs. the recliner — bottle episode)"
+  ],
+  "character_canon": {
+    "freddy": "Middle-aged man (early 50s) living with type 2 diabetes. Member of the 24/7 club, not adjacent to it. Every habit is HIS routine, not a demonstration.",
+    "age_markers": "salt-and-pepper brows, graying outer toe-crown, sturdier settled build, reading glasses, laugh lines. Blush retired — reads young.",
+    "disclosure": "Diabetes is canon and matter-of-fact — never the punchline, never explained to the audience, never an inspiration beat.",
+    "fails_review": "Any render/copy where Freddy reads as a kid, teen, young mascot, or outside educator."
+  }
+}
