@@ -1,0 +1,15 @@
+{
+  "voice": "Chris - Charming, Down-to-Earth",
+  "voice_id": "iP95p4xoKVk53GoZ742B",
+  "provider": "ElevenLabs",
+  "model_id": "eleven_v3",
+  "voice_settings": { "stability": 0.45, "similarity_boost": 0.75, "style": 0.40, "use_speaker_boost": true },
+  "rendered": "2026-07-05",
+  "lines": [
+    { "file": "01-july4.mp3",       "text": "Happy 4th of July! Tonight we celebrate freedom, friends, and fireworks!" },
+    { "file": "02-dance.mp3",       "text": "Move those feet and celebrate safely!" },
+    { "file": "03-staysafe.mp3",    "text": "Stay safe, have fun, and keep those feet happy!" },
+    { "file": "04-strongfeet.mp3",  "text": "Strong Feet. Better Days." },
+    { "file": "05-checkdaily.mp3",  "text": "Check your feet every day!" }
+  ]
+}
